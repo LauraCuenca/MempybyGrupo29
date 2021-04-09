@@ -1,10 +1,10 @@
-from datos import nombres, eval1, eval2
+#from datos import nombres, eval1, eval2
 from statistics import mean
 
 
 def crear_lista(arch):
     """ Crea una lista a partir del string enviado"""
-    lista = arch.replace("'", "").replace(" ", "").replace("\n", "").split(",")
+    lista = arch.replace('"', "").replace(" ", "").replace("\n", "").split(",")
     return lista
 
 
@@ -26,26 +26,32 @@ def lista_de_tuplas(nombres, eval1, eval2, suma):
     return alumnos
 
 
-def imprimir_datos(alumnos, suma):
+def imprimir_datos(alumnos):
     """ Imprime los datos de los alumnos en el formato dispuesto"""
     formato = "{:16} {:10} {:10} {:10}"
     formato2 = "{:10} {:10} {:10} {:10}"
     formato3 = "{:28} {:10} {:3}"
+    print("="*60)
     print(formato.format('Nombre', 'Eval1', 'Eval2', 'Sumas'))
+    print("="*60)
     for i in range(len(alumnos)):
         print(formato2.format(alumnos[i][0], alumnos[i]
                               [1], alumnos[i][2], alumnos[i][3]))
+    suma = [alumno[i] for alumno in alumnos for i in range(len(alumno)) if i==3]
     total = sum(suma)
     print(formato3.format(" ", "suma", total))
     promedio = mean(suma)
     print(formato3.format(" ", "promedio", promedio))
 
 
-nombres = crear_lista(nombres)
-eval1 = crear_lista(eval1)
-eval2 = crear_lista(eval2)
-eval1 = convertir_a_int(eval1)
-eval2 = convertir_a_int(eval2)
-suma = lista_suma(eval1, eval2)
-alumnos = lista_de_tuplas(nombres, eval1, eval2, suma)
-imprimir = imprimir_datos(alumnos, suma)
+def generar_lista_final(nombres, eval1, eval2):
+    """Genera la lista final para ser utilizada por el menu"""
+    nombres = crear_lista(nombres)
+    eval1 = crear_lista(eval1)
+    eval2 = crear_lista(eval2)
+    eval1 = convertir_a_int(eval1)
+    eval2 = convertir_a_int(eval2)
+    suma = lista_suma(eval1, eval2)
+    alumnos = lista_de_tuplas(nombres, eval1, eval2, suma)
+    return (alumnos)
+
