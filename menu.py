@@ -92,7 +92,8 @@ while True:
                 de_menor_a_mayor = True
             else:
                 de_menor_a_mayor = False
-            imprimir_datos(ordenar_segun_parametro(alumnos, opcionMenu, de_menor_a_mayor))
+            # Le restamos 1 a opcion_menu porque las opciones del menu empiezan en 1 y no en 0
+            imprimir_datos(ordenar_segun_parametro(alumnos, int(opcionMenu)-1, de_menor_a_mayor))
             input("\nPresioná una tecla para continuar... ")
         else:
             input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
