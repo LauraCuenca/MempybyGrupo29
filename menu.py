@@ -74,16 +74,16 @@ while True:
 
     if opcionMenu == "1":
         imprimir_datos(alumnos)
-        input()
+        input("\nPresioná una tecla para continuar... ")
     elif opcionMenu == "2":
         opcionMenu = menu_reportes()
         if opcionMenu == "1" or opcionMenu == "2" or opcionMenu == "3":
             minimo, maximo = ingresar_datos()
-            alumnos_filtrados = reportes(alumnos, opcionMenu, minimo, maximo)
+            alumnos_filtrados = reportes(alumnos, int(opcionMenu), minimo, maximo)
             imprimir_datos(alumnos_filtrados) 
-            input()
+            input("\nPresioná una tecla para continuar... ")
         else:
-            input("\nNo has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+            input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
     elif opcionMenu == "3":
         opcionMenu = menu_ordenar()
         if opcionMenu == "1" or opcionMenu == "2" or opcionMenu == "3" or opcionMenu == "4":
@@ -93,10 +93,10 @@ while True:
             else:
                 de_menor_a_mayor = False
             imprimir_datos(ordenar_segun_parametro(alumnos, opcionMenu, de_menor_a_mayor))
-            input()
+            input("\nPresioná una tecla para continuar... ")
         else:
-            input("\nNo has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+            input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
     elif opcionMenu == "4":
         break # Fin del programa
     else:
-        input("\nNo has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
+        input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
