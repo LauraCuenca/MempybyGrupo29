@@ -63,8 +63,8 @@ def menu_ordenar_aZ():
 
 def ingresar_datos_min_max():
     """Devuelve parametros para los filtros del reporte"""
-    minimo = int(input("Ingrese la nota MINIMA a filtrar >>"))
-    maximo = int(input("Ingrese la nota MAXIMA a filtrar >>"))
+    minimo = int(input("Ingrese la nota MINIMA a filtrar >> "))
+    maximo = int(input("Ingrese la nota MAXIMA a filtrar >> "))
     return minimo, maximo
 
 mensaje_pulsar_tecla = "\nPresioná una tecla para continuar... "
