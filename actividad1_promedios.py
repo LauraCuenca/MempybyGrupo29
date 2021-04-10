@@ -37,13 +37,15 @@ def imprimir_datos(alumnos):
     for i in range(len(alumnos)):
         print(formato2.format(alumnos[i][0], alumnos[i]
                               [1], alumnos[i][2], alumnos[i][3]))
+    ###################################################################
+    # Esto y lista_suma hacen lo mismo
+    ###################################################################
     suma = [alumno[i] for alumno in alumnos for i in range(len(alumno)) if i==3]
     total = sum(suma)
     print(formato3.format(" ", "suma", total))
-    if len(suma) > 0:
-        promedio = mean(suma)
-    else:
-        promedio = 0
+    promedio = 0
+    if len(suma) > 0:  # Tiraba error porque no puede dividir por cero
+        promedio = mean(suma)        
     print(formato3.format(" ", "promedio", promedio))
 
 
@@ -52,9 +54,19 @@ def generar_lista_final(nombres, eval1, eval2):
     nombres = crear_lista(nombres)
     eval1 = crear_lista(eval1)
     eval2 = crear_lista(eval2)
+    ###################################################################
+    # crear_lista y convertir_a_int se podrian llamar al mismo tiempo
+    eval1 = convertir_a_int(crear_lista(eval2))
+    ###################################################################
     eval1 = convertir_a_int(eval1)
     eval2 = convertir_a_int(eval2)
     suma = lista_suma(eval1, eval2)
+    ###################################################################
+    # lista_de_tuplas se podria hacer aca mismo, total no se usa en otro lado
+    ###################################################################
     alumnos = lista_de_tuplas(nombres, eval1, eval2, suma)
+    ###################################################################
+    # revisar todas las funciones que podrian hacer return directo sin varaibles extras
+    ###################################################################
     return (alumnos)
 
