@@ -70,34 +70,34 @@ alumnos = generar_lista_final(nombres, eval1, eval2)
 
 while True:
     # Mostramos el menu
-    opcionMenu = menu()
+    opcion_menu = menu()
 
-    if opcionMenu == "1":
+    if opcion_menu == "1":
         imprimir_datos(alumnos)
         input("\nPresioná una tecla para continuar... ")
-    elif opcionMenu == "2":
-        opcionMenu = menu_reportes()
-        if opcionMenu == "1" or opcionMenu == "2" or opcionMenu == "3":
+    elif opcion_menu == "2":
+        opcion_menu = menu_reportes()
+        if opcion_menu == "1" or opcion_menu == "2" or opcion_menu == "3":
             minimo, maximo = ingresar_datos()
-            alumnos_filtrados = reportes(alumnos, int(opcionMenu), minimo, maximo)
+            alumnos_filtrados = reportes(alumnos, int(opcion_menu), minimo, maximo)
             imprimir_datos(alumnos_filtrados) 
             input("\nPresioná una tecla para continuar... ")
         else:
             input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
-    elif opcionMenu == "3":
-        opcionMenu = menu_ordenar()
-        if opcionMenu == "1" or opcionMenu == "2" or opcionMenu == "3" or opcionMenu == "4":
+    elif opcion_menu == "3":
+        opcion_menu = menu_ordenar()
+        if opcion_menu == "1" or opcion_menu == "2" or opcion_menu == "3" or opcion_menu == "4":
             de_menor_a_mayor = menu_ordenar_aZ()
             if de_menor_a_mayor == "2":
                 de_menor_a_mayor = True
             else:
                 de_menor_a_mayor = False
             # Le restamos 1 a opcion_menu porque las opciones del menu empiezan en 1 y no en 0
-            imprimir_datos(ordenar_segun_parametro(alumnos, int(opcionMenu)-1, de_menor_a_mayor))
+            imprimir_datos(ordenar_segun_parametro(alumnos, int(opcion_menu)-1, de_menor_a_mayor))
             input("\nPresioná una tecla para continuar... ")
         else:
             input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
-    elif opcionMenu == "4":
+    elif opcion_menu == "4":
         break # Fin del programa
     else:
         input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
