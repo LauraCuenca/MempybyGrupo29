@@ -29,14 +29,18 @@ def lista_de_tuplas(nombres, eval1, eval2, suma):
 def imprimir_datos(alumnos):
     """ Imprime los datos de los alumnos en el formato dispuesto"""
     formato = "{:16} {:10} {:10} {:10}"
-    formato2 = "{:10} {:10} {:10} {:10}"
+    formato2 = "\033[{}m{:10} {:10} {:10} {:10}\033[40m"
     formato3 = "{:28} {:10} {:3}"
     print("="*60)
     print(formato.format('Nombre', 'Eval1', 'Eval2', 'Sumas'))
     print("="*60)
+    alternar = 0
+    colores = (40, 100) # blanco, gris
     for i in range(len(alumnos)):
-        print(formato2.format(alumnos[i][0], alumnos[i]
+        alternar = alternar % 2
+        print(formato2.format(colores[alternar], alumnos[i][0], alumnos[i]
                               [1], alumnos[i][2], alumnos[i][3]))
+        alternar += 1
     ###################################################################
     # Esto y lista_suma hacen lo mismo
     ###################################################################
