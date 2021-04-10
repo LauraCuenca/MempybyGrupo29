@@ -63,9 +63,11 @@ def ingresar_datos():
     maximo = int(input("Ingrese la nota MAXIMA a filtrar >>"))
     return minimo, maximo
 
+mensaje_pulsar_tecla = "\nPresioná una tecla para continuar... "
+mensaje_opcion_incorrecta = "\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... "
 
 
-
+# Inicio del programa principal
 alumnos = generar_lista_final(nombres, eval1, eval2)
 
 while True:
@@ -74,16 +76,16 @@ while True:
 
     if opcion_menu == "1":
         imprimir_datos(alumnos)
-        input("\nPresioná una tecla para continuar... ")
+        input(mensaje_pulsar_tecla)
     elif opcion_menu == "2":
         opcion_menu = menu_reportes()
         if opcion_menu == "1" or opcion_menu == "2" or opcion_menu == "3":
             minimo, maximo = ingresar_datos()
             alumnos_filtrados = reportes(alumnos, int(opcion_menu), minimo, maximo)
             imprimir_datos(alumnos_filtrados) 
-            input("\nPresioná una tecla para continuar... ")
+            input(mensaje_pulsar_tecla)
         else:
-            input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
+            input(mensaje_opcion_incorrecta)
     elif opcion_menu == "3":
         opcion_menu = menu_ordenar()
         if opcion_menu == "1" or opcion_menu == "2" or opcion_menu == "3" or opcion_menu == "4":
@@ -94,10 +96,10 @@ while True:
                 de_menor_a_mayor = False
             # Le restamos 1 a opcion_menu porque las opciones del menu empiezan en 1 y no en 0
             imprimir_datos(ordenar_segun_parametro(alumnos, int(opcion_menu)-1, de_menor_a_mayor))
-            input("\nPresioná una tecla para continuar... ")
+            input(mensaje_pulsar_tecla)
         else:
-            input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
+            input(mensaje_opcion_incorrecta)
     elif opcion_menu == "4":
         break # Fin del programa
     else:
-        input("\nNo has pulsado ninguna opción correcta...\nPresioná una tecla para continuar... ")
+        input(mensaje_opcion_incorrecta)
