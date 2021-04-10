@@ -56,7 +56,7 @@ def generar_lista_final(nombres, eval1, eval2):
     eval2 = crear_lista(eval2)
     ###################################################################
     # crear_lista y convertir_a_int se podrian llamar al mismo tiempo
-    eval1 = convertir_a_int(crear_lista(eval2))
+    # eval1 = convertir_a_int(crear_lista(eval1))
     ###################################################################
     eval1 = convertir_a_int(eval1)
     eval2 = convertir_a_int(eval2)
