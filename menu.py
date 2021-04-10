@@ -57,7 +57,7 @@ def menu_ordenar_aZ():
     return input("Insertá un numero valor >> ")
 
 
-def ingresar_datos():
+def ingresar_datos_min_max():
     """Devuelve parametros para los filtros del reporte"""
     minimo = int(input("Ingrese la nota MINIMA a filtrar >>"))
     maximo = int(input("Ingrese la nota MAXIMA a filtrar >>"))
@@ -79,8 +79,8 @@ while True:
         input(mensaje_pulsar_tecla)
     elif opcion_menu == "2":
         opcion_menu = menu_reportes()
-        if opcion_menu == "1" or opcion_menu == "2" or opcion_menu == "3":
-            minimo, maximo = ingresar_datos()
+        if opcion_menu in ["1","2","3"]:
+            minimo, maximo = ingresar_datos_min_max()
             alumnos_filtrados = reportes(alumnos, int(opcion_menu), minimo, maximo)
             imprimir_datos(alumnos_filtrados) 
             input(mensaje_pulsar_tecla)
@@ -88,12 +88,9 @@ while True:
             input(mensaje_opcion_incorrecta)
     elif opcion_menu == "3":
         opcion_menu = menu_ordenar()
-        if opcion_menu == "1" or opcion_menu == "2" or opcion_menu == "3" or opcion_menu == "4":
+        if opcion_menu in ["1","2","3","4"]:
             de_menor_a_mayor = menu_ordenar_aZ()
-            if de_menor_a_mayor == "2":
-                de_menor_a_mayor = True
-            else:
-                de_menor_a_mayor = False
+            de_menor_a_mayor = de_menor_a_mayor == "2"
             # Le restamos 1 a opcion_menu porque las opciones del menu empiezan en 1 y no en 0
             imprimir_datos(ordenar_segun_parametro(alumnos, int(opcion_menu)-1, de_menor_a_mayor))
             input(mensaje_pulsar_tecla)
