@@ -72,31 +72,31 @@ alumnos = generar_lista_final(nombres, eval1, eval2)
 
 while True:
     # Mostramos el menu
-    opcion_menu = menu()
+    opcion_seleccionada_menu = menu()
 
-    if opcion_menu == "1":
+    if opcion_seleccionada_menu == "1":
         imprimir_datos(alumnos)
         input(mensaje_pulsar_tecla)
-    elif opcion_menu == "2":
-        opcion_menu = menu_reportes()
-        if opcion_menu in ["1","2","3"]:
+    elif opcion_seleccionada_menu == "2":
+        opcion_seleccionada_menu = menu_reportes()
+        if opcion_seleccionada_menu in ["1","2","3"]:
             minimo, maximo = ingresar_datos_min_max()
-            alumnos_filtrados = reportes(alumnos, int(opcion_menu), minimo, maximo)
+            alumnos_filtrados = reportes(alumnos, int(opcion_seleccionada_menu), minimo, maximo)
             imprimir_datos(alumnos_filtrados) 
             input(mensaje_pulsar_tecla)
         else:
             input(mensaje_opcion_incorrecta)
-    elif opcion_menu == "3":
-        opcion_menu = menu_ordenar()
-        if opcion_menu in ["1","2","3","4"]:
+    elif opcion_seleccionada_menu == "3":
+        opcion_seleccionada_menu = menu_ordenar()
+        if opcion_seleccionada_menu in ["1","2","3","4"]:
             de_menor_a_mayor = menu_ordenar_aZ()
             de_menor_a_mayor = de_menor_a_mayor == "2"
-            # Le restamos 1 a opcion_menu porque las opciones del menu empiezan en 1 y no en 0
-            imprimir_datos(ordenar_segun_parametro(alumnos, int(opcion_menu)-1, de_menor_a_mayor))
+            # Le restamos 1 a opcion_seleccionada_menu porque las opciones del menu empiezan en 1 y no en 0
+            imprimir_datos(ordenar_segun_parametro(alumnos, int(opcion_seleccionada_menu)-1, de_menor_a_mayor))
             input(mensaje_pulsar_tecla)
         else:
             input(mensaje_opcion_incorrecta)
-    elif opcion_menu == "4":
+    elif opcion_seleccionada_menu == "4":
         break # Fin del programa
     else:
         input(mensaje_opcion_incorrecta)
