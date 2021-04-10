@@ -21,33 +21,39 @@ def menu():
 def menu_reportes():
     """Limpia la pantalla y muestra nuevamente el menu de reportes"""
     os.system('cls')
-    print("Seleccioná una opción")
-    print("\t1 - Generar reportes de Evaluacion 1")
-    print("\t2 - Generar reportes de Evaluacion 2")
-    print("\t3 - Generar reportes de Nota Final")
-    print("\t4 - Volver")
+    print("╔═"+"═"*80)
+    print("║Seleccioná una opción")
+    print("║\t1 - Generar reportes de Evaluacion 1")
+    print("║\t2 - Generar reportes de Evaluacion 2")
+    print("║\t3 - Generar reportes de Nota Final")
+    print("║\t4 - Volver")
+    print("╚═"+"═"*80)
     return input("\nInsertá un numero valor >> ")
 
 
 def menu_ordenar():
     """Limpia la pantalla y muestra nuevamente el menu de ordenar datos"""
     os.system('cls')
-    print("Seleccioná una opción")
-    print("\t1 - Ordenar por NOMBRE")
-    print("\t2 - Ordenar por NOTA DE EVALUACION 1")
-    print("\t3 - Ordenar por NOTA DE EVALUACION 2")
-    print("\t4 - Ordenar por NOTA FINAL")
-    print("\t5 - Volver")
+    print("╔═"+"═"*80)
+    print("║Seleccioná una opción")
+    print("║\t1 - Ordenar por NOMBRE")
+    print("║\t2 - Ordenar por NOTA DE EVALUACION 1")
+    print("║\t3 - Ordenar por NOTA DE EVALUACION 2")
+    print("║\t4 - Ordenar por NOTA FINAL")
+    print("║\t5 - Volver")
+    print("╚═"+"═"*80)
     return input("Insertá un numero valor >> ")
 
 
 def menu_ordenar_aZ():
     """Limpia la pantalla y muestra nuevamente el menu de ordenar datos"""
     os.system('cls')
-    print("Seleccioná una opción")
-    print("\t1 - Ordenar a-Z, 0-9")
-    print("\t2 - Ordenar Z-a, 9-0")
-    print("\t3 - Volver")
+    print("╔═"+"═"*80)
+    print("║Seleccioná una opción")
+    print("║\t1 - Ordenar a-Z, 0-9")
+    print("║\t2 - Ordenar Z-a, 9-0")
+    print("║\t3 - Volver")
+    print("╚═"+"═"*80)
     return input("Insertá un numero valor >> ")
 
 
@@ -65,7 +71,6 @@ alumnos = generar_lista_final(nombres, eval1, eval2)
 while True:
     # Mostramos el menu
     opcionMenu = menu()
-
 
     if opcionMenu == "1":
         imprimir_datos(alumnos)
@@ -92,6 +97,6 @@ while True:
         else:
             input("\nNo has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
     elif opcionMenu == "4":
-        break
+        break # Fin del programa
     else:
         input("\nNo has pulsado ninguna opción correcta...\npulsa una tecla para continuar")
