@@ -40,7 +40,10 @@ def imprimir_datos(alumnos):
     suma = [alumno[i] for alumno in alumnos for i in range(len(alumno)) if i==3]
     total = sum(suma)
     print(formato3.format(" ", "suma", total))
-    promedio = mean(suma)
+    if len(suma) > 0:
+        promedio = mean(suma)
+    else:
+        promedio = 0
     print(formato3.format(" ", "promedio", promedio))
 
 
