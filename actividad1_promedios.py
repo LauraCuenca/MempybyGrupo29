@@ -8,10 +8,10 @@ def crear_lista(arch):
     return lista
 
 
-def convertir_a_int(str):
+def convertir_a_int(texto):
     """Convierte la lista de strings, a int"""
-    str = [int(x) for x in str]
-    return str
+    texto = [int(x) for x in texto]
+    return texto
 
 
 def lista_suma(eval1, eval2):
