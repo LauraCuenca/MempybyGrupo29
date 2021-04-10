@@ -8,8 +8,12 @@ from actividad1_ordenar import ordenar_segun_parametro
 def menu():
     """Función que limpia la pantalla y muestra nuevamente el menu"""
     os.system('cls')
-    print("╔═"+"═"*80)
-    print("║Seleccioná una opción")
+    print("╔═"+"═"*79+"╗")
+    print("║"+" "*34+"ACTIVIDAD 1 "+" "*34+"║")
+    print("║"+" "*80+"║")
+    print("║"+" "*80+"║")
+    print("╠═"+"═"*79+"╣")
+    print("║Seleccioná una opción:"+" "*58+"║")
     print("║\t1 - Calcular el promedio de las notas finales de todos los estudiantes")
     print("║\t2 - Generar reportes")
     print("║\t3 - Ordernar los datos")
@@ -22,7 +26,7 @@ def menu_reportes():
     """Limpia la pantalla y muestra nuevamente el menu de reportes"""
     os.system('cls')
     print("╔═"+"═"*80)
-    print("║Seleccioná una opción")
+    print("║Seleccioná una opción:")
     print("║\t1 - Generar reportes de Evaluacion 1")
     print("║\t2 - Generar reportes de Evaluacion 2")
     print("║\t3 - Generar reportes de Nota Final")
@@ -35,7 +39,7 @@ def menu_ordenar():
     """Limpia la pantalla y muestra nuevamente el menu de ordenar datos"""
     os.system('cls')
     print("╔═"+"═"*80)
-    print("║Seleccioná una opción")
+    print("║Seleccioná una opción:")
     print("║\t1 - Ordenar por NOMBRE")
     print("║\t2 - Ordenar por NOTA DE EVALUACION 1")
     print("║\t3 - Ordenar por NOTA DE EVALUACION 2")
@@ -49,7 +53,7 @@ def menu_ordenar_aZ():
     """Limpia la pantalla y muestra nuevamente el menu de ordenar datos"""
     os.system('cls')
     print("╔═"+"═"*80)
-    print("║Seleccioná una opción")
+    print("║Seleccioná una opción:")
     print("║\t1 - Ordenar a-Z, 0-9")
     print("║\t2 - Ordenar Z-a, 9-0")
     print("║\t3 - Volver")
