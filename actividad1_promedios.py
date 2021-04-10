@@ -1,4 +1,3 @@
-#from datos import nombres, eval1, eval2
 from statistics import mean
 
 
@@ -8,10 +7,10 @@ def crear_lista(arch):
     return lista
 
 
-def convertir_a_int(texto):
+def convertir_a_int(str):
     """Convierte la lista de strings, a int"""
-    texto = [int(x) for x in texto]
-    return texto
+    str = [int(x) for x in str]
+    return str
 
 
 def lista_suma(eval1, eval2):
@@ -35,15 +34,12 @@ def imprimir_datos(alumnos):
     print(formato.format('Nombre', 'Eval1', 'Eval2', 'Sumas'))
     print("="*60)
     alternar = 0
-    colores = (40, 100) # blanco, gris
+    colores = (40, 100) # negro, gris
     for i in range(len(alumnos)):
         alternar = alternar % 2
         print(formato2.format(colores[alternar], alumnos[i][0], alumnos[i]
                               [1], alumnos[i][2], alumnos[i][3]))
         alternar += 1
-    ###################################################################
-    # Esto y lista_suma hacen lo mismo
-    ###################################################################
     suma = [alumno[i] for alumno in alumnos for i in range(len(alumno)) if i==3]
     total = sum(suma)
     print(formato3.format(" ", "suma", total))
@@ -58,19 +54,9 @@ def generar_lista_final(nombres, eval1, eval2):
     nombres = crear_lista(nombres)
     eval1 = crear_lista(eval1)
     eval2 = crear_lista(eval2)
-    ###################################################################
-    # crear_lista y convertir_a_int se podrian llamar al mismo tiempo
-    # eval1 = convertir_a_int(crear_lista(eval1))
-    ###################################################################
     eval1 = convertir_a_int(eval1)
     eval2 = convertir_a_int(eval2)
     suma = lista_suma(eval1, eval2)
-    ###################################################################
-    # lista_de_tuplas se podria hacer aca mismo, total no se usa en otro lado
-    ###################################################################
     alumnos = lista_de_tuplas(nombres, eval1, eval2, suma)
-    ###################################################################
-    # revisar todas las funciones que podrian hacer return directo sin varaibles extras
-    ###################################################################
     return (alumnos)
 
