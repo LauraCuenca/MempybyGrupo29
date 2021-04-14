@@ -28,7 +28,7 @@ def reportes(alumnos, opcion, minimo, maximo):
     for alumno in alumnos:
         if (opcion == 1):
             reporteEval1(alumno, minimo, maximo, alumnos_filtrados)
-        elif (opcion == 1):
+        elif (opcion == 2):
             reporteEval2(alumno, minimo, maximo, alumnos_filtrados)
         else:
             reporteSuma_Notas(alumno, minimo, maximo, alumnos_filtrados)
