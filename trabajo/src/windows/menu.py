@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from window import game
+from windows import game
 
 sg.theme("Topanga")
 

@@ -29,7 +29,6 @@ layout = [
     [sg.Text("Nivel de Dificultad:", size=(25, 1), pad=((5, 5), (25, 5))), sg.Input(size=(8, 1), pad=((5, 5), (25, 5)))],
     [sg.Text("Tema:", size=(25, 1)), sg.Input(size=(8, 1))],
     [sg.Text("Tipo de tarjetas:", size=(25, 1)), sg.Combo(tipo_de_tarjetas, default_value=tipo_de_tarjetas[0], readonly=True)],
-    [sg.Text("Tiempo de partida [segundos]:", size=(25, 1)), sg.Input(size=(8, 1))],
     [sg.Text(" "*18), sg.Button('Guardar cambios', pad=((5, 5), (35, 5)))]
 ]
 

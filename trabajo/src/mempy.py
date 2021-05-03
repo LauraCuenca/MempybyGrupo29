@@ -1,4 +1,4 @@
-from files.window import menu
+from src.windows import menu
 
 
 def start():
