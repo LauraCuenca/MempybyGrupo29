@@ -1,4 +1,1 @@
-Para poder correr el juego se van a necesitar las siguientes herramientas:
-• Tener descargado Python
-• Descargar la libreria: 
-      pysimplegui
+pysimplegui
