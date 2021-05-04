@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from src.windows import register
+from src.windows import registrar
 
 
 def start():
@@ -14,15 +14,16 @@ def loop():
     """
     Loop de la ventana del tablero que capta sus eventos
     """
-    window = register.build()
+    window = registrar.build()
 
     while True:
         event, _values = window.read()
 
-        if event in (sg.WINDOW_CLOSED, "Exit", "-exit-"):
+        if event in (sg.WINDOW_CLOSED,"-Exit-","-REGISTRARSE-"):
             break
 
-       # if event == ("-GUARDAR_CAMBIOS-"):
+        #if event == ("-REGISTRARSE-"):
+            #Vuelve a la ventana de inicio
             #""" pickle""""
 
     return window

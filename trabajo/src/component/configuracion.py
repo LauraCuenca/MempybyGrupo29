@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from src.windows import iniciar_sesion
+from src.windows import configuracion
 from src.windows import tablero
 
 
@@ -15,7 +15,7 @@ def loop():
     """
     Loop de la ventana de menú que capta los eventos al apretar las opciones
     """
-    window = iniciar_sesion.build()
+    window = configuracion.build()
 
     while True:
         event, _values = window.read()
@@ -29,6 +29,6 @@ def loop():
         #if event == "-TIPO_DE_TARJETA-":
             #if opc == 
         #if event == "-JUGAR-":
-            #tablero.
+            #tablero.start()
 
     return window
