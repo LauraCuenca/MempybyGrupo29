@@ -19,7 +19,7 @@ def loop():
     while True:
         event, _values = window.read()
 
-        if event in (sg.WINDOW_CLOSED, "Exit", "-exit-"):
+        if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Salir"):
             break
 
         if event == "-play-":
