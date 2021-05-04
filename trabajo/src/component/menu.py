@@ -29,6 +29,7 @@ def loop():
             window.un_hide()
 
         if event == "-INICIAR_SESION-":
+            window.hide()
             iniciar_sesion.start()
     
     return window

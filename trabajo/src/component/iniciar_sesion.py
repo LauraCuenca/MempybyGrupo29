@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
-from src.windows import menu
-from src.component import register
+from src.windows import iniciar_sesion
+from src.windows import tablero
 
 
 def start():
@@ -15,7 +15,7 @@ def loop():
     """
     Loop de la ventana de menú que capta los eventos al apretar las opciones
     """
-    window = menu.build()
+    window = iniciar_sesion.build()
 
     while True:
         event, _values = window.read()
@@ -23,12 +23,12 @@ def loop():
         if event in (sg.WINDOW_CLOSED, "Salir", "-SALIR-"):
             break
 
-        if event == "-REGISTER-":
-            window.hide()
-            register.start()
-            window.un_hide()
+       # if event == "-TEMA-":
+          
 
-        if event == "-INICIAR_SESION-":
-            iniciar_sesion.start()
+        #if event == "-TIPO_DE_TARJETA-":
+            #if opc == 
+        #if event == "-JUGAR-":
+            #tablero.
 
     return window

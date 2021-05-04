@@ -14,7 +14,7 @@ def loop():
     """
     Loop de la ventana del tablero que capta sus eventos
     """
-    window = register.reg_ventana()
+    window = register.build()
 
     while True:
         event, _values = window.read()
@@ -22,7 +22,7 @@ def loop():
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-"):
             break
 
-        if event == "-GUARDAR_CAMBIOS-"):
-            """ pickle""""
+       # if event == ("-GUARDAR_CAMBIOS-"):
+            #""" pickle""""
 
     return window

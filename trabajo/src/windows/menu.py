@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 
-def menu_inicial():
+def build():
       sg.theme("Topanga")
 
       image= "cerebro.png"
@@ -10,7 +10,7 @@ def menu_inicial():
          [sg.Input()],
          [sg.Text("Contraseña")],
          [sg.Input()],
-         [sg.Button("Registrarse",pad=((5, 5), (25, 5)),size=(10,2),key="-REGISTER")],
+         [sg.Button("Registrarse",pad=((5, 5), (25, 5)),size=(10,2),key="-REGISTER-")],
          [sg.Button("Iniciar Sesion",size=(10,2),key= "-INICIAR_SESION-")],
          [sg.Button("Salir",size=(8,2),key="-EXIT-")]]
 
