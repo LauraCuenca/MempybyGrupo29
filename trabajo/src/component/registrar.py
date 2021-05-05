@@ -1,5 +1,9 @@
+from playsound import playsound
 import PySimpleGUI as sg
 from src.windows import registrar
+
+
+sonido_boton = 'src/recursos/sonidos/click.wav'
 
 
 def start():
@@ -19,11 +23,15 @@ def loop():
     while True:
         event, _values = window.read()
 
-        if event in (sg.WINDOW_CLOSED,"-Exit-","-REGISTRARSE-"):
+        if event in (sg.WINDOW_CLOSED,"-Exit-"):
+            playsound(sonido_boton)
             break
 
-        #if event == ("-REGISTRARSE-"):
+        elif event == "-REGISTRARSE-":
             #Vuelve a la ventana de inicio
-            #""" pickle""""
+            """ pickle"""
+            print("Guardar esto en pickle:", _values)
+            playsound(sonido_boton)
+            break
 
     return window

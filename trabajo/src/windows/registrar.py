@@ -7,7 +7,7 @@ def build():
     layout = [
     [sg.Image(filename="src/recursos/images/register.png",size=(100,100))],
     [sg.Text("Nombre de Usuario *",size=(size))],
-    [sg.Input()],
+    [sg.Input(key="username")],
     [sg.Text("Contraseña *",size=(size))],
     [sg.Input()],
     [sg.Text("Confirmar contraseña *",size=(size))],
