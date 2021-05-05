@@ -20,7 +20,7 @@ def loop():
     while True:
         event, _values = window.read()
 
-        if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Salir"):
+        if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):
             break
 
         if event == "Configuración":
