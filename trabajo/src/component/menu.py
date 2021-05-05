@@ -20,7 +20,7 @@ def loop():
     while True:
         event, _values = window.read()
 
-        if event in (sg.WINDOW_CLOSED, "Salir", "-SALIR-"):
+        if event in (sg.WINDOW_CLOSED, "Salir", "-SALIR-", "-EXIT-"):
             break
 
         if event == "-REGISTER-":
