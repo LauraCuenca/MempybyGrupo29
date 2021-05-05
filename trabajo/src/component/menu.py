@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 from src.windows import menu
-from src.component import registrar, configuracion
+from src.component import registrar, tablero
 
 
 def start():
@@ -30,6 +30,7 @@ def loop():
 
         if event == "-INICIAR_SESION-":
             window.hide()
-            configuracion.start()
+            tablero.start()
+            window.un_hide()
     
     return window
