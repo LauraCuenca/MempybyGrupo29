@@ -21,6 +21,6 @@ def build():
             [sg.Button(' ', size=(8, 4), key=f"cell-{x}-{y}") for x in range(6)]
         ]
 
-    board = sg.Window('Ta Te Ti').Layout(layout)
+    board = sg.Window('Mempy').Layout(layout)
 
     return board
