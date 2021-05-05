@@ -6,7 +6,7 @@ def build():
     """
     menu_def = [
         ['&Archivo', ['Nueva partida', 'Ranking', 'Estadisticas', '---', 'Salir']],
-        ['Configuracion', ['Configuracion', 'Ayuda', '---', 'Acerca de']],
+        ['Configuracion', ['Configuración', 'Ayuda', '---', 'Acerca de']],
     ]
 
     layout = [

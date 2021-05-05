@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+from src.component import configuracion
 from src.windows import tablero
 
 
@@ -22,7 +23,8 @@ def loop():
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Salir"):
             break
 
-        if event == "-play-":
-            pass
+        if event == "Configuración":
+            configuracion.start()
+
 
     return window

@@ -13,6 +13,6 @@ def build():
         [sg.Text(" "*30),sg.Button("Jugar",size=(20,2),key=("-JUGAR-"))]
     ]
 
-    configuracion= sg.Window("Configuracion",layout=layout, size=(480,500))
+    configuracion= sg.Window("Configuracion", layout=layout, size=(480,500), resizable=False, modal=True, disable_minimize=True)
 
     return configuracion
