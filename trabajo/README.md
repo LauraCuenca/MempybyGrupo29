@@ -19,6 +19,10 @@ python run.py
 
 ## Licencia de los recursos
 
+#### Sonidos
+
+[click.wav](https://opengameart.org/content/menu-selection-click) CC-BY 3.0
+
 
 ## Datos
 
