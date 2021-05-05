@@ -35,8 +35,6 @@ def loop():
                 pass
         
         if event == "-GUARDAR_CAMBIOS-":
-            window.hide()
-            tablero.start()
-            window.un_hide()
+            pass
             
     return window
