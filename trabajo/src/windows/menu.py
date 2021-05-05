@@ -3,7 +3,7 @@ import PySimpleGUI as sg
 def build():
       sg.theme("Topanga")
 
-      image= "src/images/cerebro.png"
+      image= "src/images/cerebro1.png"
       layout=[ 
          [sg.Image(image, size=(200,200))],
          [sg.Text("Usuario")],

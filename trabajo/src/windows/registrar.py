@@ -2,10 +2,10 @@ import PySimpleGUI as sg
 
 def build():
 
-    size= (12,2)
+    size= (11,2)
 
     layout = [
-    #[sg.Image(filename="src/images/vcard_edit.png")],
+    [sg.Image(filename="src/images/register.png",size=(100,100))],
     [sg.Text("Nombre de Usuario *",size=(size))],
     [sg.Input()],
     [sg.Text("Contraseña *",size=(size))],
