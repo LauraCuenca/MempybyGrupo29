@@ -5,8 +5,8 @@ def build():
     Construye la ventana del menú del juego
     """
     menu_def = [
-        ['&Archivo', ['Nueva partida', 'Ranking', 'Estadisticas', '---', 'Salir']],
-        ['Configuracion', ['Configuración', 'Ayuda', '---', 'Acerca de']],
+        ['&Archivo', ['Nueva partida', '!Ranking', '!Estadisticas', '---', 'Cerrar sesión']],
+        ['&Configuración', ['Configuración', '!Ayuda', '---', '!Acerca de']],
     ]
 
     layout = [
@@ -18,7 +18,7 @@ def build():
 
     for y in range(6):
         layout += [
-            [sg.Button(' ', size=(8, 4), key=f"cell-{x}-{y}") for x in range(6)]
+            [sg.Button(' ', size=(8, 4), key=f"cell-{x}-{y}") for x in range(8)]
         ]
 
     board = sg.Window('Mempy').Layout(layout)

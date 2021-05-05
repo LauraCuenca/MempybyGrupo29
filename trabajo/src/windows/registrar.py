@@ -5,7 +5,7 @@ def build():
     size= (11,2)
 
     layout = [
-    [sg.Image(filename="src/images/register.png",size=(100,100))],
+    [sg.Image(filename="src/recursos/images/register.png",size=(100,100))],
     [sg.Text("Nombre de Usuario *",size=(size))],
     [sg.Input()],
     [sg.Text("Contraseña *",size=(size))],
