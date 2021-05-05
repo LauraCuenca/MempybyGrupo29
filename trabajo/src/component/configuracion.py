@@ -23,12 +23,20 @@ def loop():
         if event in (sg.WINDOW_CLOSED, "Salir", "-SALIR-"):
             break
 
-       # if event == "-TEMA-":
-          
-
-        #if event == "-TIPO_DE_TARJETA-":
-            #if opc == 
-        #if event == "-JUGAR-":
-            #tablero.start()
-
+        if event == "-NIVEL_DE_DIFICULTAD-":
+            pass
+            
+        if event == "-TIPO_DE_TARJETA-":
+        
+            if opc == "Texto":
+                pass
+        
+            if opc == "Imagen":
+                pass
+        
+        if event == "-GUARDAR_CAMBIOS-":
+            window.hide()
+            tablero.start()
+            window.un_hide()
+            
     return window
