@@ -5,7 +5,7 @@ from src.component import configuracion
 from src.windows import tablero
 
 
-sonido_boton = os.path.join(os.getcwd(), 'src/recursos/sonidos/click.wav')
+sonido_boton = os.path.join('src','recursos', 'sonidos', 'click.wav')
 
 
 def start():
