@@ -1,9 +1,10 @@
-from playsound import playsound
+import os
 import PySimpleGUI as sg
+from playsound import playsound
 from src.windows import registrar
 
 
-sonido_boton = 'src/recursos/sonidos/click.wav'
+sonido_boton = os.path.join(os.getcwd(), 'src/recursos/sonidos/click.wav')
 
 
 def start():
