@@ -1,11 +1,8 @@
-import os
 import PySimpleGUI as sg
-from playsound import playsound
 from src.windows import menu
 from src.component import registrar, tablero
+from src.handlers import sonido
 
-
-sonido_boton = os.path.join('src','recursos', 'sonidos', 'click.wav')
 
 
 def start():
@@ -26,18 +23,18 @@ def loop():
         event, _values = window.read()
 
         if event in (sg.WINDOW_CLOSED, "Salir", "-SALIR-", "-EXIT-"):
-            playsound(sonido_boton)
+            sonido.reproducir_sonido(1)
             break
 
         if event == "-REGISTER-":
             window.hide()
-            playsound(sonido_boton)
+            sonido.reproducir_sonido(1)
             registrar.start()
             window.un_hide()
 
         if event == "-INICIAR_SESION-":
             window.hide()
-            playsound(sonido_boton)
+            sonido.reproducir_sonido(1)
             tablero.start()
             window.un_hide()
     

@@ -1,6 +1,8 @@
 import PySimpleGUI as sg
 from src.windows import configuracion
 from src.windows import tablero
+from src.handlers import sonido
+
 
 
 def start():
@@ -35,6 +37,7 @@ def loop():
                 pass
         
         if event == "-GUARDAR_CAMBIOS-":
-            pass
+            sonido.reproducir_sonido(1)
+            break
             
     return window
