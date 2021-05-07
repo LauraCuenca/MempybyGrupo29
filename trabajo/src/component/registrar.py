@@ -1,9 +1,20 @@
 import PySimpleGUI as sg
+import pickle
+import string
 from src.windows import registrar
 from src.handlers import sonido
 
-
-
+def iniciar_sesion(usuario,cont,conf,genero,edad):
+    print(usuario,cont,conf,genero,edad)
+    if "" in (usuario,cont,conf,genero,edad):
+        sg.popup_error("Debes completar todos los campos")
+    else :
+        if((edad.isdigit()) and (genero.isalpha())):
+            sg.popup_ok("Campos completados correctamente")
+            pickle_data= pickle.dumps(usuario,cont,genero,edad)
+        else:
+            sg.popup_error("Campos completados incorrectamente")
+      
 def start():
     """
     Lanza la ejecución de la ventana del tablero
@@ -19,17 +30,14 @@ def loop():
     window = registrar.build()
 
     while True:
-        event, _values = window.read()
+        event, values = window.read()
 
-        if event in (sg.WINDOW_CLOSED,"-Exit-"):
+        if event in (sg.WINDOW_CLOSED,"-Exit-","-REGISTRARSE"):
             sonido.reproducir_sonido(1)
             break
 
         elif event == "-REGISTRARSE-":
-            #Vuelve a la ventana de inicio
-            """ pickle"""
-            print("Guardar esto en pickle:", _values)
+            iniciar_sesion(values["-NOMBRE_USUARIO-"],values["-CONT-"],values["-CONF_CONT-"],values["-GENERO-"],values["-EDAD-"])
             sonido.reproducir_sonido(1)
-            break
 
     return window

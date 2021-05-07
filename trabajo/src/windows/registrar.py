@@ -2,23 +2,24 @@ import PySimpleGUI as sg
 
 def build():
 
-    size= (11,2)
+    size= (15,2)
 
     layout = [
-    [sg.Image(filename="src/recursos/images/register.png",size=(100,100))],
+    [sg.Image(filename="src/recursos/images/register.png",size=(80,80))],
+    [sg.Text("*Max de caracteres: 10*",text_color='red')],
     [sg.Text("Nombre de Usuario *",size=(size))],
-    [sg.Input(key="username")],
+    [sg.InputText(key="-NOMBRE_USUARIO-",do_not_clear=False)],
     [sg.Text("Contraseña *",size=(size))],
-    [sg.Input()],
-    [sg.Text("Confirmar contraseña *",size=(size))],
-    [sg.Input()],
+    [sg.Input(key="-CONT-")],
+    [sg.Text("Confirmar cont. *",size=(size))],
+    [sg.Input(key="-CONF_CONT-")],
     [sg.Text("Genero *",size=(size))],
-    [sg.Input()],
+    [sg.Input(key="-GENERO-")],
     [sg.Text("Edad *",size=(size))],
-    [sg.Input()],
+    [sg.Spin(list(range(100)),size=(size),key="-EDAD-")],
     [sg.Button("Registrarse",size=(size),pad=(5,5),key=("-REGISTRARSE-"))]
     ]
     
-    registrar = sg.Window("Registrarse",layout=layout,size=(480,500),element_justification='c')
+    registrar = sg.Window("Registrarse",layout=layout,size=(550,500),element_justification='c')
 
     return registrar
