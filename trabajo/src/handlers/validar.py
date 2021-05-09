@@ -9,7 +9,15 @@ def iniciar_sesion(usuario,cont,conf,genero,edad):
     else :
         if((edad.isdigit()) and (genero.isalpha()) and cont==conf):
             sg.popup_ok("Campos completados correctamente")
-            pickle_data= pickle.dumps(usuario,cont,genero,edad)
+ 
+            jugador= [usuario,cont,genero,edad]
+            jugador_pickle= open("jugador","wb")
+            pickle.dump= (jugador,jugador_pickle)
+            jugador_pickle.close()
+
+            fichero= open("jugador","rb")
+            lista_j= pickle.load(fichero)
+            print(lista_j)
         else:
             sg.popup_error("Campos completados incorrectamente")
       

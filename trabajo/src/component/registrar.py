@@ -1,5 +1,4 @@
 import PySimpleGUI as sg
-import pickle
 from src.windows import registrar
 from src.handlers import sonido
 from src.handlers import validar
