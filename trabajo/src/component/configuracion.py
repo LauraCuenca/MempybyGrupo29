@@ -1,8 +1,9 @@
 import PySimpleGUI as sg
+import json
 from src.windows import configuracion
 from src.windows import tablero
 from src.handlers import sonido
-
+from src.handlers import verificar
 
 
 def start():
@@ -20,24 +21,16 @@ def loop():
     window = configuracion.build()
 
     while True:
-        event, _values = window.read()
+        event, values = window.read()
 
-        if event in (sg.WINDOW_CLOSED, "Salir", "-SALIR-"):
-            break
-
-        if event == "-NIVEL_DE_DIFICULTAD-":
-            pass
-            
-        if event == "-TIPO_DE_TARJETA-":
-        
-            if opc == "Texto":
-                pass
-        
-            if opc == "Imagen":
-                pass
-        
-        if event == "-GUARDAR_CAMBIOS-":
+        if event in (sg.WINDOW_CLOSED, "Salir", "-CONFIGURACION-"):
             sonido.reproducir_sonido(1)
             break
+
+        elif event == "-CONFIGURACION-":
+            verificar.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["TIPO_DE_TARJETAS"],
+                                     values["TIEMPO_TOTAL_PARTIDA"], values["-TEMA-"], values["-MENSAJES_ALERTA-"],
+                                     values["GUARDAR_CAMBIOS"])
+            sonido.reproducir_sonido(1)
             
     return window
