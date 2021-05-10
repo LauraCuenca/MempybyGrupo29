@@ -15,15 +15,15 @@ def build():
         [sg.InputText(key="-AYUDA-", do_not_clear=False)],
         [sg.Text("Tipo de tarjetas:", size=(size)), sg.Combo(tipo_de_tarjetas, default_value=tipo_de_tarjetas[0], readonly=True)],
         [sg.InputText(key="-TIPO_DE_TARJETAS-", do_not_clear=False)],
-        [sg.Text("Tiempo total de partida:", sg.Input(size=(8, 1)))],
+        [sg.Text("Tiempo total de partida:"), sg.Input(size=(8, 1))],
         [sg.Input(key="-TIEMPO_TOTAL_PARTIDA-", do_not_clear=False)],
         [sg.Text("Tema:", size=(size)), sg.Input(size=(8, 1))],
         [sg.InputText(key="-TEMA-", do_not_clear=False)],
-        [sg.Text("Mensajes de alerta:", sg.Input(size=(8, 1)))],
+        [sg.Text("Mensajes de alerta:"), sg.Input(size=(8, 1))],
         [sg.InputText(key="-MENSAJES_ALERTA-", do_not_clear=False)],
         [sg.Text(" "*30),sg.Button("Guardar cambios",size=(20,2),key=("-GUARDAR_CAMBIOS-"))]
     ]
 
-    configuracion= sg.Window("Configuración", layout=layout, size=(480,500), resizable=False, modal=True, disable_minimize=True)
+    configuracion= sg.Window("Configuración", layout=layout, resizable=False, modal=True, disable_minimize=True)
 
     return configuracion
