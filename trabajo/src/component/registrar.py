@@ -4,17 +4,13 @@ from src.handlers import sonido
 from src.handlers import validar
 
 def start():
-    """
-    Lanza la ejecución de la ventana del tablero
-    """
+    """ Lanza la ejecución de la ventana del tablero """
     window = loop()
     window.close()
 
 
 def loop():
-    """
-    Loop de la ventana del tablero que capta sus eventos
-    """
+    """Loop de la ventana del tablero que capta sus eventos"""
     window = registrar.build()
 
     while True:
