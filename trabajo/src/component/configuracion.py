@@ -27,7 +27,7 @@ def loop():
             sonido.reproducir_sonido(1)
             break
 
-        elif event == "-CONFIGURACION-":
+        elif event == "-GUARDAR_CAMBIOS-":
             guardar.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["-TIPO_DE_TARJETAS-"], 
                            values["-TIEMPO_TOTAL_PARTIDA-"], values["-TEMA_COLOR-"], values["-MENSAJES_ALERTA-"])
            
