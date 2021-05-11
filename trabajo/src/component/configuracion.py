@@ -32,5 +32,6 @@ def loop():
                                      values["-TIEMPO_TOTAL_PARTIDA-"], values["-TEMA-"], values["-MENSAJES_ALERTA-"],
                                      values["-GUARDAR_CAMBIOS-"])
             sonido.reproducir_sonido(1)
+            break
             
     return window
