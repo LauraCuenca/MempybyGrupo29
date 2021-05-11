@@ -26,7 +26,6 @@ def iniciar_sesion(usuario,cont,conf,genero,edad):
  
             jugador= [usuario,cont,genero,edad]
             agregar_jugador(jugador)
-
         else:
             sg.popup_error("Campos completados incorrectamente")
       

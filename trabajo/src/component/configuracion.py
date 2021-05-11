@@ -3,7 +3,7 @@ import json
 from src.windows import configuracion
 from src.windows import tablero
 from src.handlers import sonido
-from src.handlers import verificar
+from src.handlers import guardar
 
 
 def start():
@@ -28,9 +28,10 @@ def loop():
             break
 
         elif event == "-CONFIGURACION-":
-            verificar.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["TIPO_DE_TARJETAS"],
-                                     values["TIEMPO_TOTAL_PARTIDA"], values["-TEMA-"], values["-MENSAJES_ALERTA-"],
-                                     values["GUARDAR_CAMBIOS"])
+            guardar.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["-TIPO_DE_TARJETAS-"], 
+                           values["-TIEMPO_TOTAL_PARTIDA-"], values["-TEMA_COLOR-"], values["-MENSAJES_ALERTA-"])
+           
             sonido.reproducir_sonido(1)
+            break
             
     return window
