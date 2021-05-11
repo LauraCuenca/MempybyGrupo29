@@ -2,17 +2,14 @@ import PySimpleGUI as sg
 import pickle
 #from src.recursos import jugadores
 
-def guardar_reg(lista_jugador):
-    """ Guarda el registro en el archivo"""
-    with open("jugadores", 'wb') as archivo:  #probar append, osea ab, o rb+,0 ab+
+def guardar_reg(jugador):
+    """ Guarda el jugador en el archivo"""
+    with open("jugadores", 'rb+') as archivo:
+        lista_jugador=pickle.load(archivo)
+        lista_jugador= lista_jugador.append(jugador) 
+        archivo.seek(0, 0)
         pickle.dump(lista_jugador, archivo)
 
-def agregar_jugador(jugador):
-    """ Agrega el nuevo jugador a la lista y llama a la funcion guardar """
-    lista_jugador=[]
-    lista_jugador.append(jugador)
-     #Llamamos a la funcion para guardar los temas
-    guardar_reg(lista_jugador)
 
 def iniciar_sesion(usuario,cont,conf,genero,edad):
     """ Valida que los campos se llenen correctamente"""
@@ -25,7 +22,6 @@ def iniciar_sesion(usuario,cont,conf,genero,edad):
             sg.SystemTray.notify('Guardado', 'Campos completados correctamente')
  
             jugador= [usuario,cont,genero,edad]
-            agregar_jugador(jugador)
+            guardar_reg(jugador)
         else:
             sg.popup_error("Campos completados incorrectamente")
-      
