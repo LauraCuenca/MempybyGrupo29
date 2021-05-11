@@ -30,7 +30,7 @@ def loop():
         elif event == "-CONFIGURACION-":
             verificar.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["TIPO_DE_TARJETAS"],
                                      values["TIEMPO_TOTAL_PARTIDA"], values["-TEMA-"], values["-MENSAJES_ALERTA-"],
-                                     values["GUARDAR_CAMBIOS"])
+                                     values["-GUARDAR_CAMBIOS-"])
             sonido.reproducir_sonido(1)
             
     return window
