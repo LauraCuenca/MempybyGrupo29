@@ -12,7 +12,7 @@ def iniciar_sesion(usuario,cont,conf,genero,edad):
  
             jugador= [usuario,cont,genero,edad]
             jugador_pickle= open("jugador","wb")
-            pickle.dump= (jugador,jugador_pickle)
+            pickle.dump(jugador,jugador_pickle)
             jugador_pickle.close()
 
             fichero= open("jugador","rb")
