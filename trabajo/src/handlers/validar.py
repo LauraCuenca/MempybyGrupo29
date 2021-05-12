@@ -34,14 +34,12 @@ def iniciar_sesion(usuario,cont,conf,genero,edad):
     edad= str(edad)
     print(usuario,cont,conf,genero,edad)
     if "" in (usuario,cont,conf,genero,edad):
-        sg.popup_error("Debes completar todos los campos")
+        sg.SystemTray.notify('Error!', 'Debes completar todos los campos', icon="src/recursos/images/exclamation.png")
     else:
         if((edad.isdigit()) and (genero.isalpha()) and cont==conf):
-            sg.SystemTray.notify('Guardado', 'Campos completados correctamente')
- 
             jugador= [usuario,cont,genero,edad]
             archivo_existe(jugador)
-
+            sg.SystemTray.notify('Guardado...', 'Campos completados correctamente')
         else:
-            sg.popup_error("Campos completados incorrectamente")
+            sg.SystemTray.notify('Error!', 'Campos completados incorrectamente', icon="src/recursos/images/exclamation.png")
 
