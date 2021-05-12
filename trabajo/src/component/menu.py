@@ -1,8 +1,7 @@
 import PySimpleGUI as sg
 from src.windows import menu
 from src.component import registrar, tablero
-from src.handlers import sonido
-
+from src.handlers import sonido, login
 
 
 def start():
@@ -20,7 +19,7 @@ def loop():
     window = menu.build()
 
     while True:
-        event, _values = window.read()
+        event, values = window.read()
 
         if event in (sg.WINDOW_CLOSED, "Salir", "-SALIR-", "-EXIT-"):
             sonido.reproducir_sonido(1)
@@ -35,6 +34,7 @@ def loop():
         if event == "-INICIAR_SESION-":
             window.hide()
             sonido.reproducir_sonido(1)
+            login.comparacion(values["-USUARIO-"],values["-CONT-"])
             tablero.start()
             window.un_hide()
     

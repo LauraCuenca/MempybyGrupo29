@@ -1,6 +1,5 @@
 import PySimpleGUI as sg
 import pickle
-import os
 
 
 

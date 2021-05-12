@@ -1,7 +1,6 @@
 import PySimpleGUI as sg
 from src.windows import registrar
-from src.handlers import sonido
-from src.handlers import validar
+from src.handlers import sonido, validar
 
 
 
