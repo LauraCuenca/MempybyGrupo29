@@ -111,6 +111,23 @@ def procesar_logos(ruta="src/recursos/datasets/companies.csv"):
     #print(len(logos))
 
 
+def get_tabla_criterios():
+    criterios = {'lunes': {(0, 12): {"criterio": "Pokemones tipo Grass y Poison", 
+                                    "funcion": procesar_pokemon },
+                            (13, 23): {"criterio": "Pokemones tipo Normal y Volador", 
+                                    "funcion": procesar_pokemon }
+                },
+                'martes': {(0, 12): {}, (13, 23): {}},
+                'miercoles': {(0, 12): {}, (13, 23): {}},
+                'jueves': {(0, 12): {}, (13, 23): {}},
+                'viernes': {(0, 12): {}, (13, 23): {}},
+                'sabado': {(0, 12): {}, (13, 23): {}},
+                'domingo': {(0, 12): {}, (13, 23): {}}
+    }
+
+    return criterios
+
+
 
 if __name__ == '__main__':
     procesar_pokemon("../recursos/datasets/pokemon.csv")
