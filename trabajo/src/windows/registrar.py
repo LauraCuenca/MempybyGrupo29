@@ -1,5 +1,7 @@
 import PySimpleGUI as sg
 
+
+
 def build():
 
     size= (15,2)
@@ -23,3 +25,4 @@ def build():
     registrar = sg.Window("Registrarse",layout=layout,size=(550,500),element_justification='c', resizable=False, modal=True, disable_minimize=True)
 
     return registrar
+
