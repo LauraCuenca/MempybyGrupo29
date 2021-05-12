@@ -88,6 +88,6 @@ def procesar_fifa(ruta="src/recursos/datasets/fifa20data.csv"):
 
 
 if __name__ == '__main__':
-    procesar_pokemon("pokemon.csv")
-    procesar_fifa("fifa20data.csv")
+    procesar_pokemon("../recursos/datasets/pokemon.csv")
+    procesar_fifa("../recursos/datasets/fifa20data.csv")
 
