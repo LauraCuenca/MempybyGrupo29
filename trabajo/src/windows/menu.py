@@ -15,6 +15,6 @@ def build():
          [sg.Button("Salir",size=(8,2),key="-EXIT-")]]
 
       menu= sg.Window("Mempy -byGrupo29",keep_on_top=True, element_justification='c',layout=layout,size=(480,500
-      ))
+      ),resizable=False, modal=True, disable_minimize=True)
 
       return menu

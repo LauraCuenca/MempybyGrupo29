@@ -20,6 +20,6 @@ def build():
     [sg.Button("Registrarse",size=(size),pad=(5,5),key=("-REGISTRARSE-"))]
     ]
     
-    registrar = sg.Window("Registrarse",layout=layout,size=(550,500),element_justification='c')
+    registrar = sg.Window("Registrarse",layout=layout,size=(550,500),element_justification='c', resizable=False, modal=True, disable_minimize=True)
 
     return registrar

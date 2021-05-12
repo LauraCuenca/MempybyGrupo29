@@ -16,7 +16,7 @@ def loop():
     while True:
         event, values = window.read()
 
-        if event in (sg.WINDOW_CLOSED,"-Exit-","-REGISTRARSE"):
+        if event in (sg.WINDOW_CLOSED,"-Exit-","-REGISTRARSE-"):
             sonido.reproducir_sonido(1)
             break
 
