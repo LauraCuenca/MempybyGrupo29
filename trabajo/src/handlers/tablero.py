@@ -86,8 +86,33 @@ def procesar_fifa(ruta="src/recursos/datasets/fifa20data.csv"):
     #print(len(jugadores))
 
 
+def procesar_logos(ruta="src/recursos/datasets/companies.csv"):
+    """
+    Devuelve una lista de todos los logos de autos dependiendo las condiciones
+    """
+
+    archivo = open(ruta, "r", encoding="utf8")
+    csvreader = csv.reader(archivo, delimiter=',')
+
+    encabezado, datos = next(csvreader), list(csvreader) 
+    archivo.close()
+
+    print(encabezado)
+
+    # Devuelve todos los logos con imagen, con origen distinto a estados unidos o reino unido (29)
+    logos = list(filter(lambda x: x if x[1] and x[2]!="United States" and x[2]!="United Kingdom"
+                else None, datos))
+    #print(logos)
+    #print(len(logos))
+
+    # Devuelve todos los logos con imagen, y segment igual a "Mass-Market Cars" (16)
+    logos = list(filter(lambda x: x if x[1] and x[4]=="Mass-Market Cars" else None, datos))
+    #print(logos)
+    #print(len(logos))
+
+
 
 if __name__ == '__main__':
     procesar_pokemon("../recursos/datasets/pokemon.csv")
     procesar_fifa("../recursos/datasets/fifa20data.csv")
-
+    procesar_logos("../recursos/datasets/companies.csv")
