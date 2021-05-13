@@ -6,6 +6,7 @@ import os
 
 def archivo_existe(jugador):
     """Verifica si el archivo exite, en caso contrario lo crea"""
+    jugador = {jugador[0]: jugador}
     try:
         with open("jugadores", 'rb') as archivo:
             lista_jugador= pickle.load(archivo)
