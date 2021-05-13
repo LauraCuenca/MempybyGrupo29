@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 
 def build():
-    """ Crea la ventana cuando se inicia sesion"""
+    """ Crea la ventana cuando de configuracion"""
     tipo_de_tarjetas = ["Texto", "Imagen", "Mixto"]
     dificultad = ["Fácil", "Medio", "Difícil"]
     ayuda = ["Con", "Sin"]

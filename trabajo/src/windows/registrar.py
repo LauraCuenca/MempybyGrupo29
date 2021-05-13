@@ -3,7 +3,7 @@ import PySimpleGUI as sg
 
 
 def build():
-
+    """ Crea la ventana para registrar el usuario"""
     size= (15,2)
 
     layout = [
