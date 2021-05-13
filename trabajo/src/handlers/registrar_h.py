@@ -19,7 +19,7 @@ def archivo_existe(jugador):
 
 
 
-def iniciar_sesion(usuario,cont,conf,genero,edad):
+def validar(usuario,cont,conf,genero,edad):
     """ Valida que los campos se llenen correctamente"""
     edad= str(edad)
     print(usuario,cont,conf,genero,edad)

@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 from src.windows import registrar
-from src.handlers import sonido, validar
+from src.handlers import sonido, registrar_h
 
 
 
@@ -16,12 +16,12 @@ def loop():
 
     while True:
         event, values = window.read()
-        if event in (sg.WINDOW_CLOSED,"-Exit-"):
+        if event in (sg.WINDOW_CLOSED,"-SALIR-"):
             sonido.reproducir_sonido(1)
             break
 
         elif event == "-REGISTRARSE-":
-            validar.iniciar_sesion(values["-NOMBRE_USUARIO-"],values["-CONT-"],values["-CONF_CONT-"],values["-GENERO-"],values["-EDAD-"])
+            registrar_h.validar(values["-NOMBRE_USUARIO-"],values["-CONT-"],values["-CONF_CONT-"],values["-GENERO-"],values["-EDAD-"])
             sonido.reproducir_sonido(1)
             break
 

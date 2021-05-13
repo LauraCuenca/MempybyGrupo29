@@ -19,10 +19,10 @@ def build():
     [sg.Input(key="-GENERO-",do_not_clear=False)],
     [sg.Text("Edad *",size=(size))],
     [sg.Spin(list(range(100)),size=(size),key="-EDAD-")],
-    [sg.Button("Registrarse",size=(size),pad=(5,5),key=("-REGISTRARSE-"))]
+    [sg.Button("Registrarse",key=("-REGISTRARSE-"),size=(size)),sg.Button("Salir",size=(size),key=("-SALIR-"))]
     ]
     
-    registrar = sg.Window("Registrarse",layout=layout,size=(550,500),element_justification='c', resizable=False, modal=True, disable_minimize=True)
+    registrar = sg.Window("Registrarse",layout=layout,size=(550,550),element_justification='c', resizable=False, modal=True, disable_minimize=True)
 
     return registrar
 
