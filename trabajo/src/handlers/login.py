@@ -9,7 +9,7 @@ def comparacion(usuario,cont):
             jugadores= pickle.load(archivo)
             jugadores_dict = {}
             for jugador in jugadores:
-                for usuario, v in jugador.items():
+                for k, v in jugador.items():
                      jugadores_dict[k] = v
             
             if (usuario in jugadores_dict) and jugadores_dict[usuario][1]== cont:
