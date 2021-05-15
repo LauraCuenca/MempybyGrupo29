@@ -24,7 +24,7 @@ def leer_config():
     configuraciones = {}
     with open("configuracion.json", "r", encoding="utf8") as archivoJSON:
         configuraciones = json.load(archivoJSON)
-    print(configuraciones)
+    #print(configuraciones)
     return configuraciones
 
 
