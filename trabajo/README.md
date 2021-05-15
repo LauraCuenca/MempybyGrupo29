@@ -39,11 +39,11 @@ python run.py
 |Día  | Mañana - criterio  | Tarde - criterio |
 |--|--|--|
 | Lunes  | Pokemones tipo Grass y Poison | Pokemones tipo Normal y Volador |
-| Martes |  |  |
-| Miercoles |  |  |
-| Jueves |  |  |
-| Viernes |  |  |
-| Sabado |  |  |
-| Domingo |  |  |
+| Martes | Pokemones tipo Bug y diferentes a Poison o Flying | Pokemones tipo Dragon y que no tengan segundo tipo |
+| Miercoles | Pokemones que contengan la letra k en su nombre, que la longitud de su nombre sea mayor a 8 y que solo tengan 1 tipo | Pokemones que terminen su nombre en on |
+| Jueves | Jugadores con imagen, pais==Argentina, edad entre 30 y 35 años que sean zurdos y pesen menos de 170lbs | Jugadores con imagen, edad menos a 18 años y jueguen de arquero |
+| Viernes | Jugadores con imagen, edad==23, Overall==Potential y que sean zurdos | Jugadores con imagen, cuyos nombres sean mas de 18 caracteres y contengan las letras k,z y w |
+| Sabado | Jugadores con imagen, edad menor a 25 y equipo barcelona | Jugadores con imagen, extranjeros jugando en Boca o River |
+| Domingo | Logos con imagen, con origen distinto a estados unidos o reino unido | Logos con imagen, y segment igual a Mass-Market Cars |
 
 
