@@ -11,7 +11,7 @@ def build():
 
     layout = [
         [sg.Menu(menu_def, pad=((100, 100), 20))],
-        [sg.Text('Jugador 1: ' + "Juanito", key='-P1-'), sg.Text('|    Tiempo restante: 9', key='-P2-')],
+        [sg.Text('Jugador: ', key='-P1-'), sg.Text('|    Tiempo restante: 9', key='-P2-')],
         [],
         [sg.Text('')]
     ]
