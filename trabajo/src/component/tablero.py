@@ -9,6 +9,9 @@ def start():
     """
     Lanza la ejecución de la ventana del menú
     """
+    jugador_logueado = login.leer_sesion()
+    configuraciones = configuracion_h.leer_config()
+    sg.theme(configuraciones[jugador_logueado][4])
     window = loop()
     window.close()
 
