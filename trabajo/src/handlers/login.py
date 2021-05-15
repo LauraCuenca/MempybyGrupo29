@@ -16,6 +16,7 @@ def comparacion(usuario,cont):
                     return True
             else:
                 sg.SystemTray.notify('Error!', 'Debe registrarse', icon="src/recursos/images/exclamation.png")
+                return False
     except FileNotFoundError as e:
         menu.build()
         sg.SystemTray.notify('Error!', 'Debe registrarse', icon="src/recursos/images/exclamation.png")

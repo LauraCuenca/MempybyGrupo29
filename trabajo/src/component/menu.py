@@ -32,10 +32,11 @@ def loop():
             window.un_hide()
 
         if event == "-INICIAR_SESION-":
-            login.comparacion(values["-USUARIO-"],values["-CONT-"])
-            sonido.reproducir_sonido(1)
-            window.hide()
-            tablero.start()
-            window.un_hide()
+            if (login.comparacion(values["-USUARIO-"],values["-CONT-"])):
+                sonido.reproducir_sonido(1)
+                window.hide()
+                tablero.start()
+                window.un_hide()
+            
     
     return window
