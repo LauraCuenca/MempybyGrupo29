@@ -21,9 +21,9 @@ def loop():
             break
 
         elif event == "-REGISTRARSE-":
-            registrar_h.validar(values["-NOMBRE_USUARIO-"],values["-CONT-"],values["-CONF_CONT-"],values["-GENERO-"],values["-EDAD-"])
-            sonido.reproducir_sonido(1)
-            break
+            if (registrar_h.validar(values["-NOMBRE_USUARIO-"],values["-CONT-"],values["-CONF_CONT-"],values["-GENERO-"],values["-EDAD-"])):
+                sonido.reproducir_sonido(1)
+                break
 
     return window
 

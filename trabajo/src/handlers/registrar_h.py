@@ -25,12 +25,15 @@ def validar(usuario,cont,conf,genero,edad):
     #print(usuario,cont,conf,genero,edad)
     if "" in (usuario,cont,conf,genero,edad):
         sg.SystemTray.notify('Error!', 'Debes completar todos los campos', icon="src/recursos/images/exclamation.png")
+        return False
     else:
         if((edad.isdigit()) and (genero.isalpha()) and cont==conf):
             jugador= [usuario,cont,genero,edad]
             archivo_existe(jugador)
             configuracion_h.crear_configuracion_default(usuario)
             sg.SystemTray.notify('Guardado...', 'Campos completados correctamente')
+            return True
         else:
             sg.SystemTray.notify('Error!', 'Campos completados incorrectamente', icon="src/recursos/images/exclamation.png")
+            return False
 
