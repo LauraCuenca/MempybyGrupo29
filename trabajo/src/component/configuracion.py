@@ -1,9 +1,7 @@
-import PySimpleGUI as sg
 import json
+import PySimpleGUI as sg
 from src.windows import configuracion
-from src.windows import tablero
-from src.handlers import sonido
-from src.handlers import guardar
+from src.handlers import sonido, configuracion_h
 
 
 def start():
@@ -29,7 +27,7 @@ def loop():
 
         elif event == "-GUARDAR_CAMBIOS-":
             print(values)
-            guardar.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["-TIPO_DE_TARJETAS-"], 
+            configuracion_h.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["-TIPO_DE_TARJETAS-"], 
                            values["-TIEMPO_TOTAL_PARTIDA-"], values["-TEMA_COLOR-"], values["-MENSAJES_ALERTA-"])
            
             sonido.reproducir_sonido(1)
