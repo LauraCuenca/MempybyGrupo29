@@ -15,7 +15,7 @@ def build():
         #[sg.Text("Ayuda:", size=(size), pad=(padding)), sg.Radio("Con ayuda", group_id=1, key="-AYUDA1-"), sg.Radio("Sin ayuda", group_id=1, default=True, key="-AYUDA2-")],
         [sg.Text("Ayuda:", size=(size), pad=(padding)), sg.Combo(ayuda, default_value=ayuda[0], readonly=True, key="-AYUDA-")],
         [sg.Text("Tipo de tarjetas:", size=(size)), sg.Combo(tipo_de_tarjetas, default_value=tipo_de_tarjetas[0], readonly=True, key="-TIPO_DE_TARJETAS-")],
-        [sg.Text("Tiempo total de partida:",size=(size),pad=(padding)),sg.Input(size=(8, 1), key="-TIEMPO_TOTAL_PARTIDA-")],
+        [sg.Text("Tiempo total de partida:",size=(size),pad=(padding)),sg.Spin(list(range(1000)),size=(8,1),key="-TIEMPO_TOTAL_PARTIDA-")],
         [sg.Text("Tema colores:", size=(size)), sg.Combo(tema, default_value=tema[0], readonly=True, key="-TEMA_COLOR-")],
         [sg.Text("Mensajes de alerta:"), sg.Input(key="-MENSAJES_ALERTA-")],
         [sg.Text(" "*30), sg.Button("Guardar cambios", size=(20,2), key=("-GUARDAR_CAMBIOS-"))]
