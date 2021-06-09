@@ -25,6 +25,6 @@ def build():
         [sg.Text(" "*30), sg.Button("Guardar cambios", size=(20,2), key=("-GUARDAR_CAMBIOS-"))]
     ]
 
-    configuracion= sg.Window("Configuración", layout=layout, resizable=False, modal=True, disable_minimize=True)
+    configuracion= sg.Window("Configuración", layout=layout, resizable=False, modal=True)
 
     return configuracion
