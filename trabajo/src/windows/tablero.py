@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 
+
 def build():
     """
     Construye la ventana del menú del juego
@@ -16,9 +17,10 @@ def build():
         [sg.Text('')]
     ]
 
-    for y in range(6):
+    for y in range(4):
         layout += [
-            [sg.Button(' ', size=(8, 4), key=f"cell-{x}-{y}") for x in range(8)]
+            [sg.Button(' ', size=(16, 8), image_filename="src/recursos/datasets/images_pokemon/images/pikachu.png",
+                       key=f"cell-{x}-{y}") for x in range(8)]
         ]
 
     board = sg.Window('Mempy').Layout(layout)
