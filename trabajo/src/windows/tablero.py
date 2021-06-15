@@ -12,15 +12,15 @@ def build():
 
     layout = [
         [sg.Menu(menu_def, pad=((100, 100), 20))],
-        [sg.Text('Jugador: ', key='-P1-'), sg.Text('|    Tiempo restante: 9', key='-P2-')],
+        [sg.Text('Jugador: ', key='-P1-', size=(20, 1)), sg.Text('|    Tiempo restante: 9', key='-TIEMPO_RESTANTE-')],
         [],
         [sg.Text('')]
     ]
 
-    for y in range(4):
+    for y in range(3):
         layout += [
             [sg.Button(' ', size=(16, 8), image_filename="src/recursos/datasets/images_pokemon/images/pikachu.png",
-                       key=f"cell-{x}-{y}") for x in range(8)]
+                       key=f"-CELL-{x}-{y}-") for x in range(4)]
         ]
 
     board = sg.Window('Mempy').Layout(layout)

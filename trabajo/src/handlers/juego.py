@@ -21,22 +21,39 @@ class Juego:
     def generar_tablero(self):
         """
         Verifica la hora, el dia, la dificultad y genera la matriz para el tablero del juego
+        Genera una matriz para ser usada como tablero
+
+        datos_de_tarjeta: [[estado, texto, imagen],...]
+        estado:
+            0: boca abajo
+            1: boca arriba
+            2: ya encontrada, boca arriba permanente
         """
+        dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
         hoy = datetime.datetime.today()
         dia_de_la_semana = hoy.weekday()
         hora_del_dia = hoy.hour
-        datos_de_tarjetas = []  # Llamar a la funcion que devuelve los datos, sumarla 2 veces
-        random.shuffle(datos_de_tarjetas)  # Mezcla el orden
+        if 0 <= hora_del_dia <= 12:
+            hora_del_dia = (0, 12)
+        else:
+            hora_del_dia = (13, 23)
         if self.dificultad == "Fácil":
-            tamanio = ()  # Tamaño del tablero segun la dificultad
+            tamanio = (4, 2)  # Tamaño x,y del tablero segun la dificultad
             self.tiempo_restante = 200
         elif self.dificultad == "Medio":
-            tamanio = ()
+            tamanio = (4, 3)
             self.tiempo_restante = 100
         else:
-            tamanio = ()
+            tamanio = (4, 4)
             self.tiempo_restante = 50
+        datos_de_tarjetas = self.criterios[dias[dia_de_la_semana]][hora_del_dia]
+        datos_de_tarjetas = datos_de_tarjetas["funcion"](modo=datos_de_tarjetas["modo"])[0:(tamanio[0] * tamanio[1])//2]
+        # datos_de_tarjetas = list(map(lambda t: [0, t[0], t[1]], datos_de_tarjetas))  # Agrega el estado de la tarjeta 0
+        datos_de_tarjetas = datos_de_tarjetas * 2  # Llamar a la funcion que devuelve los datos, sumarla 2 veces para las coincidencias
+        random.shuffle(datos_de_tarjetas)  # Mezcla el orden
+        print(len(datos_de_tarjetas))
         self.matriz_tablero = self.generar_matriz(tamanio[0], tamanio[1], datos_de_tarjetas)
+        print(self.matriz_tablero)
 
     def generar_matriz(self, x, y, datos_de_tarjetas):
         """
@@ -51,10 +68,12 @@ class Juego:
         contador_de_datos = 0  # Variable para ir contando cual es la sig tarjeta a guardar
         matriz = []
         for i in range(x):
+            fila = []
             for j in range(y):
-                matriz.append([0, datos_de_tarjetas[contador_de_datos][0],
-                               datos_de_tarjetas[contador_de_datos][1]])  # datos = [texto, imagen]
+                fila.append([0, datos_de_tarjetas[contador_de_datos][0],
+                             datos_de_tarjetas[contador_de_datos][1]])  # datos = [texto, imagen]
                 contador_de_datos += 1
+            matriz.append(fila)
         return matriz
 
     def hay_acierto(self):
@@ -98,4 +117,5 @@ class Juego:
 
 
 if __name__ == '__main__':
-    pass
+    nueva_partida = Juego("Medio", True, False, 'Diego', 'M', 30, 1)
+    nueva_partida.generar_tablero()
