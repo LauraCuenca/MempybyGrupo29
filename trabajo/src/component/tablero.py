@@ -45,6 +45,8 @@ def loop():
             window.close()
             configuraciones = configuracion_h.leer_config()
             sg.theme(configuraciones[jugador_logueado][4])
+            nueva_partida = 0  # Si se cambia la configuracion, se reinicia la partida
+            tiempo_espera_tarjeta = 0
             window = tablero.build()
         if event == "Nueva partida":
             ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
