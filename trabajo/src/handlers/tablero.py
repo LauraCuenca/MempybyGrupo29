@@ -51,7 +51,7 @@ def procesar_pokemon(ruta="src/recursos/datasets/pokemon.csv", modo=1):
         pokemones = list(filter(lambda x: x if x[0][-2:] == "on" else None, datos))
         print(pokemones[0])
         print(len(pokemones))
-    return [[x[0], x[0]] for x in pokemones]
+    return [[x[0], f"src/recursos/datasets/images_pokemon/images/{x[0]}.png"] for x in pokemones]
 
 
 def procesar_fifa(ruta="src/recursos/datasets/fifa20data.csv", modo=2):
@@ -107,7 +107,9 @@ def procesar_fifa(ruta="src/recursos/datasets/fifa20data.csv", modo=2):
         print(jugadores[0])
         print(len(jugadores))
     # print([[x[0], x[1].split('/')[4]+x[1].split('/')[5]+x[1].split('/')[6]] for x in jugadores])
-    return [[x[0], f"{x[1].split('/')[4]}-{x[1].split('/')[5]}-{x[1].split('/')[6]}"] for x in jugadores]
+    return [[x[0],
+             f"src/recursos/datasets/images_fifa/images/{x[1].split('/')[4]}-{x[1].split('/')[5]}-20_60.png"]
+            for x in jugadores]
 
 
 def procesar_logos(ruta="src/recursos/datasets/companies.csv", modo=1):
@@ -136,7 +138,7 @@ def procesar_logos(ruta="src/recursos/datasets/companies.csv", modo=1):
         print(logos[0])
         print(len(logos))
     # print([[x[3], x[1]] for x in logos])
-    return [[x[3], x[1]] for x in logos]
+    return [[x[3], f"src/recursos/datasets/images_logo/images/{x[1].split('/')[4]}"] for x in logos]
 
 
 def get_tabla_criterios():
@@ -188,8 +190,8 @@ def get_tabla_criterios():
 
 if __name__ == '__main__':
     # procesar_pokemon("../recursos/datasets/pokemon.csv")
-    procesar_fifa("../recursos/datasets/fifa20data.csv")
-    # procesar_logos("../recursos/datasets/companies.csv")
+    # procesar_fifa("../recursos/datasets/fifa20data.csv")
+    procesar_logos("../recursos/datasets/companies.csv")
     """
     imagenes = []
     for i in range(1,7):

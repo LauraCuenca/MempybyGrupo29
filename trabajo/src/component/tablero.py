@@ -62,7 +62,7 @@ def loop():
             x = int(event.split("-")[2])
             y = int(event.split("-")[3])
             window[event].update(
-                image_filename=f"src/recursos/datasets/images_pokemon/images/{nueva_partida.revelar_tarjeta(x, y)}.png")
+                image_filename=nueva_partida.revelar_tarjeta(x, y))
             if not nueva_partida.hay_acierto():
                 if nueva_partida.get_tarjetas_boca_arriba() >= 2:
                     tiempo_espera_tarjeta = time.time() + 2  # Agrega X secs de espera antes de voltear
