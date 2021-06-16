@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+from src.handlers import configuracion_h, login
 
 
 def build():
@@ -17,10 +18,16 @@ def build():
         [sg.Text('')]
     ]
 
-    for y in range(3):
+    config = configuracion_h.leer_config()[login.leer_sesion()]
+    if config[0] == "Fácil":
+        tamanio = (4, 2)  # Tamaño x,y del tablero segun la dificultad
+    elif config[0] == "Medio":
+        tamanio = (4, 3)
+    else:
+        tamanio = (4, 4)
+    for y in range(tamanio[1]):
         layout += [
-            [sg.Button(' ', size=(16, 8), image_filename="src/recursos/datasets/images_pokemon/images/pikachu.png",
-                       key=f"-CELL-{x}-{y}-") for x in range(4)]
+            [sg.Button(' ', size=(16, 8), key=f"-CELL-{x}-{y}-") for x in range(tamanio[0])]
         ]
 
     board = sg.Window('Mempy').Layout(layout)

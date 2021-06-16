@@ -51,9 +51,7 @@ class Juego:
         # datos_de_tarjetas = list(map(lambda t: [0, t[0], t[1]], datos_de_tarjetas))  # Agrega el estado de la tarjeta 0
         datos_de_tarjetas = datos_de_tarjetas * 2  # Llamar a la funcion que devuelve los datos, sumarla 2 veces para las coincidencias
         random.shuffle(datos_de_tarjetas)  # Mezcla el orden
-        print(len(datos_de_tarjetas))
         self.matriz_tablero = self.generar_matriz(tamanio[0], tamanio[1], datos_de_tarjetas)
-        print(self.matriz_tablero)
 
     def generar_matriz(self, x, y, datos_de_tarjetas):
         """
