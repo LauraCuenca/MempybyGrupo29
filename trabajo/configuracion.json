@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"lau": ["F\u00e1cil", "Con", "Texto", "60", "Topanga", "Ganaste, Perdiste"]}
+=======
+{"diego": ["F\u00e1cil", "Sin", "Mixto", 8, "LightGray1", "sin mensajes"], "mauro": ["Dif\u00edcil", "Sin", "Mixto", 25, "DarkBlue17", "Ganaste, Perdiste"], "laura": ["F\u00e1cil", "Con", "Texto", "60", "Topanga", "Ganaste, Perdiste"], "prueba": ["F\u00e1cil", "Con", "Texto", 60, "LightGray1", "Ganaste, Perdiste"]}
+>>>>>>> 03aad5bc207d4e3b01bbdec308aba6b4578ca2aa

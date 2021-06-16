@@ -86,6 +86,8 @@ def loop():
             y = int(event.split("-")[3])
             palabra, imagen = nueva_partida.revelar_tarjeta(x, y)
             window[event].update(text=palabra, image_filename=imagen)
+            if imagen == "src/recursos/datasets/images_pokemon/images/vacio.png":  # Si es texto ajusta size boton
+                window[event].set_size(size=(98, 110))
             if not nueva_partida.hay_acierto():
                 if nueva_partida.get_tarjetas_boca_arriba() >= 2:
                     tiempo_espera_tarjeta = time.time() + 1  # Agrega X secs de espera antes de voltear

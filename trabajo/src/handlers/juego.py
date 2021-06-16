@@ -21,6 +21,7 @@ class Juego:
         self.aciertos_maximos = 0
         self.aciertos = 0  # Cantidad de aciertos obtenidos
         self.descripcion = ""  # Descripcion de las tarjetas de la partida
+        self.puntaje = 0  # Puntos obtenidos
 
     def generar_tablero(self):
         """
@@ -56,7 +57,11 @@ class Juego:
         self.descripcion = datos_de_tarjetas["criterio"]
         datos_de_tarjetas = datos_de_tarjetas["funcion"](modo=datos_de_tarjetas["modo"])[
                             0:(tamanio[0] * tamanio[1]) // 2]
-        datos_de_tarjetas = datos_de_tarjetas * 2  # Llamar a la funcion que devuelve los datos, sumarla 2 veces para las coincidencias
+        datos_de_tarjetas2 = datos_de_tarjetas.copy()
+        if self.tipo_tarjeta == "Mixto":  # Si es mixto algunas tiene imagen y otras texto
+            datos_de_tarjetas2 = [[x[0], 'src/recursos/datasets/images_pokemon/images/vacio.png'] for x in
+                                  datos_de_tarjetas]
+        datos_de_tarjetas = datos_de_tarjetas + datos_de_tarjetas2  # Llamar a la funcion que devuelve los datos, sumarla 2 veces para las coincidencias
         random.shuffle(datos_de_tarjetas)  # Mezcla el orden
         self.matriz_tablero = self.generar_matriz(tamanio[0], tamanio[1], datos_de_tarjetas)
 
@@ -97,7 +102,10 @@ class Juego:
                 self.matriz_tablero[tarjetas_volteadas[0][1]][tarjetas_volteadas[0][2]][0] = 2
                 self.matriz_tablero[tarjetas_volteadas[1][1]][tarjetas_volteadas[1][2]][0] = 2
                 self.aciertos += 1
+                self.contar_puntos(10)
                 return True
+            else:
+                self.contar_puntos(-1)
         return False
 
     def hay_fin_del_juego(self):
@@ -124,8 +132,11 @@ class Juego:
             palabra = self.matriz_tablero[x][y][1]
             imagen = "src/recursos/datasets/images_pokemon/images/vacio.png"
         else:
-            palabra = self.matriz_tablero[x][y][1]
             imagen = self.matriz_tablero[x][y][2]
+            if imagen != "src/recursos/datasets/images_pokemon/images/vacio.png":
+                palabra = ""
+            else:
+                palabra = self.matriz_tablero[x][y][1]
         return palabra.upper(), imagen
 
     def get_tarjetas_boca_arriba(self):
@@ -162,11 +173,11 @@ class Juego:
         """
         pass
 
-    def contar_puntos(self):
+    def contar_puntos(self, puntos):
         """
         Cuenta los puntos ganados en la partida
         """
-        pass
+        self.puntaje += puntos
 
 
 if __name__ == '__main__':
