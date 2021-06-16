@@ -32,8 +32,14 @@ def loop():
 
         window["-P1-"].update(f"Jugador: {jugador_logueado}")
         if nueva_partida:
-            window["-TIEMPO_RESTANTE-"].update(f"|    Tiempo restante: {nueva_partida.tiempo_restante}")
-            window["-DESCRIPCION_PARTIDA-"].update(nueva_partida.descripcion)
+            if not nueva_partida.hay_fin_del_juego():
+                nueva_partida.tiempo_restante = round(nueva_partida.tiempo_maximo - (
+                            tiempo_actual - nueva_partida.tiempo_de_inicio))
+                window["-TIEMPO_RESTANTE-"].update(f"|    Tiempo restante: {nueva_partida.tiempo_restante}")
+                window["-DESCRIPCION_PARTIDA-"].update(nueva_partida.descripcion)
+            else:
+                sg.popup("Fin del juego")
+                nueva_partida = 0
 
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):
             sonido.reproducir_sonido(1)
@@ -61,7 +67,8 @@ def loop():
                             text="",
                             image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
 
-        if "-CELL-" in event and nueva_partida and not tiempo_espera_tarjeta:  # Verifica que tarjeta se apreto
+        if "-CELL-" in event and nueva_partida and not tiempo_espera_tarjeta and not nueva_partida.hay_fin_del_juego():
+            # Verifica que tarjeta se apreto
             x = int(event.split("-")[2])
             y = int(event.split("-")[3])
             palabra, imagen = nueva_partida.revelar_tarjeta(x, y)
@@ -69,9 +76,6 @@ def loop():
             if not nueva_partida.hay_acierto():
                 if nueva_partida.get_tarjetas_boca_arriba() >= 2:
                     tiempo_espera_tarjeta = time.time() + 1  # Agrega X secs de espera antes de voltear
-
-            if nueva_partida.hay_fin_del_juego():
-                sg.popup("Fin del juego")
 
         if tiempo_espera_tarjeta and tiempo_actual > tiempo_espera_tarjeta:
             for t in nueva_partida.esconder_tarjetas():  # Voltear tarjetas

@@ -1,4 +1,4 @@
-import datetime
+import datetime, time
 import random
 
 from src.handlers import tablero
@@ -7,16 +7,19 @@ from src.handlers import tablero
 class Juego:
     def __init__(self, dificultad, con_ayuda, tipo_tarjeta, jugador_nombre, jugador_genero, jugador_edad,
                  nro_de_partida):
-        self.dificultad = dificultad
+        self.dificultad = dificultad  # Fácil, Medio, Díficil
         self.con_ayuda = con_ayuda
-        self.tipo_tarjeta = tipo_tarjeta
-        self.jugador_nombre = jugador_nombre
+        self.tipo_tarjeta = tipo_tarjeta  # Texto, Imagen, Mixto
+        self.jugador_nombre = jugador_nombre  # Datos del jugador
         self.jugador_genero = jugador_genero
         self.jugador_edad = jugador_edad
-        self.nro_de_partida = nro_de_partida
-        self.matriz_tablero = []
-        self.tiempo_restante = 0
-        self.aciertos = 0
+        self.nro_de_partida = nro_de_partida  # Nro de la partida
+        self.matriz_tablero = []  # Matriz con los datos del tablero
+        self.tiempo_de_inicio = time.time()  # Tiempo de inicio de la partida
+        self.tiempo_maximo = 0
+        self.tiempo_restante = 0  # Tiempo restante para jugar
+        self.aciertos_maximos = 0
+        self.aciertos = 0  # Cantidad de aciertos obtenidos
         self.descripcion = ""  # Descripcion de las tarjetas de la partida
 
     def generar_tablero(self):
@@ -47,6 +50,8 @@ class Juego:
         else:
             tamanio = (8, 4)
             self.tiempo_restante = 50
+        self.tiempo_maximo = self.tiempo_restante  # Setea el tiempo maximo
+        self.aciertos_maximos = tamanio[0] * tamanio[1] // 2  # Setea la cantidad de aciertos maximos
         datos_de_tarjetas = tablero.get_tabla_criterios()[dias[dia_de_la_semana]][hora_del_dia]
         self.descripcion = datos_de_tarjetas["criterio"]
         datos_de_tarjetas = datos_de_tarjetas["funcion"](modo=datos_de_tarjetas["modo"])[
@@ -99,15 +104,9 @@ class Juego:
         """
         Devuelve si ya alcanzaron todas las aciertos o se llego al tiempo limite
         """
-        if self.dificultad == "Fácil":
-            tamanio = 6  # Tamaño x,y del tablero segun la dificultad
-        elif self.dificultad == "Medio":
-            tamanio = 8
-        else:
-            tamanio = 16
         if self.tiempo_restante <= 0:  # Si se acabo el tiempo, terminar juego
             return True
-        elif self.aciertos == tamanio:  # Ganaste el juego
+        elif self.aciertos == self.aciertos_maximos:  # Ganaste el juego
             return True
         return False
 
@@ -160,6 +159,12 @@ class Juego:
     def guardar_datos(self):
         """
         Guarda los datos de las acciones que se producen durante la partida
+        """
+        pass
+
+    def contar_puntos(self):
+        """
+        Cuenta los puntos ganados en la partida
         """
         pass
 
