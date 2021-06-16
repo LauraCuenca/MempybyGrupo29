@@ -13,18 +13,19 @@ def build():
 
     layout = [
         [sg.Menu(menu_def, pad=((100, 100), 20))],
-        [sg.Text('Jugador: ', key='-P1-', size=(20, 1)), sg.Text('|    Tiempo restante: 9', key='-TIEMPO_RESTANTE-')],
+        [sg.Text('Jugador: ', key='-P1-', size=(20, 1)),
+         sg.Text('|    Tiempo restante: 9', key='-TIEMPO_RESTANTE-', size=(20, 1))],
         [],
-        [sg.Text('')]
+        [sg.Text('', key="-DESCRIPCION_PARTIDA-", size=(70, 1))]
     ]
 
     config = configuracion_h.leer_config()[login.leer_sesion()]
     if config[0] == "Fácil":
-        tamanio = (4, 2)  # Tamaño x,y del tablero segun la dificultad
+        tamanio = (4, 3)  # Tamaño x,y del tablero segun la dificultad
     elif config[0] == "Medio":
-        tamanio = (4, 3)
-    else:
         tamanio = (4, 4)
+    else:
+        tamanio = (8, 4)
     for y in range(tamanio[1]):
         layout += [
             [sg.Button(' ', size=(16, 8), key=f"-CELL-{x}-{y}-") for x in range(tamanio[0])]

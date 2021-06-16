@@ -17,6 +17,7 @@ class Juego:
         self.matriz_tablero = []
         self.tiempo_restante = 0
         self.aciertos = 0
+        self.descripcion = ""  # Descripcion de las tarjetas de la partida
 
     def generar_tablero(self):
         """
@@ -38,15 +39,16 @@ class Juego:
         else:
             hora_del_dia = (13, 23)
         if self.dificultad == "Fácil":
-            tamanio = (4, 2)  # Tamaño x,y del tablero segun la dificultad
+            tamanio = (4, 3)  # Tamaño x,y del tablero segun la dificultad
             self.tiempo_restante = 200
         elif self.dificultad == "Medio":
-            tamanio = (4, 3)
+            tamanio = (4, 4)
             self.tiempo_restante = 100
         else:
-            tamanio = (4, 4)
+            tamanio = (8, 4)
             self.tiempo_restante = 50
         datos_de_tarjetas = self.criterios[dias[dia_de_la_semana]][hora_del_dia]
+        self.descripcion = datos_de_tarjetas["criterio"]
         datos_de_tarjetas = datos_de_tarjetas["funcion"](modo=datos_de_tarjetas["modo"])[0:(tamanio[0] * tamanio[1])//2]
         # datos_de_tarjetas = list(map(lambda t: [0, t[0], t[1]], datos_de_tarjetas))  # Agrega el estado de la tarjeta 0
         datos_de_tarjetas = datos_de_tarjetas * 2  # Llamar a la funcion que devuelve los datos, sumarla 2 veces para las coincidencias

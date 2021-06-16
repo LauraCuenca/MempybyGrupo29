@@ -26,6 +26,9 @@ def loop():
     while True:
         event, _values = window.read(timeout=100)
         window["-P1-"].update(f"Jugador: {jugador_logueado}")
+        if nueva_partida:
+            window["-TIEMPO_RESTANTE-"].update(f"|    Tiempo restante: {nueva_partida.tiempo_restante}")
+            window["-DESCRIPCION_PARTIDA-"].update(nueva_partida.descripcion)
 
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):
             sonido.reproducir_sonido(1)
@@ -40,12 +43,10 @@ def loop():
             window = tablero.build()
         if event == "Nueva partida":
             ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
-            print(ok)
             if ok:
-                print("entro")
-                nueva_partida = juego.Juego("Medio", True, False, jugador_logueado, 'M', 30, 1)
+                config = configuracion_h.leer_config()[login.leer_sesion()]
+                nueva_partida = juego.Juego(config[0], True, False, jugador_logueado, 'M', 30, 1)
                 nueva_partida.generar_tablero()
-                # print(nueva_partida.matriz_tablero)
                 for x in range(len(nueva_partida.matriz_tablero)):
                     for y in range(len(nueva_partida.matriz_tablero[x])):
                         print(nueva_partida.matriz_tablero[x][y])
