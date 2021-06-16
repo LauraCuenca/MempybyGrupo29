@@ -16,7 +16,7 @@ def build():
         [sg.Text('Jugador: ', key='-P1-', size=(20, 1)),
          sg.Text('|    Tiempo restante: 9', key='-TIEMPO_RESTANTE-', size=(20, 1))],
         [],
-        [sg.Text('', key="-DESCRIPCION_PARTIDA-", size=(70, 1))]
+        [sg.Text('', key="-DESCRIPCION_PARTIDA-", size=(80, 1))]
     ]
 
     config = configuracion_h.leer_config()[login.leer_sesion()]
@@ -28,7 +28,9 @@ def build():
         tamanio = (8, 4)
     for y in range(tamanio[1]):
         layout += [
-            [sg.Button(' ', size=(16, 8), key=f"-CELL-{x}-{y}-") for x in range(tamanio[0])]
+            [sg.Button(' ', size=(16, 8), key=f"-CELL-{x}-{y}-",
+                       image_filename="src/recursos/datasets/images_pokemon/images/vacio.png") for x in
+             range(tamanio[0])]
         ]
 
     board = sg.Window('Mempy').Layout(layout)

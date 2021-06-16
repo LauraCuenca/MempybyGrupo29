@@ -1,3 +1,5 @@
+import time
+
 import PySimpleGUI as sg
 from src.component import configuracion
 from src.windows import tablero
@@ -45,12 +47,24 @@ def loop():
             ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
             if ok:
                 config = configuracion_h.leer_config()[login.leer_sesion()]
-                nueva_partida = juego.Juego(config[0], True, False, jugador_logueado, 'M', 30, 1)
+                nueva_partida = juego.Juego(config[0], True, "Imagen", jugador_logueado, 'M', 30, 1)
                 nueva_partida.generar_tablero()
-                for x in range(len(nueva_partida.matriz_tablero)):
+
+                for x in range(len(nueva_partida.matriz_tablero)):  # Limpia tablero
                     for y in range(len(nueva_partida.matriz_tablero[x])):
-                        print(nueva_partida.matriz_tablero[x][y])
                         window[f"-CELL-{x}-{y}-"].update(
-                            image_filename=f"src/recursos/datasets/images_pokemon/images/{nueva_partida.matriz_tablero[x][y][2]}.png")
+                            image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
+
+        if "-CELL-" in event and nueva_partida:  # Verifica que tarjeta se apreto
+            x = int(event.split("-")[2])
+            y = int(event.split("-")[3])
+            window[event].update(
+                image_filename=f"src/recursos/datasets/images_pokemon/images/{nueva_partida.revelar_tarjeta(x, y)}.png")
+            if not nueva_partida.hay_acierto():
+                for t in nueva_partida.esconder_tarjetas():  # Voltear tarjetas
+                    window[f"-CELL-{t[0]}-{t[1]}-"].update(
+                        image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
+            if nueva_partida.hay_fin_del_juego():
+                sg.popup("Fin del juego")
 
     return window
