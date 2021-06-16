@@ -1,7 +1,7 @@
 import time
 
 import PySimpleGUI as sg
-from src.component import configuracion
+from src.component import configuracion, estadisticas_c
 from src.windows import tablero
 from src.handlers import sonido, login, configuracion_h, juego
 
@@ -39,6 +39,10 @@ def loop():
             sonido.reproducir_sonido(1)
             break
 
+        if event == "Estadisticas":
+            sonido.reproducir_sonido(1)
+            estadisticas_c.start()
+
         if event == "Configuración":
             sonido.reproducir_sonido(1)
             configuracion.start()
@@ -46,6 +50,7 @@ def loop():
             configuraciones = configuracion_h.leer_config()
             sg.theme(configuraciones[jugador_logueado][4])
             window = tablero.build()
+
         if event == "Nueva partida":
             ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
             if ok:

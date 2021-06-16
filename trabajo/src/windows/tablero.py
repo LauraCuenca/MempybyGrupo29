@@ -7,7 +7,7 @@ def build():
     Construye la ventana del menú del juego
     """
     menu_def = [
-        ['&Archivo', ['Nueva partida', '!Ranking', '!Estadisticas', '---', 'Cerrar sesión']],
+        ['&Archivo', ['Nueva partida', 'Ranking', 'Estadisticas', '---', 'Cerrar sesión']],
         ['&Configuración', ['Configuración', '!Ayuda', '---', '!Acerca de']],
     ]
 
