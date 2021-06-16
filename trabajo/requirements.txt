@@ -1,2 +1,4 @@
 PySimpleGUI
 playsound
+pandas
+matplotlib
