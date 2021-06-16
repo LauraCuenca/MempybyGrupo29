@@ -4,9 +4,9 @@ def build():
       """ Crea ventana de menu"""
       sg.theme("Topanga")
 
-      image= "src/recursos/images/cerebro1.png"
+      image= "src/recursos/images/cerebro2.png"
       layout=[ 
-         [sg.Image(image, size=(200,200))],
+         [sg.Image(image)],
          [sg.Text("Usuario")],
          [sg.Input(key=("-USUARIO-"))],
          [sg.Text("Contraseña")],

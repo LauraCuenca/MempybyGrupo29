@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"diego": ["F\u00e1cil", "Sin", "Imagen", 8, "LightGray1", "sin mensajes"], "mauro": ["Dif\u00edcil", "Sin", "Mixto", 25, "DarkBlue17", "Ganaste, Perdiste"], "laura": ["F\u00e1cil", "Con", "Texto", "60", "Topanga", "Ganaste, Perdiste"], "prueba": ["F\u00e1cil", "Con", "Texto", 60, "LightGray1", "Ganaste, Perdiste"], "yani": ["Medio", "Con", "Imagen", 60, "Topanga", "Ganaste, Perdiste"]}
+=======
+{"diego": ["Dif\u00edcil", "Sin", "Imagen", 8, "LightGray1", "sin mensajes"], "mauro": ["Dif\u00edcil", "Sin", "Mixto", 25, "DarkBlue17", "Ganaste, Perdiste"], "laura": ["F\u00e1cil", "Con", "Texto", "60", "Topanga", "Ganaste, Perdiste"], "prueba": ["F\u00e1cil", "Con", "Texto", 60, "LightGray1", "Ganaste, Perdiste"]}
+>>>>>>> e7057cc63a5e20e7388cf6d5cb48ecb29c3ae39e
