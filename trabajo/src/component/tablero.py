@@ -1,7 +1,7 @@
 import time
 
 import PySimpleGUI as sg
-from src.component import configuracion, estadisticas_c
+from src.component import configuracion, estadisticas_c,ranking_c,acerca_de
 from src.windows import tablero
 from src.handlers import sonido, login, configuracion_h, juego
 
@@ -48,6 +48,14 @@ def loop():
         if event == "Estadisticas":
             sonido.reproducir_sonido(1)
             estadisticas_c.start()
+        
+        if event == "Ranking":
+            sonido.reproducir_sonido(1)
+            ranking_c.start()
+
+        if event == "Acerca de":
+            sonido.reproducir_sonido(1)
+            acerca_de.start()
 
         if event == "Configuración":
             sonido.reproducir_sonido(1)
