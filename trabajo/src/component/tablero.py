@@ -24,9 +24,12 @@ def loop():
     window = tablero.build()
     jugador_logueado = login.leer_sesion()  # Nombre del jugador logueado
     nueva_partida = 0
+    tiempo_espera_tarjeta = 0
 
     while True:
-        event, _values = window.read(timeout=100)
+        event, values = window.read(timeout=100)
+        tiempo_actual = time.time()  # Actualiza tiempo actual
+
         window["-P1-"].update(f"Jugador: {jugador_logueado}")
         if nueva_partida:
             window["-TIEMPO_RESTANTE-"].update(f"|    Tiempo restante: {nueva_partida.tiempo_restante}")
@@ -55,16 +58,22 @@ def loop():
                         window[f"-CELL-{x}-{y}-"].update(
                             image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
 
-        if "-CELL-" in event and nueva_partida:  # Verifica que tarjeta se apreto
+        if "-CELL-" in event and nueva_partida and not tiempo_espera_tarjeta:  # Verifica que tarjeta se apreto
             x = int(event.split("-")[2])
             y = int(event.split("-")[3])
             window[event].update(
                 image_filename=f"src/recursos/datasets/images_pokemon/images/{nueva_partida.revelar_tarjeta(x, y)}.png")
             if not nueva_partida.hay_acierto():
-                for t in nueva_partida.esconder_tarjetas():  # Voltear tarjetas
-                    window[f"-CELL-{t[0]}-{t[1]}-"].update(
-                        image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
+                if nueva_partida.get_tarjetas_boca_arriba() >= 2:
+                    tiempo_espera_tarjeta = time.time() + 2  # Agrega X secs de espera antes de voltear
+
             if nueva_partida.hay_fin_del_juego():
                 sg.popup("Fin del juego")
+
+        if tiempo_espera_tarjeta and tiempo_actual > tiempo_espera_tarjeta:
+            for t in nueva_partida.esconder_tarjetas():  # Voltear tarjetas
+                window[f"-CELL-{t[0]}-{t[1]}-"].update(
+                    image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
+            tiempo_espera_tarjeta = 0
 
     return window

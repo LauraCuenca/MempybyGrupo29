@@ -5,7 +5,8 @@ from src.handlers import tablero
 
 
 class Juego:
-    def __init__(self, dificultad, con_ayuda, tipo_tarjeta, jugador_nombre, jugador_genero, jugador_edad, nro_de_partida):
+    def __init__(self, dificultad, con_ayuda, tipo_tarjeta, jugador_nombre, jugador_genero, jugador_edad,
+                 nro_de_partida):
         self.dificultad = dificultad
         self.con_ayuda = con_ayuda
         self.tipo_tarjeta = tipo_tarjeta
@@ -48,7 +49,8 @@ class Juego:
             self.tiempo_restante = 50
         datos_de_tarjetas = tablero.get_tabla_criterios()[dias[dia_de_la_semana]][hora_del_dia]
         self.descripcion = datos_de_tarjetas["criterio"]
-        datos_de_tarjetas = datos_de_tarjetas["funcion"](modo=datos_de_tarjetas["modo"])[0:(tamanio[0] * tamanio[1])//2]
+        datos_de_tarjetas = datos_de_tarjetas["funcion"](modo=datos_de_tarjetas["modo"])[
+                            0:(tamanio[0] * tamanio[1]) // 2]
         datos_de_tarjetas = datos_de_tarjetas * 2  # Llamar a la funcion que devuelve los datos, sumarla 2 veces para las coincidencias
         random.shuffle(datos_de_tarjetas)  # Mezcla el orden
         self.matriz_tablero = self.generar_matriz(tamanio[0], tamanio[1], datos_de_tarjetas)
@@ -116,6 +118,17 @@ class Juego:
         if self.matriz_tablero[x][y][0] == 0:  # Si esta boca abajo, revelar tarjeta
             self.matriz_tablero[x][y][0] = 1  # Marca la tarjeta como boca arriba
         return self.matriz_tablero[x][y][2]
+
+    def get_tarjetas_boca_arriba(self):
+        """
+        Devuelve la cantidad de tarjetas boca arriba, estado = 1
+        """
+        tarjetas_volteadas = 0
+        for x in range(len(self.matriz_tablero)):
+            for y in range(len(self.matriz_tablero[x])):
+                if self.matriz_tablero[x][y][0] == 1:  # Si la tarjeta esta boca arriba
+                    tarjetas_volteadas += 1
+        return tarjetas_volteadas
 
     def esconder_tarjetas(self):
         """
