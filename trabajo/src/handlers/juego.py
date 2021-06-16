@@ -113,11 +113,21 @@ class Juego:
 
     def revelar_tarjeta(self, x, y):
         """
-        Muestra el resultado de la tarjeta al voltearla. Devuelve la imagen a mostrar
+        Muestra el resultado de la tarjeta al voltearla. Devuelve la imagen o texto a mostrar
         """
+        palabra = ""
+        imagen = ""
         if self.matriz_tablero[x][y][0] == 0:  # Si esta boca abajo, revelar tarjeta
             self.matriz_tablero[x][y][0] = 1  # Marca la tarjeta como boca arriba
-        return self.matriz_tablero[x][y][2]
+        if self.tipo_tarjeta == "Imagen":
+            imagen = self.matriz_tablero[x][y][2]
+        elif self.tipo_tarjeta == "Texto":
+            palabra = self.matriz_tablero[x][y][1]
+            imagen = "src/recursos/datasets/images_pokemon/images/vacio.png"
+        else:
+            palabra = self.matriz_tablero[x][y][1]
+            imagen = self.matriz_tablero[x][y][2]
+        return palabra.upper(), imagen
 
     def get_tarjetas_boca_arriba(self):
         """

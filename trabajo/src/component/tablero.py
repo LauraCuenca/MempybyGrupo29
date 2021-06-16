@@ -50,19 +50,20 @@ def loop():
             ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
             if ok:
                 config = configuracion_h.leer_config()[login.leer_sesion()]
-                nueva_partida = juego.Juego(config[0], True, "Imagen", jugador_logueado, 'M', 30, 1)
+                nueva_partida = juego.Juego(config[0], config[1], config[2], jugador_logueado, 'M', 30, 1)
                 nueva_partida.generar_tablero()
 
                 for x in range(len(nueva_partida.matriz_tablero)):  # Limpia tablero
                     for y in range(len(nueva_partida.matriz_tablero[x])):
                         window[f"-CELL-{x}-{y}-"].update(
+                            text="",
                             image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
 
         if "-CELL-" in event and nueva_partida and not tiempo_espera_tarjeta:  # Verifica que tarjeta se apreto
             x = int(event.split("-")[2])
             y = int(event.split("-")[3])
-            window[event].update(
-                image_filename=nueva_partida.revelar_tarjeta(x, y))
+            palabra, imagen = nueva_partida.revelar_tarjeta(x, y)
+            window[event].update(text=palabra, image_filename=imagen)
             if not nueva_partida.hay_acierto():
                 if nueva_partida.get_tarjetas_boca_arriba() >= 2:
                     tiempo_espera_tarjeta = time.time() + 2  # Agrega X secs de espera antes de voltear
@@ -73,6 +74,7 @@ def loop():
         if tiempo_espera_tarjeta and tiempo_actual > tiempo_espera_tarjeta:
             for t in nueva_partida.esconder_tarjetas():  # Voltear tarjetas
                 window[f"-CELL-{t[0]}-{t[1]}-"].update(
+                    text="",
                     image_filename="src/recursos/datasets/images_pokemon/images/vacio.png")
             tiempo_espera_tarjeta = 0
 
