@@ -68,7 +68,7 @@ def loop():
             window[event].update(text=palabra, image_filename=imagen)
             if not nueva_partida.hay_acierto():
                 if nueva_partida.get_tarjetas_boca_arriba() >= 2:
-                    tiempo_espera_tarjeta = time.time() + 2  # Agrega X secs de espera antes de voltear
+                    tiempo_espera_tarjeta = time.time() + 1  # Agrega X secs de espera antes de voltear
 
             if nueva_partida.hay_fin_del_juego():
                 sg.popup("Fin del juego")
