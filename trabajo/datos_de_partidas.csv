@@ -9,3 +9,7 @@ tiempo_partida, nro_de_partida, cant_palabras, evento, nick, genero, edad, estad
 1623942166,2,8,intento,diego,M,30,error,Toyota,Medio
 1623942168,2,8,intento,diego,M,30,error,BMW,Medio
 1623942170,2,8,intento,diego,M,30,error,BMW,Medio
+1623973287,3,8,inicio_partida,diego,M,30,,,Medio
+1623973288,3,8,intento,diego,M,30,error,Stefan Bajic,Medio
+1623973290,3,8,intento,diego,M,30,error,Iván Martínez Marqués,Medio
+1623973291,3,8,fin,diego,M,30,abandono,,Medio

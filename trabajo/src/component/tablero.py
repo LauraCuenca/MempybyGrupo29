@@ -1,7 +1,7 @@
 import time
 
 import PySimpleGUI as sg
-from src.component import configuracion, estadisticas_c,ranking_c,acerca_de
+from src.component import configuracion, estadisticas_c, ranking_c, acerca_de
 from src.windows import tablero
 from src.handlers import sonido, login, configuracion_h, juego
 
@@ -34,7 +34,7 @@ def loop():
         if nueva_partida:
             if not nueva_partida.hay_fin_del_juego():
                 nueva_partida.tiempo_restante = round(nueva_partida.tiempo_maximo - (
-                            tiempo_actual - nueva_partida.tiempo_de_inicio))
+                        tiempo_actual - nueva_partida.tiempo_de_inicio))
                 window["-TIEMPO_RESTANTE-"].update(f"|    Tiempo restante: {nueva_partida.tiempo_restante}")
                 window["-DESCRIPCION_PARTIDA-"].update(nueva_partida.descripcion)
             else:
@@ -42,13 +42,15 @@ def loop():
                 nueva_partida = 0
 
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):
+            if nueva_partida:
+                nueva_partida.guardar_datos('fin', 'abandono', '')
             sonido.reproducir_sonido(1)
             break
 
         if event == "Estadisticas":
             sonido.reproducir_sonido(1)
             estadisticas_c.start()
-        
+
         if event == "Ranking":
             sonido.reproducir_sonido(1)
             ranking_c.start()
