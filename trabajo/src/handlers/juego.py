@@ -1,5 +1,7 @@
-import datetime, time
+import datetime
+import time
 import random
+import csv
 
 from src.handlers import tablero
 
@@ -64,6 +66,7 @@ class Juego:
         datos_de_tarjetas = datos_de_tarjetas + datos_de_tarjetas2  # Llamar a la funcion que devuelve los datos, sumarla 2 veces para las coincidencias
         random.shuffle(datos_de_tarjetas)  # Mezcla el orden
         self.matriz_tablero = self.generar_matriz(tamanio[0], tamanio[1], datos_de_tarjetas)
+        self.guardar_datos("inicio_partida", "", "")
 
     def generar_matriz(self, x, y, datos_de_tarjetas):
         """
@@ -103,9 +106,13 @@ class Juego:
                 self.matriz_tablero[tarjetas_volteadas[1][1]][tarjetas_volteadas[1][2]][0] = 2
                 self.aciertos += 1
                 self.contar_puntos(10)
+                self.guardar_datos("intento", "ok",
+                                   self.matriz_tablero[tarjetas_volteadas[1][1]][tarjetas_volteadas[1][2]][1])
                 return True
             else:
                 self.contar_puntos(-1)
+                self.guardar_datos("intento", "error",
+                                   self.matriz_tablero[tarjetas_volteadas[1][1]][tarjetas_volteadas[1][2]][1])
         return False
 
     def hay_fin_del_juego(self):
@@ -113,8 +120,10 @@ class Juego:
         Devuelve si ya alcanzaron todas las aciertos o se llego al tiempo limite
         """
         if self.tiempo_restante <= 0:  # Si se acabo el tiempo, terminar juego
+            self.guardar_datos("fin", "timeout", "")
             return True
         elif self.aciertos == self.aciertos_maximos:  # Ganaste el juego
+            self.guardar_datos("fin", "finalizada", "")
             return True
         return False
 
@@ -167,11 +176,20 @@ class Juego:
                 self.matriz_tablero[t[0]][t[1]][0] = 0
         return tarjetas_a_esconder
 
-    def guardar_datos(self):
+    def guardar_datos(self, evento, estado, palabra):
         """
         Guarda los datos de las acciones que se producen durante la partida
         """
-        pass
+        datos = ""
+        try:
+            with open("datos_de_partidas.csv", "r") as archivo:
+                datos = archivo.read()
+        except FileNotFoundError as e:
+            datos = ""
+        nro_de_partida = len(datos.split()) + 1
+        with open("datos_de_partidas.csv", "w") as archivo:
+            archivo.write(datos +
+                          f"{round(time.time())},{nro_de_partida},{self.aciertos_maximos},{evento},{self.jugador_nombre},{self.jugador_genero},{self.jugador_edad},{estado},{palabra},{self.dificultad}\n")
 
     def contar_puntos(self, puntos):
         """
