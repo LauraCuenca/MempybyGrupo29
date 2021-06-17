@@ -15,7 +15,7 @@ def build():
     configuraciones = configuracion_h.leer_config()
 
     layout = [
-        [sg.Text(" "*30),sg.Image(filename=("src/recursos/images/configuracion.png"),size=(150,150))],
+        [sg.Text(" "*30),sg.Image(filename=("src/recursos/images/configuracion2.png"),size=(150,150))],
         [sg.Text("Nivel de Dificultad:", size=(size), pad=(padding)), sg.Combo(dificultad, default_value=configuraciones[jugador_logueado][0], readonly=True, key="-NIVEL_DE_DIFICULTAD-")],
         [sg.Text("Ayuda:", size=(size), pad=(padding)), sg.Combo(ayuda, default_value=configuraciones[jugador_logueado][1], readonly=True, key="-AYUDA-")],
         [sg.Text("Tipo de tarjetas:", size=(size)), sg.Combo(tipo_de_tarjetas, default_value=configuraciones[jugador_logueado][2], readonly=True, key="-TIPO_DE_TARJETAS-")],

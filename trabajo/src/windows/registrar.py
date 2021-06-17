@@ -7,7 +7,7 @@ def build():
     size= (15,2)
 
     layout = [
-    [sg.Image(filename="src/recursos/images/register.png",size=(80,80))],
+    [sg.Image(filename="src/recursos/images/register2.png")],
     [sg.Text("*Max de caracteres: 10*",text_color='red')],
     [sg.Text("Nombre de Usuario *",size=(size))],
     [sg.InputText(key="-NOMBRE_USUARIO-",do_not_clear=False)],
