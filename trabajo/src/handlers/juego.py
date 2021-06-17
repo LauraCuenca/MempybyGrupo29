@@ -21,6 +21,7 @@ class Juego:
         self.aciertos_maximos = 0
         self.aciertos = 0  # Cantidad de aciertos obtenidos
         self.descripcion = ""  # Descripcion de las tarjetas de la partida
+        self.puntaje = 0  # Puntos obtenidos
 
     def generar_tablero(self):
         """
@@ -101,7 +102,10 @@ class Juego:
                 self.matriz_tablero[tarjetas_volteadas[0][1]][tarjetas_volteadas[0][2]][0] = 2
                 self.matriz_tablero[tarjetas_volteadas[1][1]][tarjetas_volteadas[1][2]][0] = 2
                 self.aciertos += 1
+                self.contar_puntos(10)
                 return True
+            else:
+                self.contar_puntos(-1)
         return False
 
     def hay_fin_del_juego(self):
@@ -169,11 +173,11 @@ class Juego:
         """
         pass
 
-    def contar_puntos(self):
+    def contar_puntos(self, puntos):
         """
         Cuenta los puntos ganados en la partida
         """
-        pass
+        self.puntaje += puntos
 
 
 if __name__ == '__main__':

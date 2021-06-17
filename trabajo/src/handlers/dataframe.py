@@ -1,7 +1,7 @@
 import pandas as pd
 
 columnas = ['Tiempo', 'Num de Part', 'Cant Total de Palabras', 'Nombre Evento','Nick','Genero','Edad',
-            'Estado','Palabra','Nivel'] # definimos los nombres de las columnas
+            'Estado','Palabra','Nivel']  # definimos los nombres de las columnas
 
 datos_juego = pd.DataFrame(columns=columnas)
 
