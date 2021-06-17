@@ -120,9 +120,11 @@ class Juego:
         """
         if self.tiempo_restante <= 0:  # Si se acabo el tiempo, terminar juego
             self.guardar_datos("fin", "timeout", "")
+            self.guardar_puntos()
             return True
         elif self.aciertos == self.aciertos_maximos:  # Ganaste el juego
             self.guardar_datos("fin", "finalizada", "")
+            self.guardar_puntos()
             return True
         return False
 
@@ -203,6 +205,17 @@ class Juego:
         Cuenta los puntos ganados en la partida
         """
         self.puntaje += puntos
+
+    def guardar_puntos(self):
+        try:
+            with open("datos_de_puntos.csv", "r") as archivo:
+                datos = archivo.read()
+        except FileNotFoundError as e:
+            # Si el archivo no existe, crea la cabecera
+            datos = "nro_de_partida, nick, puntos, nivel\n"
+        with open("datos_de_puntos.csv", "w") as archivo:
+            archivo.write(datos +
+                          f"{self.nro_de_partida},{self.jugador_nombre},{self.puntaje},{self.dificultad}\n")
 
 
 if __name__ == '__main__':
