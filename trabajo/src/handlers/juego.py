@@ -189,7 +189,6 @@ class Juego:
             # Si el archivo no existe, crea la cabecera
             datos = "tiempo_partida, nro_de_partida, cant_palabras, evento, nick, genero, edad, estado, palabra, nivel\n"
         nro_de_partida = datos.split('\n')
-        print(nro_de_partida)
         if self.nro_de_partida == 0:  # Si no esta seteado el nro de la partida, buscarlo
             if len(nro_de_partida) <= 3:
                 self.nro_de_partida = 1

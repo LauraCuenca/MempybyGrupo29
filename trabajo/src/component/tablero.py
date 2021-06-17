@@ -23,6 +23,7 @@ def loop():
     """
     window = tablero.build()
     jugador_logueado = login.leer_sesion()  # Nombre del jugador logueado
+    configuraciones = configuracion_h.leer_config()
     nueva_partida = 0
     tiempo_espera_tarjeta = 0
 
@@ -38,7 +39,18 @@ def loop():
                 window["-TIEMPO_RESTANTE-"].update(f"|    Tiempo restante: {nueva_partida.tiempo_restante}")
                 window["-DESCRIPCION_PARTIDA-"].update(nueva_partida.descripcion)
             else:
-                sg.popup("Fin del juego")
+                if nueva_partida.aciertos == nueva_partida.aciertos_maximos:  # Si ganaste
+                    msj = configuraciones[jugador_logueado][5].split(',')
+                    if len(msj) >= 1:
+                        sg.popup(msj[0], title="fin")  # Mostrar primer mensaje
+                    else:
+                        sg.popup("Ganaste el juego!!", title="fin")
+                else:
+                    msj = configuraciones[jugador_logueado][5].split(',')
+                    if len(msj) >= 2:
+                        sg.popup(msj[1], title="fin")  # Mostrar segundo mensaje
+                    else:
+                        sg.popup("Perdiste el juego", title="fin")
                 nueva_partida = 0
 
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):

@@ -13,3 +13,16 @@ tiempo_partida, nro_de_partida, cant_palabras, evento, nick, genero, edad, estad
 1623973288,3,8,intento,diego,M,30,error,Stefan Bajic,Medio
 1623973290,3,8,intento,diego,M,30,error,Iván Martínez Marqués,Medio
 1623973291,3,8,fin,diego,M,30,abandono,,Medio
+1623973780,4,6,inicio_partida,diego,M,30,,,Fácil
+1623973782,4,6,intento,diego,M,30,error,Jakub Markovič,Fácil
+1623973785,4,6,intento,diego,M,30,error,Daniel Sandy,Fácil
+1623973788,4,6,intento,diego,M,30,ok,Stefan Bajic,Fácil
+1623973789,4,6,intento,diego,M,30,error,Gabriele Plechero,Fácil
+1623973792,4,6,intento,diego,M,30,ok,Gabriele Plechero,Fácil
+1623973793,4,6,intento,diego,M,30,error,Pépé Bonet,Fácil
+1623973796,4,6,intento,diego,M,30,ok,Jakub Markovič,Fácil
+1623973797,4,6,intento,diego,M,30,error,Pépé Bonet,Fácil
+1623973799,4,6,intento,diego,M,30,ok,Daniel Sandy,Fácil
+1623973802,4,6,intento,diego,M,30,ok,Maarten Vandevoordt,Fácil
+1623973803,4,6,intento,diego,M,30,ok,Pépé Bonet,Fácil
+1623973803,4,6,fin,diego,M,30,finalizada,,Fácil
