@@ -71,7 +71,7 @@ def loop():
             ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
             if ok:
                 config = configuracion_h.leer_config()[login.leer_sesion()]
-                nueva_partida = juego.Juego(config[0], config[1], config[2], jugador_logueado, 'M', 30, 1)
+                nueva_partida = juego.Juego(config[0], config[1], config[2], jugador_logueado, 'M', 30)
                 nueva_partida.generar_tablero()
 
                 for x in range(len(nueva_partida.matriz_tablero)):  # Limpia tablero

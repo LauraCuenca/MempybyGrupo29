@@ -7,15 +7,14 @@ from src.handlers import tablero
 
 
 class Juego:
-    def __init__(self, dificultad, con_ayuda, tipo_tarjeta, jugador_nombre, jugador_genero, jugador_edad,
-                 nro_de_partida):
+    def __init__(self, dificultad, con_ayuda, tipo_tarjeta, jugador_nombre, jugador_genero, jugador_edad):
         self.dificultad = dificultad  # Fácil, Medio, Díficil
         self.con_ayuda = con_ayuda
         self.tipo_tarjeta = tipo_tarjeta  # Texto, Imagen, Mixto
         self.jugador_nombre = jugador_nombre  # Datos del jugador
         self.jugador_genero = jugador_genero
         self.jugador_edad = jugador_edad
-        self.nro_de_partida = nro_de_partida  # Nro de la partida
+        self.nro_de_partida = 0  # Numero de partida
         self.matriz_tablero = []  # Matriz con los datos del tablero
         self.tiempo_de_inicio = time.time()  # Tiempo de inicio de la partida
         self.tiempo_maximo = 0
@@ -185,11 +184,19 @@ class Juego:
             with open("datos_de_partidas.csv", "r") as archivo:
                 datos = archivo.read()
         except FileNotFoundError as e:
-            datos = ""
-        nro_de_partida = len(datos.split()) + 1
+            # Si el archivo no existe, crea la cabecera
+            datos = "tiempo_partida, nro_de_partida, cant_palabras, evento, nick, genero, edad, estado, palabra, nivel\n"
+        nro_de_partida = datos.split('\n')
+        print(nro_de_partida)
+        if self.nro_de_partida == 0:  # Si no esta seteado el nro de la partida, buscarlo
+            if len(nro_de_partida) <= 3:
+                self.nro_de_partida = 1
+            else:
+                self.nro_de_partida = nro_de_partida[-2]
+                self.nro_de_partida = int(self.nro_de_partida.split(',')[1]) + 1
         with open("datos_de_partidas.csv", "w") as archivo:
             archivo.write(datos +
-                          f"{round(time.time())},{nro_de_partida},{self.aciertos_maximos},{evento},{self.jugador_nombre},{self.jugador_genero},{self.jugador_edad},{estado},{palabra},{self.dificultad}\n")
+                          f"{round(time.time())},{self.nro_de_partida},{self.aciertos_maximos},{evento},{self.jugador_nombre},{self.jugador_genero},{self.jugador_edad},{estado},{palabra},{self.dificultad}\n")
 
     def contar_puntos(self, puntos):
         """
