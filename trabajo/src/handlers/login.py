@@ -32,3 +32,9 @@ def leer_sesion():
         jugador = pickle.load(archivo)
     return jugador
 
+
+def listar_jugadores():
+    """Devuelve un diccionario con todos los usuarios registrados"""
+    with open("jugadores", 'rb') as archivo:
+        return pickle.load(archivo)
+

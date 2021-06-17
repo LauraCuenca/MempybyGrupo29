@@ -24,6 +24,7 @@ def loop():
     window = tablero.build()
     jugador_logueado = login.leer_sesion()  # Nombre del jugador logueado
     configuraciones = configuracion_h.leer_config()
+    datos_de_jugador_logueado = login.listar_jugadores()[jugador_logueado]  # Todos los datos del jugador logueado
     nueva_partida = 0
     tiempo_espera_tarjeta = 0
 
@@ -85,7 +86,8 @@ def loop():
             ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
             if ok:
                 config = configuracion_h.leer_config()[login.leer_sesion()]
-                nueva_partida = juego.Juego(config[0], config[1], config[2], jugador_logueado, 'M', 30)
+                nueva_partida = juego.Juego(config[0], config[1], config[2], jugador_logueado,
+                                            datos_de_jugador_logueado[2], datos_de_jugador_logueado[3])
                 nueva_partida.generar_tablero()
 
                 for x in range(len(nueva_partida.matriz_tablero)):  # Limpia tablero
