@@ -211,7 +211,7 @@ class Juego:
                 datos = archivo.read()
         except FileNotFoundError as e:
             # Si el archivo no existe, crea la cabecera
-            datos = "nro_de_partida, nick, puntos, nivel\n"
+            datos = "nro_de_partida,nick,puntos,nivel\n"
         with open("datos_de_puntos.csv", "w") as archivo:
             archivo.write(datos +
                           f"{self.nro_de_partida},{self.jugador_nombre},{self.puntaje},{self.dificultad}\n")
