@@ -1,4 +1,4 @@
-tiempo_partida, nro_de_partida, cant_palabras, evento, nick, genero, edad, estado, palabra, nivel
+tiempo_partida,nro_de_partida,cant_palabras,evento,nick,genero,edad,estado,palabra,nivel
 1623942105,1,8,inicio_partida,diego,M,30,,,Medio
 1623942106,1,8,intento,diego,M,30,error,Porsche,Medio
 1623942109,1,8,intento,diego,M,30,error,Mercedes-Benz,Medio
