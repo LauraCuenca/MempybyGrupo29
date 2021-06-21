@@ -108,7 +108,7 @@ def loop():
                 if nueva_partida.get_tarjetas_boca_arriba() >= 2:
                     tiempo_espera_tarjeta = time.time() + 1  # Agrega X secs de espera antes de voltear
 
-        if tiempo_espera_tarjeta and tiempo_actual > tiempo_espera_tarjeta:
+        if nueva_partida and tiempo_espera_tarjeta and tiempo_actual > tiempo_espera_tarjeta:
             for t in nueva_partida.esconder_tarjetas():  # Voltear tarjetas
                 window[f"-CELL-{t[0]}-{t[1]}-"].update(
                     text="",
