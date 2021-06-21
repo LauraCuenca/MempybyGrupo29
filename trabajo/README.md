@@ -47,3 +47,8 @@ python run.py
 | Domingo | Logos con imagen, con origen distinto a estados unidos o reino unido | Logos con imagen, y segment igual a Mass-Market Cars |
 
 
+## Tests
+
+Para ejecutar los tests:
+
+```python -m unittest discover```
