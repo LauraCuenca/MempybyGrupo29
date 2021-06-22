@@ -1,7 +1,6 @@
 import datetime
 import time
 import random
-import csv
 
 from src.handlers import tablero
 
