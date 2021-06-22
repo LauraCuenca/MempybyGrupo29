@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 from src.windows import estadisticas
-from src.handlers import sonido, estadisticas_h
+from src.handlers import sonido
 
 
 
