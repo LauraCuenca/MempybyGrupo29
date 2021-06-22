@@ -57,15 +57,25 @@ def loop():
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):
             if nueva_partida:
                 nueva_partida.guardar_datos('fin', 'abandono', '')
+            nueva_partida = 0  # Si se cambia la configuracion, se reinicia la partida
+            tiempo_espera_tarjeta = 0
             sonido.reproducir_sonido(1)
             break
 
         if event == "Estadisticas":
             sonido.reproducir_sonido(1)
+            if nueva_partida:
+                nueva_partida.guardar_datos('fin', 'abandono', '')
+            nueva_partida = 0  # Si se cambia la configuracion, se reinicia la partida
+            tiempo_espera_tarjeta = 0
             estadisticas_c.start()
 
         if event == "Ranking":
             sonido.reproducir_sonido(1)
+            if nueva_partida:
+                nueva_partida.guardar_datos('fin', 'abandono', '')
+            nueva_partida = 0  # Si se cambia la configuracion, se reinicia la partida
+            tiempo_espera_tarjeta = 0
             ranking_c.start()
 
         if event == "Acerca de":
@@ -78,6 +88,8 @@ def loop():
             window.close()
             configuraciones = configuracion_h.leer_config()
             sg.theme(configuraciones[jugador_logueado][4])
+            if nueva_partida:
+                nueva_partida.guardar_datos('fin', 'abandono', '')
             nueva_partida = 0  # Si se cambia la configuracion, se reinicia la partida
             tiempo_espera_tarjeta = 0
             window = tablero.build()
