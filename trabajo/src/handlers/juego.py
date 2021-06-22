@@ -46,13 +46,13 @@ class Juego:
             hora_del_dia = (13, 23)
         if self.dificultad == "Fácil":
             tamanio = (4, 3)  # Tamaño x,y del tablero segun la dificultad
-            self.tiempo_restante = 200
+            self.tiempo_restante = 40
         elif self.dificultad == "Medio":
             tamanio = (4, 4)
-            self.tiempo_restante = 100
+            self.tiempo_restante = 80
         else:
             tamanio = (8, 4)
-            self.tiempo_restante = 50
+            self.tiempo_restante = 100
         self.tiempo_maximo = self.tiempo_restante  # Setea el tiempo maximo
         self.aciertos_maximos = tamanio[0] * tamanio[1] // 2  # Setea la cantidad de aciertos maximos
         datos_de_tarjetas = tablero.get_tabla_criterios()[dias[dia_de_la_semana]][hora_del_dia]
@@ -122,7 +122,7 @@ class Juego:
         for x in range(len(self.matriz_tablero)):
             for y in range(len(self.matriz_tablero[x])):
                 if self.matriz_tablero[x][y][0] == 0 and self.matriz_tablero[x][y][1] == palabra:
-                    return f"AYUDA: la próxima tarjeta está en la columna {x+1}"
+                    return f"AYUDA: la próxima tarjeta está en la columna {x + 1}"
 
     def hay_fin_del_juego(self):
         """
