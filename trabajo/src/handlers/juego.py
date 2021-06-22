@@ -23,6 +23,7 @@ class Juego:
         self.aciertos = 0  # Cantidad de aciertos obtenidos
         self.descripcion = ""  # Descripcion de las tarjetas de la partida
         self.puntaje = 0  # Puntos obtenidos
+        self.texto_ayuda = "Sin ayuda"  # Mensaje de ayuda
 
     def generar_tablero(self):
         """
@@ -114,6 +115,15 @@ class Juego:
                                    self.matriz_tablero[tarjetas_volteadas[1][1]][tarjetas_volteadas[1][2]][1])
         return False
 
+    def buscar_ayuda(self, palabra):
+        """
+        Devuelve el texto de ayuda para la siguiente tarjeta
+        """
+        for x in range(len(self.matriz_tablero)):
+            for y in range(len(self.matriz_tablero[x])):
+                if self.matriz_tablero[x][y][0] == 0 and self.matriz_tablero[x][y][1] == palabra:
+                    return f"AYUDA: la próxima tarjeta está en la columna {x+1}"
+
     def hay_fin_del_juego(self):
         """
         Devuelve si ya alcanzaron todas las aciertos o se llego al tiempo limite
@@ -147,6 +157,9 @@ class Juego:
                 palabra = ""
             else:
                 palabra = self.matriz_tablero[x][y][1]
+        # Si no hay 2 tarjetas volteadas actualizar ayuda
+        if self.con_ayuda == "Con":
+            self.texto_ayuda = self.buscar_ayuda(self.matriz_tablero[x][y][1])
         return palabra.upper(), imagen
 
     def get_tarjetas_boca_arriba(self):

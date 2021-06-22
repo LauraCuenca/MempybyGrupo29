@@ -16,7 +16,8 @@ def build():
         [sg.Text('Jugador: ', key='-P1-', size=(20, 1)),
          sg.Text('|    Tiempo restante: 0', key='-TIEMPO_RESTANTE-', size=(26, 1))],
         [],
-        [sg.Text('', key="-DESCRIPCION_PARTIDA-", size=(70, 2))]
+        [sg.Text('', key="-DESCRIPCION_PARTIDA-", size=(70, 2))],
+        [sg.Text("AYUDA: ", size=(70, 1), key="-AYUDA-")]
     ]
 
     config = configuracion_h.leer_config()[login.leer_sesion()]
