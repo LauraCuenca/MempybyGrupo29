@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 from src.windows import estadisticas
-from src.handlers import sonido
+from src.handlers import grafico_estado, grafico_genero, sonido, top_10
 
 
 
@@ -23,37 +23,37 @@ def loop():
         if event == "-TOP_10-":
             window.hide()
             sonido.reproducir_sonido(1)
-            estadisticas_h.top_10()
+            top_10.start()
             window.un_hide()
 
         if event == "-GRAFICO_P_TERM-":
             window.hide()
             sonido.reproducir_sonido(1)
-            estadisticas_h.top_10()
+            grafico_estado.start()
             window.un_hide()
 
         if event == "-GRAFICO_GENERO-":
             window.hide()
             sonido.reproducir_sonido(1)
-            estadisticas_h.top_10()
+            grafico_genero.start()
             window.un_hide()
 
         if event == "-GRAFICO_SEMANA-":
             window.hide()
             sonido.reproducir_sonido(1)
-            estadisticas_h.top_10()
+            #estadisticas_h.top_10()
             window.un_hide()
 
         if event == "-PROMEDIO_PARTIDAS-":
             window.hide()
             sonido.reproducir_sonido(1)
-            estadisticas_h.top_10()
+            #estadisticas_h.top_10()
             window.un_hide()
             
         if event == "-PORCENTAJE_PALABRAS-":
             window.hide()
             sonido.reproducir_sonido(1)
-            estadisticas_h.top_10()
+            #estadisticas_h.top_10()
             window.un_hide()
 
     return window

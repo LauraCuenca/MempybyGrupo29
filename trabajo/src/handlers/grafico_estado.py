@@ -7,6 +7,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
 def graficar(canvas, figure):
+    """ Arma la figura """
     figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
     figure_canvas_agg.draw()
     figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
@@ -14,6 +15,7 @@ def graficar(canvas, figure):
 
 
 def obtener_datos():
+    """ Filtro los datos que se quieren obtener del csv"""
 
     datos_juego= pd.read_csv('datos_de_partidas.csv')
 
@@ -27,11 +29,13 @@ def obtener_datos():
     return etiquetas, data_dibujo
 
 
-
-layout = [[sg.Canvas(key='figCanvas')],
+def build():
+    layout = [[sg.Canvas(key='figCanvas')],
           [sg.Button('Salir')]]
 
-window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
+    window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
+    return window
+
 
 etiquetas, data_dibujo = obtener_datos()
 
@@ -44,10 +48,19 @@ plt.legend(etiquetas)
 
 plt.title("Porcentaje de Partidas por Estado")
 
-graficar(window['figCanvas'].TKCanvas, fig)
 
-while True:
-    event, values = window.read(timeout=200)
-    if event == sg.WIN_CLOSED or event == 'Salir':
-        break
-window.close()
+
+def start():
+    """ Lanza la ejecución de la ventana del tablero """
+    window = loop()
+    window.close()
+
+
+def loop():
+    """Loop de la ventana del tablero que capta sus eventos"""
+    graficar(window['figCanvas'].TKCanvas, fig)
+    while True:
+        event, values = window.read()
+        if event == sg.WIN_CLOSED or event == 'Salir':
+            break
+    return window 

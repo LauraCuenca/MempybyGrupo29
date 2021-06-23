@@ -1,48 +1,65 @@
 import PySimpleGUI as sg
+from PySimpleGUI.PySimpleGUI import Window
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
-def graficar(canvas, figure):
-    figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
+def graficar(canvas, figure, ax):
+    """ Arma la figura """
+    figure_canvas_agg = FigureCanvasTkAgg(figure, canvas, ax)
     figure_canvas_agg.draw()
     figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
     return figure_canvas_agg
 
 
 def obtener_datos():
+    """ Filtro los datos que se quieren obtener del csv"""
 
     datos_juego= pd.read_csv('datos_de_partidas.csv')
 
     top_10 = datos_juego[datos_juego["estado"]=='ok']['palabra'].head(10)
-    
-    data_dibujo = [top_10]
-    return data_dibujo
+    list_nombres= list(top_10.values)
+    data = list_nombres
+    return data
 
+def iterar(data):
 
+    for x in data:
+        lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]],[data[4]],[data[5]],[data[6]],[data[7]]]
+    return lista_de_listas
 
-layout = [[sg.Canvas(key='figCanvas')],
+def build():
+    layout = [[sg.Canvas(key='figCanvas')],
           [sg.Button('Salir')]]
 
-window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
+    window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
+    return window
 
-data_dibujo = obtener_datos()
-
-
-fig,ax= plt.subplots(1,1)
-column_labels=['Top 10']
+fig, ax =plt.subplots(1,1)
+data= obtener_datos()
+data_act=iterar(data)
+column_labels= ['Top 10']
 ax.axis('tight')
 ax.axis('off')
-ax.table(cellText=data_dibujo,colLabels=column_labels,loc="center",rowLabels=(1,10))
+ax.table(cellText=data_act,colLabels=column_labels,loc="center")
+plt.title("Top 10 de las primeras palabras encontradas")
 
-plt.title("Porcentaje de Partidas por Genero")
+#graficar(window['figCanvas'].TKCanvas, fig, ax)
 
-graficar(window['figCanvas'].TKCanvas, fig)
+def start():
+    """ Lanza la ejecución de la ventana del tablero """
+    window = loop()
+    window.close()
 
-while True:
-    event, values = window.read(timeout=200)
-    if event == sg.WIN_CLOSED or event == 'Salir':
-        break
-window.close()
+
+def loop():
+    """Loop de la ventana del tablero que capta sus eventos"""
+    window= graficar(build()['figCanvas'].TKCanvas, fig, ax)
+    
+    while True:
+       event, values = window.read(timeout=500)
+       if event == sg.WIN_CLOSED or event == 'Salir':
+           break
+    return window
