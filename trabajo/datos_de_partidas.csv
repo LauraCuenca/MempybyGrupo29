@@ -1,28 +1,22 @@
-tiempo_partida,nro_de_partida,cant_palabras,evento,nick,genero,edad,estado,palabra,nivel
-1623942105,1,8,inicio_partida,diego,M,30,,,Medio
-1623942106,1,8,intento,diego,M,30,error,Porsche,Medio
-1623942109,1,8,intento,diego,M,30,error,Mercedes-Benz,Medio
-1623942111,1,8,intento,diego,M,30,ok,Volkswagen,Medio
-1623942113,1,8,intento,diego,M,30,error,Subaru,Medio
-1623942115,1,8,intento,diego,M,30,ok,Toyota,Medio
-1623942165,2,8,inicio_partida,diego,M,30,,,Medio
-1623942166,2,8,intento,diego,M,30,error,Toyota,Medio
-1623942168,2,8,intento,diego,M,30,error,BMW,Medio
-1623942170,2,8,intento,diego,M,30,error,BMW,Medio
-1623973287,3,8,inicio_partida,diego,M,30,,,Medio
-1623973288,3,8,intento,diego,M,30,error,Stefan Bajic,Medio
-1623973290,3,8,intento,diego,M,30,error,Iv√°n Mart√≠nez Marqu√©s,Medio
-1623973291,3,8,fin,diego,M,30,abandono,,Medio
-1623973780,4,6,inicio_partida,diego,M,30,,,F√°cil
-1623973782,4,6,intento,diego,M,30,error,Jakub Markoviƒç,F√°cil
-1623973785,4,6,intento,diego,M,30,error,Daniel Sandy,F√°cil
-1623973788,4,6,intento,diego,M,30,ok,Stefan Bajic,F√°cil
-1623973789,4,6,intento,diego,M,30,error,Gabriele Plechero,F√°cil
-1623973792,4,6,intento,diego,M,30,ok,Gabriele Plechero,F√°cil
-1623973793,4,6,intento,diego,M,30,error,P√©p√© Bonet,F√°cil
-1623973796,4,6,intento,diego,M,30,ok,Jakub Markoviƒç,F√°cil
-1623973797,4,6,intento,diego,M,30,error,P√©p√© Bonet,F√°cil
-1623973799,4,6,intento,diego,M,30,ok,Daniel Sandy,F√°cil
-1623973802,4,6,intento,diego,M,30,ok,Maarten Vandevoordt,F√°cil
-1623973803,4,6,intento,diego,M,30,ok,P√©p√© Bonet,F√°cil
-1623973803,4,6,fin,diego,M,30,finalizada,,F√°cil
+1624490799,1,6,inicio_partida,diego,m,30,,,F·cil
+1624490800,1,6,intento,diego,m,30,error,magneton,F·cil
+1624490802,1,6,intento,diego,m,30,error,vaporeon,F·cil
+1624490804,1,6,intento,diego,m,30,error,rhydon,F·cil
+1624490807,1,6,intento,diego,m,30,ok,magneton,F·cil
+1624490809,1,6,intento,diego,m,30,error,charmeleon,F·cil
+1624490811,1,6,intento,diego,m,30,ok,charmeleon,F·cil
+1624490813,1,6,intento,diego,m,30,ok,flareon,F·cil
+1624490815,1,6,intento,diego,m,30,ok,jolteon,F·cil
+1624490816,1,6,intento,diego,m,30,ok,rhydon,F·cil
+1624490817,1,6,intento,diego,m,30,ok,vaporeon,F·cil
+1624490817,1,6,fin,diego,m,30,finalizada,,F·cil
+1624490821,2,6,inicio_partida,diego,m,30,,,F·cil
+1624490824,2,6,intento,diego,m,30,error,magneton,F·cil
+1624490827,2,6,fin,diego,m,30,abandono,,F·cil
+1624490862,3,6,inicio_partida,diego,m,30,,,F·cil
+1624490863,3,6,intento,diego,m,30,error,flareon,F·cil
+1624490865,3,6,intento,diego,m,30,error,charmeleon,F·cil
+1624490867,3,6,fin,diego,m,30,abandono,,F·cil
+1624490922,4,6,inicio_partida,diego,m,30,,,F·cil
+1624490923,4,6,intento,diego,m,30,error,vaporeon,F·cil
+1624490925,4,6,fin,diego,m,30,abandono,,F·cil
