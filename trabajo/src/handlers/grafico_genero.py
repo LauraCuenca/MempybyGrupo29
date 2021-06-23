@@ -21,8 +21,7 @@ def obtener_datos():
 
     partidas_genero = datos_juego["genero"].value_counts()
     nombres = datos_juego["genero"].unique()
-    
-    print(nombres)
+    nombres= list(nombres)
 
     data_dibujo = partidas_genero
     etiquetas = nombres
@@ -35,19 +34,18 @@ layout = [[sg.Canvas(key='figCanvas')],
 
 window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
 
-etiquetas, data_dibujo = obtener_datos()
-
+etiquetas, data_dibujo= obtener_datos()
 
 fig = plt.figure()
-plt.bar(data_dibujo,height=data_dibujo)
-
+plt.pie(data_dibujo, labels=etiquetas, autopct='%1.2f%%',
+        shadow=True, startangle=90, labeldistance=1.1)
+plt.axis('equal')
 plt.legend(etiquetas)
-
 plt.title("Porcentaje de Partidas por Genero")
-
 
 graficar(window['figCanvas'].TKCanvas, fig)
     
+
 while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Salir':
