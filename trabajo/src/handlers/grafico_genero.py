@@ -53,7 +53,7 @@ def start():
 
 def loop():
     """Loop de la ventana del tablero que capta sus eventos"""
-    graficar(window['figCanvas'].TKCanvas, fig)
+    window= graficar(build()['figCanvas'].TKCanvas, fig)
     
     while True:
         event, values = window.read()

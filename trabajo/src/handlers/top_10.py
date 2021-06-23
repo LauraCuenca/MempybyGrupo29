@@ -27,7 +27,7 @@ def obtener_datos():
 def iterar(data):
 
     for x in data:
-        lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]],[data[4]],[data[5]],[data[6]],[data[7]]]
+        lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]]]
     return lista_de_listas
 
 def build():
