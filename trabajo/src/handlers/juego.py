@@ -194,7 +194,7 @@ class Juego:
         """
         datos = ""
         try:
-            with open("datos_de_partidas.csv", "r", encoding='utf8') as archivo:
+            with open("datos_de_partidas.csv", "r") as archivo:
                 datos = archivo.read()
         except FileNotFoundError as e:
             # Si el archivo no existe, crea la cabecera
