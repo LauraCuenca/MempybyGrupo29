@@ -29,13 +29,13 @@ def loop():
         if event == "-GRAFICO_P_TERM-":
             window.hide()
             sonido.reproducir_sonido(1)
-            grafico_estado.start()
+            grafico_estado.graficar()
             window.un_hide()
 
         if event == "-GRAFICO_GENERO-":
             window.hide()
             sonido.reproducir_sonido(1)
-            grafico_genero.start()
+            grafico_genero.graficar()
             window.un_hide()
 
         if event == "-GRAFICO_SEMANA-":

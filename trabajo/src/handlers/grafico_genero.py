@@ -27,12 +27,11 @@ def obtener_datos():
     return etiquetas, data_dibujo
 
 
-def build():
-    layout = [[sg.Canvas(key='figCanvas')],
-    [sg.Button('Salir')]]
 
-    window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
-    return window
+layout = [[sg.Canvas(key='figCanvas')],
+           [sg.Button('Salir')]]
+
+window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
 
 etiquetas, data_dibujo = obtener_datos()
 
@@ -45,18 +44,10 @@ plt.legend(etiquetas)
 plt.title("Porcentaje de Partidas por Genero")
 
 
-def start():
-    """ Lanza la ejecución de la ventana del tablero """
-    window = loop()
-    window.close()
-
-
-def loop():
-    """Loop de la ventana del tablero que capta sus eventos"""
-    window= graficar(build()['figCanvas'].TKCanvas, fig)
+graficar(window['figCanvas'].TKCanvas, fig)
     
-    while True:
-        event, values = window.read()
-        if event == sg.WIN_CLOSED or event == 'Salir':
-            break
-    return window
+while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED or event == 'Salir':
+        break
+ 

@@ -2,7 +2,6 @@ import PySimpleGUI as sg
 from PySimpleGUI.PySimpleGUI import Window
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
@@ -30,12 +29,12 @@ def iterar(data):
         lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]]]
     return lista_de_listas
 
-def build():
-    layout = [[sg.Canvas(key='figCanvas')],
-          [sg.Button('Salir')]]
 
-    window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
-    return window
+layout = [[sg.Canvas(key='figCanvas')],
+    [sg.Button('Salir')]]
+
+window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
+   
 
 fig, ax =plt.subplots(1,1)
 data= obtener_datos()
@@ -46,20 +45,12 @@ ax.axis('off')
 ax.table(cellText=data_act,colLabels=column_labels,loc="center")
 plt.title("Top 10 de las primeras palabras encontradas")
 
-#graficar(window['figCanvas'].TKCanvas, fig, ax)
 
-def start():
-    """ Lanza la ejecución de la ventana del tablero """
-    window = loop()
-    window.close()
+graficar(window['figCanvas'].TKCanvas, fig, ax)
 
 
-def loop():
-    """Loop de la ventana del tablero que capta sus eventos"""
-    window= graficar(build()['figCanvas'].TKCanvas, fig, ax)
-    
-    while True:
-       event, values = window.read(timeout=500)
-       if event == sg.WIN_CLOSED or event == 'Salir':
-           break
-    return window
+while True:
+     event, values = window.read(timeout=200)
+     if event == sg.WIN_CLOSED or event == 'Salir':
+        break
+window.close()
