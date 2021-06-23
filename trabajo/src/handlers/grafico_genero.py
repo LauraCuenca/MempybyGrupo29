@@ -22,6 +22,8 @@ def obtener_datos():
     partidas_genero = datos_juego["genero"].value_counts()
     nombres = datos_juego["genero"].unique()
     
+    print(nombres)
+
     data_dibujo = partidas_genero
     etiquetas = nombres
     return etiquetas, data_dibujo
@@ -50,4 +52,4 @@ while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Salir':
         break
- 
+window.close()
