@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 from PySimpleGUI.PySimpleGUI import Window
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+#import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
@@ -27,7 +27,7 @@ def obtener_datos():
 def iterar(data):
 
     for x in data:
-        lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]],[data[4]],[data[5]],[data[6]],[data[7]]]
+        lista_de_listas= [[data[0]],[data[1]],[data[2]]]
     return lista_de_listas
 
 def build():
@@ -56,10 +56,11 @@ def start():
 
 def loop():
     """Loop de la ventana del tablero que capta sus eventos"""
-    window= graficar(build()['figCanvas'].TKCanvas, fig, ax)
+    window= build()#graficar(build()['figCanvas'].TKCanvas, fig, ax)
     
     while True:
-       event, values = window.read(timeout=500)
+       event, values = window.read(timeout=200)
+       graficar(window['figCanvas'].TKCanvas, fig, ax)
        if event == sg.WIN_CLOSED or event == 'Salir':
            break
     return window

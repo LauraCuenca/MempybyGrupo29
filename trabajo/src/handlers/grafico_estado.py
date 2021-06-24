@@ -2,7 +2,7 @@
 import PySimpleGUI as sg
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+#import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
