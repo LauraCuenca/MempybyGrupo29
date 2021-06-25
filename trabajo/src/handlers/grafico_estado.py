@@ -1,18 +1,7 @@
-
 import PySimpleGUI as sg
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-
-
-def graficar(canvas, figure):
-    """ Arma la figura """
-    figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-    figure_canvas_agg.draw()
-    figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-    return figure_canvas_agg
-
+from src.handlers import sonido
 
 def obtener_datos():
     """ Filtro los datos que se quieren obtener del csv"""
@@ -29,14 +18,6 @@ def obtener_datos():
     return etiquetas, data_dibujo
 
 
-
-layout = [[sg.Canvas(key='figCanvas')],
-    [sg.Button('Salir')]]
-
-window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
-
-
-
 etiquetas, data_dibujo = obtener_datos()
 
 explode = (0,0,0)
@@ -45,14 +26,35 @@ plt.pie(data_dibujo, explode=explode, labels=etiquetas, autopct='%1.2f%%',
         shadow=True, startangle=90, labeldistance=1.1)
 plt.axis('equal')
 plt.legend(etiquetas)
-
 plt.title("Porcentaje de Partidas por Estado")
+plt.savefig("src/recursos/graficos/grafico_estado.png")
+
+def start():
+    """ Lanza la ejecución de la ventana del tablero """
+    window = loop()
+    window.close()
+
+def build():
+    """ Crea la ventana para registrar el usuario"""
+    size= (15,2)
+
+    layout = [
+    [sg.Image(filename="src/recursos/graficos/grafico_estado.png")],
+    [sg.Button("Salir",size=(size),key=("-SALIR-"))]
+    ]
+    
+    grafico_estado = sg.Window("Grafico",layout=layout,size=(550,550),element_justification='c', resizable=False, modal=True)
+
+    return grafico_estado
 
 
-graficar(window['figCanvas'].TKCanvas, fig)
+def loop():
+    """Loop de la ventana del tablero que capta sus eventos"""
+    window = build()
 
-while True:
-    event, values = window.read()
-    if event == sg.WIN_CLOSED or event == 'Salir':
-        break
-window.close()
+    while True:
+        event, values = window.read()
+        if event in (sg.WINDOW_CLOSED,"-SALIR-"):
+            sonido.reproducir_sonido(1)
+            break
+    return window
