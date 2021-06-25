@@ -18,12 +18,6 @@ def obtener_datos():
     return etiquetas, data_dibujo
 
 
-
-layout = [[sg.Canvas(key='figCanvas')],
-           [sg.Button('Salir')]]
-
-window = sg.Window('Grafico',layout,finalize=True,resizable=True,element_justification="center")
-
 etiquetas, data_dibujo= obtener_datos()
 
 fig = plt.figure()
