@@ -27,7 +27,7 @@ def loop():
 
         elif event == "-GUARDAR_CAMBIOS-":
             configuracion_h.config(values["-NIVEL_DE_DIFICULTAD-"], values["-AYUDA-"], values["-TIPO_DE_TARJETAS-"], 
-                           values["-TIEMPO_TOTAL_PARTIDA-"], values["-TEMA_COLOR-"], values["-MENSAJES_ALERTA-"])
+                           60, values["-TEMA_COLOR-"], values["-MENSAJES_ALERTA-"])
             sonido.reproducir_sonido(1)
             break
             

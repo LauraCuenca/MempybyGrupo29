@@ -19,7 +19,7 @@ def build():
         [sg.Text("Nivel de Dificultad:", size=(size), pad=(padding)), sg.Combo(dificultad, default_value=configuraciones[jugador_logueado][0], readonly=True, key="-NIVEL_DE_DIFICULTAD-")],
         [sg.Text("Ayuda:", size=(size), pad=(padding)), sg.Combo(ayuda, default_value=configuraciones[jugador_logueado][1], readonly=True, key="-AYUDA-")],
         [sg.Text("Tipo de tarjetas:", size=(size)), sg.Combo(tipo_de_tarjetas, default_value=configuraciones[jugador_logueado][2], readonly=True, key="-TIPO_DE_TARJETAS-")],
-        [sg.Text("Tiempo total de partida:",size=(size),pad=(padding)),sg.Spin(list(range(1000)),size=(8,1),key="-TIEMPO_TOTAL_PARTIDA-", initial_value=configuraciones[jugador_logueado][3])],
+        [sg.Text("Tiempo total de partida:",size=(size),pad=(padding)),sg.Spin(list(range(1000)),size=(8,1),key="-TIEMPO_TOTAL_PARTIDA-", initial_value=configuraciones[jugador_logueado][3], disabled=True)],
         [sg.Text("Tema colores:", size=(size)), sg.Combo(tema, default_value=configuraciones[jugador_logueado][4], readonly=True, key="-TEMA_COLOR-")],
         [sg.Text("Mensajes de alerta:"), sg.Input(key="-MENSAJES_ALERTA-", default_text=configuraciones[jugador_logueado][5])],
         [sg.Text(" "*30), sg.Button("Guardar cambios", size=(20,2), key=("-GUARDAR_CAMBIOS-"))]
