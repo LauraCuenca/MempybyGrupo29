@@ -17,9 +17,9 @@ def iterar(data):
     """
 
     """
-    lista_de_listas = [[]]
-    for x in data:
-        lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]],[data[4]],[data[5]],[data[6]],[data[7]]]
+    lista_de_listas = []
+    for x in range(len(data)):
+        lista_de_listas += [[data[x]]]
     return lista_de_listas
 
 
@@ -39,7 +39,7 @@ def build():
     [sg.Button("Salir",size=(size),key=("-SALIR-"))]
     ]
     
-    top_10 = sg.Window("Grafico",layout=layout,size=(550,550),element_justification='c', resizable=False, modal=True)
+    top_10 = sg.Window("Grafico",layout=layout,element_justification='c', resizable=False, modal=True)
 
     return top_10
 
