@@ -1,3 +1,4 @@
+import csv
 import datetime
 import time
 import random
@@ -141,7 +142,6 @@ class Juego:
         Muestra el resultado de la tarjeta al voltearla. Devuelve la imagen o texto a mostrar
         """
         palabra = ""
-        imagen = ""
         if self.matriz_tablero[x][y][0] == 0:  # Si esta boca abajo, revelar tarjeta
             self.matriz_tablero[x][y][0] = 1  # Marca la tarjeta como boca arriba
         if self.tipo_tarjeta == "Imagen":
@@ -192,23 +192,27 @@ class Juego:
         """
         Guarda los datos de las acciones que se producen durante la partida
         """
-        datos = ""
         try:
-            with open("datos_de_partidas.csv", "r") as archivo:
-                datos = archivo.read()
-        except FileNotFoundError as e:
+            with open('datos_de_partidas.csv') as archivo:
+                datos = list(csv.reader(archivo, delimiter=','))
+        except FileNotFoundError:
             # Si el archivo no existe, crea la cabecera
-            datos = "tiempo_partida,nro_de_partida,cant_palabras,evento,nick,genero,edad,estado,palabra,nivel\n"
-        nro_de_partida = datos.split('\n')
+            datos = [["tiempo_partida", "nro_de_partida", "cant_palabras", "evento", "nick", "genero", "edad", "estado",
+                      "palabra", "nivel"]]
+        nro_de_partida = datos
         if self.nro_de_partida == 0:  # Si no esta seteado el nro de la partida, buscarlo
             if len(nro_de_partida) <= 3:
                 self.nro_de_partida = 1
             else:
                 self.nro_de_partida = nro_de_partida[-2]
-                self.nro_de_partida = int(self.nro_de_partida.split(',')[1]) + 1
-        with open("datos_de_partidas.csv", "w") as archivo:
-            archivo.write(datos +
-                          f"{round(time.time())},{self.nro_de_partida},{self.aciertos_maximos},{evento},{self.jugador_nombre},{self.jugador_genero},{self.jugador_edad},{estado},{palabra},{self.dificultad}\n")
+                self.nro_de_partida = int(self.nro_de_partida[1]) + 1
+        with open('datos_de_partidas.csv', mode='a+') as archivo:
+            datos_de_partida = csv.writer(archivo, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            if len(datos) == 1:  # Si no hay datos escribir la cabecera primero
+                datos_de_partida.writerow(datos[0])
+            datos_de_partida.writerow(
+                [round(time.time()), self.nro_de_partida, self.aciertos_maximos, evento, self.jugador_nombre,
+                 self.jugador_genero, self.jugador_edad, estado, palabra, self.dificultad])
 
     def contar_puntos(self, puntos):
         """
@@ -217,17 +221,22 @@ class Juego:
         self.puntaje += puntos
 
     def guardar_puntos(self):
+        """
+        Guarda los puntos obtenidos al final de la partida
+        """
         try:
-            with open("datos_de_puntos.csv", "r") as archivo:
-                datos = archivo.read()
-        except FileNotFoundError as e:
+            with open('datos_de_puntos.csv') as archivo:
+                datos = list(csv.reader(archivo, delimiter=','))
+        except FileNotFoundError:
             # Si el archivo no existe, crea la cabecera
-            datos = "nro_de_partida,nick,puntos,nivel\n"
-        with open("datos_de_puntos.csv", "w") as archivo:
-            archivo.write(datos +
-                          f"{self.nro_de_partida},{self.jugador_nombre},{self.puntaje},{self.dificultad}\n")
+            datos = [["nro_de_partida", "nick", "puntos", "nivel"]]
+        with open('datos_de_puntos.csv', mode='a+') as archivo:
+            puntaje = csv.writer(archivo, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            if len(datos) == 1:  # Si no hay datos escribir la cabecera primero
+                puntaje.writerow(datos[0])
+            puntaje.writerow([self.nro_de_partida, self.jugador_nombre, self.puntaje, self.dificultad])
 
 
 if __name__ == '__main__':
-    nueva_partida = Juego("Medio", True, 'Imagen', 'Diego', 'M', 30, 1)
+    nueva_partida = Juego("Medio", True, 'Imagen', 'Diego', 'M', 30)
     nueva_partida.generar_tablero()
