@@ -34,7 +34,7 @@ def build():
     [sg.Button("Salir",size=(size),key=("-SALIR-"))]
     ]
     
-    grafico_estado = sg.Window("Grafico",layout=layout,size=(550,550),element_justification='c', resizable=False, modal=True)
+    grafico_estado = sg.Window("Grafico",layout=layout,element_justification='c', resizable=False, modal=True)
 
     return grafico_estado
 
