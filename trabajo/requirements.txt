@@ -1,4 +1,6 @@
 PySimpleGUI
 playsound
+vext
+vext.gi
 pandas
 matplotlib
