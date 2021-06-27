@@ -5,29 +5,30 @@ import matplotlib.pyplot as plt
 from src.handlers import sonido
 
 
-#def obtener_datos():
-   # datos_puntos = pd.read_csv("datos_de_puntos.csv")
-    #filtro= datos_puntos[['nick','puntos']].head(7)
-    #ranking= filtro.sort_values(by='puntos',ascending=False)
-    #print(ranking)
-    #return ranking
+def obtener_datos():
+    datos_puntos = pd.read_csv("datos_de_puntos.csv")
+    filtro= datos_puntos[['nick','puntos']].head(7)
+    ranking= filtro.sort_values(by='puntos',ascending=False)
+    print(ranking)
+    return ranking
 
-#def iterar(data):
+def iterar(data):
+    """"""
+    lista_de_listas = []
+    for x in range(len(data)):
+        lista_de_listas += [[data[x]]]
+    return lista_de_listas
 
-    #for x in data:
-       # lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]],[data[4]]]
-    #return lista_de_listas
 
-
-#fig, ax =plt.subplots(1,1)
-#data= obtener_datos()
-#data_act=iterar(data)
-#column_labels= [['Nick'],['Puntaje']]
-#ax.axis('tight')
-#ax.axis('off')
-#ax.table(cellText=data_act,colLabels=column_labels,loc="center")
-#plt.title("Ranking de puntajes")
-#plt.savefig("src/recursos/graficos/ranking.png")
+fig, ax =plt.subplots(1,1)
+data= obtener_datos()
+data_act=iterar(data)
+column_labels= [['Nick'],['Puntaje']]
+ax.axis('tight')
+ax.axis('off')
+ax.table(cellText=data_act,colLabels=column_labels,loc="center")
+plt.title("Ranking de puntajes")
+plt.savefig("src/recursos/graficos/ranking.png")
 
 def start():
     """ Lanza la ejecución de la ventana del tablero """
