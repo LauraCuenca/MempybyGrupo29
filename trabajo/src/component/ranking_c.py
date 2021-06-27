@@ -23,7 +23,7 @@ def loop():
         if event == "-RANKING-":
             window.hide()
             sonido.reproducir_sonido(1)
-            ranking_h()
+            ranking_h.start()
             window.un_hide()
 
     return window
