@@ -18,16 +18,7 @@ def obtener_datos():
     return etiquetas, data_dibujo
 
 
-etiquetas, data_dibujo = obtener_datos()
 
-explode = (0,0,0)
-fig = plt.figure()
-plt.pie(data_dibujo, explode=explode, labels=etiquetas, autopct='%1.2f%%',
-        shadow=True, startangle=90, labeldistance=1.1)
-plt.axis('equal')
-plt.legend(etiquetas)
-plt.title("Porcentaje de Partidas por Estado")
-plt.savefig("src/recursos/graficos/grafico_estado.png")
 
 def start():
     """ Lanza la ejecución de la ventana del tablero """
@@ -51,6 +42,17 @@ def build():
 def loop():
     """Loop de la ventana del tablero que capta sus eventos"""
     window = build()
+
+    etiquetas, data_dibujo = obtener_datos()
+
+    explode = (0, 0, 0)
+    fig = plt.figure()
+    plt.pie(data_dibujo, explode=explode, labels=etiquetas, autopct='%1.2f%%',
+            shadow=True, startangle=90, labeldistance=1.1)
+    plt.axis('equal')
+    plt.legend(etiquetas)
+    plt.title("Porcentaje de Partidas por Estado")
+    plt.savefig("src/recursos/graficos/grafico_estado.png")
 
     while True:
         event, values = window.read()

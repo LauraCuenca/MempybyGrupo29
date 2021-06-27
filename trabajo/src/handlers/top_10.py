@@ -14,22 +14,16 @@ def obtener_datos():
     return data
 
 def iterar(data):
+    """
 
+    """
+    lista_de_listas = [[]]
     for x in data:
         lista_de_listas= [[data[0]],[data[1]],[data[2]],[data[3]],[data[4]],[data[5]],[data[6]],[data[7]]]
     return lista_de_listas
 
 
 
-fig, ax =plt.subplots(1,1)
-data= obtener_datos()
-data_act=iterar(data)
-column_labels= ['Top 10']
-ax.axis('tight')
-ax.axis('off')
-ax.table(cellText=data_act,colLabels=column_labels,loc="center")
-plt.title("Top 10 de las primeras palabras encontradas")
-plt.savefig("src/recursos/graficos/top_10.png")
 
 def start():
     """ Lanza la ejecución de la ventana del tablero """
@@ -53,6 +47,16 @@ def build():
 def loop():
     """Loop de la ventana del tablero que capta sus eventos"""
     window = build()
+
+    fig, ax = plt.subplots(1, 1)
+    data = obtener_datos()
+    data_act = iterar(data)
+    column_labels = ['Top 10']
+    ax.axis('tight')
+    ax.axis('off')
+    ax.table(cellText=data_act, colLabels=column_labels, loc="center")
+    plt.title("Top 10 de las primeras palabras encontradas")
+    plt.savefig("src/recursos/graficos/top_10.png")
 
     while True:
         event, values = window.read()
