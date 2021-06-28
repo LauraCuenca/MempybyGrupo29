@@ -37,7 +37,7 @@ def loop():
 
     fig, ax = plt.subplots(1, 1)
     data = obtener_datos()
-    column_labels = ['Posicion', 'Nick', 'Puntaje']
+    column_labels = ['Nick', 'Puntaje']
     ax.axis('tight')
     ax.axis('off')
     ax.table(cellText=data, colLabels=column_labels, loc="center")
