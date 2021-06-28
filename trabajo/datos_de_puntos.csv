@@ -1,4 +1,9 @@
 nro_de_partida,nick,puntos,nivel
 8,diego,58,FÃ¡cil
+<<<<<<< HEAD
 10,milo89,34,Fácil
 11,milo89,56,Fácil
+=======
+10,laura,76,Medio
+11,laura,133,Difícil
+>>>>>>> fff296c363c4c01d204062d7a4021ea855a5afe8
