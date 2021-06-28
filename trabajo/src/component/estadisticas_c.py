@@ -38,12 +38,6 @@ def loop():
             grafico_genero.start()
             window.un_hide()
 
-        if event == "-GRAFICO_SEMANA-":
-            window.hide()
-            sonido.reproducir_sonido(1)
-            #estadisticas_h.top_10()
-            window.un_hide()
-
         if event == "-PROMEDIO_PARTIDAS-":
             window.hide()
             sonido.reproducir_sonido(1)
