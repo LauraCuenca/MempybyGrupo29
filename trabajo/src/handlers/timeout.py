@@ -9,11 +9,13 @@ def obtener_datos():
 
     datos_juego= pd.read_csv('datos_de_partidas.csv')
     
-    partidas_timeout= datos_juego[datos_juego["estado"]=='timeout']['nro_de_partida'].value_counts()
-    palabras= datos_juego[datos_juego["nro_de_partida"]==int(partidas_timeout)]['palabra']
+    partidas_timeout= datos_juego[datos_juego["estado"]=='timeout']['nro_de_partida']
+    palabras= datos_juego[datos_juego["nro_de_partida"]==int(partidas_timeout)]['palabra'].dropna()
 
-    data_dibujo = partidas_timeout
-    etiquetas = palabras
+    cant= palabras.value_counts()
+
+    data_dibujo = list(cant)
+    etiquetas = list(palabras.unique())
     return etiquetas, data_dibujo
 
 
@@ -45,7 +47,7 @@ def loop():
     etiquetas, data_dibujo = obtener_datos()
 
     fig = plt.figure()
-    plt.pie(data_dibujo, labels=etiquetas, autopct='%1.2f%%',
+    plt.pie(data_dibujo, labels=etiquetas, autopct='%1.2f%%',explode=None,
             shadow=True, startangle=90, labeldistance=1.1)
     plt.axis('equal')
     plt.legend(etiquetas)
