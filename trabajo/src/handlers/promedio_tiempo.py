@@ -9,13 +9,21 @@ def obtener_datos():
 
     datos_juego= pd.read_csv('datos_de_partidas.csv')
     
-    partidas_timeout= datos_juego[datos_juego["estado"]=='timeout']['nro_de_partida']
-    palabras= datos_juego[datos_juego["nro_de_partida"]==int(partidas_timeout)]['palabra'].dropna()
+    finalizadas_f= datos_juego[(datos_juego['nivel']=='Fácil')&(datos_juego['estado']=='finalizada')]
+    nro_facil= finalizadas_f['tiempo_partida'].div(14000000)
+    sum_f=nro_facil.sum()
 
-    cant= palabras.value_counts()
+    finalizadas_m= datos_juego[(datos_juego['nivel']=='Medio')&(datos_juego['estado']=='finalizada')]
+    nro_medio= finalizadas_m['tiempo_partida'].div(14000000)
+    sum_m=nro_medio.sum()
 
-    data_dibujo = list(cant)
-    etiquetas = list(palabras.unique())
+    finalizadas_d= datos_juego[(datos_juego['nivel']=='Difícil')&(datos_juego['estado']=='finalizada')]
+    nro_dif= finalizadas_d['tiempo_partida'].div(14000000)
+    sum_d=nro_dif.sum()
+
+
+    data_dibujo = [int(sum_f),int(sum_m),int(sum_d)]
+    etiquetas = ['Facil','Medio','Dificil']
     return etiquetas, data_dibujo
 
 
@@ -31,7 +39,7 @@ def build():
     size= (15,2)
 
     layout = [
-    [sg.Image(filename="src/recursos/graficos/grafico_timeout.png")],
+    [sg.Image(filename="src/recursos/graficos/promedio_tiempo.png")],
     [sg.Button("Salir",size=(size),key=("-SALIR-"))]
     ]
     
@@ -51,8 +59,8 @@ def loop():
             shadow=True, startangle=90, labeldistance=1.1)
     plt.axis('equal')
     plt.legend(etiquetas)
-    plt.title("Porcentaje de palabras en partidas Timeout")
-    plt.savefig("src/recursos/graficos/grafico_timeout.png")
+    plt.title("Promedio de tiempo de partidas finalizadas por nivel")
+    plt.savefig("src/recursos/graficos/promedio_tiempo.png")
 
     while True:
         event, values = window.read()

@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 from src.windows import estadisticas
-from src.handlers import grafico_estado, grafico_genero, sonido, top_10,timeout
+from src.handlers import grafico_estado, grafico_genero, promedio_tiempo, sonido, top_10,timeout
 
 
 
@@ -41,7 +41,7 @@ def loop():
         if event == "-PROMEDIO_PARTIDAS-":
             window.hide()
             sonido.reproducir_sonido(1)
-            #promedio_partidas.start()
+            promedio_tiempo.start()
             window.un_hide()
             
         if event == "-PORCENTAJE_PALABRAS-":

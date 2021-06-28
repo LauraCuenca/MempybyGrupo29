@@ -71,53 +71,53 @@ tiempo_partida,nro_de_partida,cant_palabras,evento,nick,genero,edad,estado,palab
 1624817507,9,6,inicio_partida,diego,m,30,,,Fácil
 1624817512,9,6,inicio_partida,diego,m,30,,,Fácil
 1624817515,9,6,fin,diego,m,30,abandono,,Fácil
-1624914085,10,6,inicio_partida,milo89,M,31,,,F�cil
+1624914085,10,6,inicio_partida,milo89,M,31,,,Fácil
 
-1624914089,10,6,intento,milo89,M,31,error,farfetchd,F�cil
+1624914089,10,6,intento,milo89,M,31,error,farfetchd,Fácil
 
-1624914093,10,6,intento,milo89,M,31,error,pidgeot,F�cil
+1624914093,10,6,intento,milo89,M,31,error,pidgeot,Fácil
 
-1624914097,10,6,intento,milo89,M,31,error,spearow,F�cil
+1624914097,10,6,intento,milo89,M,31,error,spearow,Fácil
 
-1624914100,10,6,intento,milo89,M,31,ok,pidgeotto,F�cil
+1624914100,10,6,intento,milo89,M,31,ok,pidgeotto,Fácil
 
-1624914106,10,6,intento,milo89,M,31,error,farfetchd,F�cil
+1624914106,10,6,intento,milo89,M,31,error,farfetchd,Fácil
 
-1624914109,10,6,intento,milo89,M,31,ok,pidgeot,F�cil
+1624914109,10,6,intento,milo89,M,31,ok,pidgeot,Fácil
 
-1624914112,10,6,intento,milo89,M,31,error,spearow,F�cil
+1624914112,10,6,intento,milo89,M,31,error,spearow,Fácil
 
-1624914116,10,6,intento,milo89,M,31,error,fearow,F�cil
+1624914116,10,6,intento,milo89,M,31,error,fearow,Fácil
 
-1624914118,10,6,intento,milo89,M,31,ok,pidgey,F�cil
+1624914118,10,6,intento,milo89,M,31,ok,pidgey,Fácil
 
-1624914122,10,6,intento,milo89,M,31,ok,spearow,F�cil
+1624914122,10,6,intento,milo89,M,31,ok,spearow,Fácil
 
-1624914125,10,6,fin,milo89,M,31,timeout,,F�cil
+1624914125,10,6,fin,milo89,M,31,timeout,,Fácil
 
-1624916136,11,6,inicio_partida,milo89,M,31,,,F�cil
+1624916136,11,6,inicio_partida,milo89,M,31,,,Fácil
 
 1624916140,11,6,intento,milo89,M,31,error,pidgey,F�cil
 
-1624916143,11,6,intento,milo89,M,31,ok,pidgey,F�cil
+1624916143,11,6,intento,milo89,M,31,ok,pidgey,Fácil
 
-1624916146,11,6,intento,milo89,M,31,error,spearow,F�cil
+1624916146,11,6,intento,milo89,M,31,error,spearow,Fácil
 
-1624916149,11,6,intento,milo89,M,31,ok,spearow,F�cil
+1624916149,11,6,intento,milo89,M,31,ok,spearow,Fácil
 
-1624916153,11,6,intento,milo89,M,31,error,farfetchd,F�cil
+1624916153,11,6,intento,milo89,M,31,error,farfetchd,Fácil
 
-1624916156,11,6,intento,milo89,M,31,error,pidgeot,F�cil
+1624916156,11,6,intento,milo89,M,31,error,pidgeot,Fácil
 
-1624916159,11,6,intento,milo89,M,31,ok,fearow,F�cil
+1624916159,11,6,intento,milo89,M,31,ok,fearow,Fácil
 
-1624916161,11,6,intento,milo89,M,31,ok,pidgeot,F�cil
+1624916161,11,6,intento,milo89,M,31,ok,pidgeot,Fácil
 
-1624916164,11,6,intento,milo89,M,31,ok,pidgeotto,F�cil
+1624916164,11,6,intento,milo89,M,31,ok,pidgeotto,Fácil
 
-1624916166,11,6,intento,milo89,M,31,ok,farfetchd,F�cil
+1624916166,11,6,intento,milo89,M,31,ok,farfetchd,Fácil
 
-1624916166,11,6,fin,milo89,M,31,finalizada,,F�cil
+1624916166,11,6,fin,milo89,M,31,finalizada,,Fácil
 
 1624896485,12,8,inicio_partida,laura,Femenino,0,,,Medio
 
@@ -147,93 +147,93 @@ tiempo_partida,nro_de_partida,cant_palabras,evento,nick,genero,edad,estado,palab
 
 1624896505,12,8,fin,laura,Femenino,0,finalizada,,Medio
 
-1624896531,13,16,inicio_partida,laura,Femenino,0,,,Dif�cil
+1624896531,13,16,inicio_partida,laura,Femenino,0,,,Difícil
 
-1624896538,13,16,intento,laura,Femenino,0,error,dodrio,Dif�cil
+1624896538,13,16,intento,laura,Femenino,0,error,dodrio,Difícil
 
-1624896540,13,16,intento,laura,Femenino,0,error,spearow,Dif�cil
+1624896540,13,16,intento,laura,Femenino,0,error,spearow,Difícil
 
-1624896543,13,16,intento,laura,Femenino,0,error,staravia,Dif�cil
+1624896543,13,16,intento,laura,Femenino,0,error,staravia,Difícil
 
-1624896546,13,16,intento,laura,Femenino,0,error,spearow,Dif�cil
+1624896546,13,16,intento,laura,Femenino,0,error,spearow,Difícil
 
-1624896547,13,16,intento,laura,Femenino,0,ok,spearow,Dif�cil
+1624896547,13,16,intento,laura,Femenino,0,ok,spearow,Difícil
 
-1624896548,13,16,intento,laura,Femenino,0,ok,pidgey,Dif�cil
+1624896548,13,16,intento,laura,Femenino,0,ok,pidgey,Difícil
 
-1624896549,13,16,intento,laura,Femenino,0,error,taillow,Dif�cil
+1624896549,13,16,intento,laura,Femenino,0,error,taillow,Difícil
 
-1624896552,13,16,intento,laura,Femenino,0,error,pidgeotto,Dif�cil
+1624896552,13,16,intento,laura,Femenino,0,error,pidgeotto,Difícil
 
-1624896554,13,16,intento,laura,Femenino,0,ok,pidgeotto,Dif�cil
+1624896554,13,16,intento,laura,Femenino,0,ok,pidgeotto,Difícil
 
-1624896555,13,16,intento,laura,Femenino,0,error,taillow,Dif�cil
+1624896555,13,16,intento,laura,Femenino,0,error,taillow,Difícil
 
-1624896557,13,16,intento,laura,Femenino,0,error,staravia,Dif�cil
+1624896557,13,16,intento,laura,Femenino,0,error,staravia,Difícil
 
-1624896559,13,16,intento,laura,Femenino,0,error,swellow,Dif�cil
+1624896559,13,16,intento,laura,Femenino,0,error,swellow,Difícil
 
-1624896561,13,16,intento,laura,Femenino,0,error,dodrio,Dif�cil
+1624896561,13,16,intento,laura,Femenino,0,error,dodrio,Difícil
 
-1624896563,13,16,intento,laura,Femenino,0,error,starly,Dif�cil
+1624896563,13,16,intento,laura,Femenino,0,error,starly,Difícil
 
-1624896566,13,16,intento,laura,Femenino,0,error,swellow,Dif�cil
+1624896566,13,16,intento,laura,Femenino,0,error,swellow,Difícil
 
-1624896568,13,16,intento,laura,Femenino,0,error,taillow,Dif�cil
+1624896568,13,16,intento,laura,Femenino,0,error,taillow,Difícil
 
-1624896570,13,16,intento,laura,Femenino,0,ok,starly,Dif�cil
+1624896570,13,16,intento,laura,Femenino,0,ok,starly,Difícil
 
-1624896572,13,16,intento,laura,Femenino,0,error,hoothoot,Dif�cil
+1624896572,13,16,intento,laura,Femenino,0,error,hoothoot,Difícil
 
-1624896574,13,16,intento,laura,Femenino,0,ok,hoothoot,Dif�cil
+1624896574,13,16,intento,laura,Femenino,0,ok,hoothoot,Difícil
 
-1624896576,13,16,intento,laura,Femenino,0,error,doduo,Dif�cil
+1624896576,13,16,intento,laura,Femenino,0,error,doduo,Difícil
 
-1624896579,13,16,intento,laura,Femenino,0,error,fearow,Dif�cil
+1624896579,13,16,intento,laura,Femenino,0,error,fearow,Difícil
 
-1624896581,13,16,intento,laura,Femenino,0,ok,doduo,Dif�cil
+1624896581,13,16,intento,laura,Femenino,0,ok,doduo,Difícil
 
-1624896583,13,16,intento,laura,Femenino,0,error,fearow,Dif�cil
+1624896583,13,16,intento,laura,Femenino,0,error,fearow,Difícil
 
-1624896585,13,16,intento,laura,Femenino,0,error,dodrio,Dif�cil
+1624896585,13,16,intento,laura,Femenino,0,error,dodrio,Difícil
 
-1624896587,13,16,intento,laura,Femenino,0,error,staraptor,Dif�cil
+1624896587,13,16,intento,laura,Femenino,0,error,staraptor,Difícil
 
-1624896589,13,16,intento,laura,Femenino,0,ok,staraptor,Dif�cil
+1624896589,13,16,intento,laura,Femenino,0,ok,staraptor,Difícil
 
-1624896591,13,16,intento,laura,Femenino,0,error,dodrio,Dif�cil
+1624896591,13,16,intento,laura,Femenino,0,error,dodrio,Difícil
 
-1624896593,13,16,intento,laura,Femenino,0,ok,swablu,Dif�cil
+1624896593,13,16,intento,laura,Femenino,0,ok,swablu,Difícil
 
-1624896595,13,16,intento,laura,Femenino,0,error,noctowl,Dif�cil
+1624896595,13,16,intento,laura,Femenino,0,error,noctowl,Difícil
 
-1624896598,13,16,intento,laura,Femenino,0,ok,noctowl,Dif�cil
+1624896598,13,16,intento,laura,Femenino,0,ok,noctowl,Difícil
 
-1624896599,13,16,intento,laura,Femenino,0,error,farfetchd,Dif�cil
+1624896599,13,16,intento,laura,Femenino,0,error,farfetchd,Difícil
 
-1624896602,13,16,intento,laura,Femenino,0,error,pidgeot,Dif�cil
+1624896602,13,16,intento,laura,Femenino,0,error,pidgeot,Difícil
 
-1624896604,13,16,intento,laura,Femenino,0,ok,pidgeot,Dif�cil
+1624896604,13,16,intento,laura,Femenino,0,ok,pidgeot,Difícil
 
-1624896607,13,16,intento,laura,Femenino,0,error,dodrio,Dif�cil
+1624896607,13,16,intento,laura,Femenino,0,error,dodrio,Difícil
 
-1624896609,13,16,intento,laura,Femenino,0,ok,fearow,Dif�cil
+1624896609,13,16,intento,laura,Femenino,0,ok,fearow,Difícil
 
-1624896612,13,16,intento,laura,Femenino,0,error,staravia,Dif�cil
+1624896612,13,16,intento,laura,Femenino,0,error,staravia,Difícil
 
-1624896614,13,16,intento,laura,Femenino,0,ok,staravia,Dif�cil
+1624896614,13,16,intento,laura,Femenino,0,ok,staravia,Difícil
 
-1624896615,13,16,intento,laura,Femenino,0,error,taillow,Dif�cil
+1624896615,13,16,intento,laura,Femenino,0,error,taillow,Difícil
 
-1624896618,13,16,intento,laura,Femenino,0,ok,swellow,Dif�cil
+1624896618,13,16,intento,laura,Femenino,0,ok,swellow,Difícil
 
-1624896619,13,16,intento,laura,Femenino,0,ok,taillow,Dif�cil
+1624896619,13,16,intento,laura,Femenino,0,ok,taillow,Difícil
 
-1624896620,13,16,intento,laura,Femenino,0,error,dodrio,Dif�cil
+1624896620,13,16,intento,laura,Femenino,0,error,dodrio,Difícil
 
-1624896623,13,16,intento,laura,Femenino,0,ok,dodrio,Dif�cil
+1624896623,13,16,intento,laura,Femenino,0,ok,dodrio,Difícil
 
-1624896624,13,16,intento,laura,Femenino,0,ok,farfetchd,Dif�cil
+1624896624,13,16,intento,laura,Femenino,0,ok,farfetchd,Difícil
 
-1624896624,13,16,fin,laura,Femenino,0,finalizada,,Dif�cil
+1624896624,13,16,fin,laura,Femenino,0,finalizada,,Difícil
 
