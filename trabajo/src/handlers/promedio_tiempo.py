@@ -9,7 +9,7 @@ def obtener_datos():
 
     datos_juego= pd.read_csv('datos_de_partidas.csv')
     
-    finalizadas_f= datos_juego[(datos_juego['nivel']=='Fácil')&(datos_juego['estado']=='finalizada')]
+    finalizadas_f= datos_juego[(datos_juego['nivel']=='Facil')&(datos_juego['estado']=='finalizada')]
     nro_facil= finalizadas_f['tiempo_partida'].div(14000000)
     sum_f=nro_facil.sum()
 
@@ -17,7 +17,7 @@ def obtener_datos():
     nro_medio= finalizadas_m['tiempo_partida'].div(14000000)
     sum_m=nro_medio.sum()
 
-    finalizadas_d= datos_juego[(datos_juego['nivel']=='Difícil')&(datos_juego['estado']=='finalizada')]
+    finalizadas_d= datos_juego[(datos_juego['nivel']=='Dificil')&(datos_juego['estado']=='finalizada')]
     nro_dif= finalizadas_d['tiempo_partida'].div(14000000)
     sum_d=nro_dif.sum()
 
