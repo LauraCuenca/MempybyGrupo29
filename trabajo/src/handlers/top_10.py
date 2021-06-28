@@ -51,10 +51,11 @@ def loop():
     fig, ax = plt.subplots(1, 1)
     data = obtener_datos()
     data_act = iterar(data)
+    data_10= data_act[:10]
     column_labels = ['Top 10']
     ax.axis('tight')
     ax.axis('off')
-    ax.table(cellText=data_act, colLabels=column_labels, loc="center")
+    ax.table(cellText=data_10, colLabels=column_labels, loc="center")
     plt.title("Top 10 de las primeras palabras encontradas")
     plt.savefig("src/recursos/graficos/top_10.png")
 
