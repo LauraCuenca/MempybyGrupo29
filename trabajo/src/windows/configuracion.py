@@ -5,7 +5,7 @@ from src.handlers import login, configuracion_h
 def build():
     """ Crea la ventana cuando de configuracion"""
     tipo_de_tarjetas = ["Texto", "Imagen", "Mixto"]
-    dificultad = ["Fácil", "Medio", "Difícil"]
+    dificultad = ["Facil", "Medio", "Dificil"]
     ayuda = ["Con", "Sin"]
     tema = ["LightGray1", "Topanga", "DarkBlue17"]
     size= (25,2)
