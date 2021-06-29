@@ -6,9 +6,9 @@ from src.handlers import sonido
 
 def obtener_datos():
     datos_puntos = pd.read_csv("datos_de_puntos.csv")
-    filtro = datos_puntos[['nick', 'puntos']].head(10)
+    filtro = datos_puntos[['nick', 'puntos']]
     filtro = filtro.groupby('nick')[['nick', 'puntos']].sum()
-    ranking = filtro.sort_values(by='puntos', ascending=False).reset_index()
+    ranking = filtro.sort_values(by='puntos', ascending=False).reset_index()[:3]
     return ranking.values
 
 
