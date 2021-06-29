@@ -9,13 +9,17 @@ def obtener_datos():
 
     datos_juego= pd.read_csv('datos_de_partidas.csv')
     
-    partidas_timeout= datos_juego[datos_juego["estado"]=='timeout']['nro_de_partida']
-    palabras= datos_juego[datos_juego["nro_de_partida"]==int(partidas_timeout)]['palabra'].dropna()
+    timeout= datos_juego[datos_juego["estado"]=='timeout']['nro_de_partida'].values.tolist()
+    #palabras= datos_juego[datos_juego["nro_de_partida"]==int(partidas_timeout)]['palabra'].dropna()
 
-    cant= palabras.value_counts()
+    df2 = datos_juego[datos_juego['nro_de_partida'].isin(timeout)].dropna()
+    cant= df2['palabra'].value_counts()
+    palabras= df2['palabra'].unique()
+
+    #cant= palabras.value_counts()
 
     data_dibujo = list(cant)
-    etiquetas = list(palabras.unique())
+    etiquetas = list(palabras)
     return etiquetas, data_dibujo
 
 
@@ -59,4 +63,4 @@ def loop():
         if event in (sg.WINDOW_CLOSED,"-SALIR-"):
             sonido.reproducir_sonido(1)
             break
-    return window
+    return window  
