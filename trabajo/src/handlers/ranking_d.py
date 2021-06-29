@@ -3,14 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from src.handlers import sonido
 
-
 def obtener_datos():
-    datos_puntos = pd.read_csv("datos_de_puntos.csv")
-    filtro = datos_puntos[['nick', 'puntos']]
+    datos_puntos= pd.read_csv('datos_de_puntos.csv')
+    dif= datos_puntos[datos_puntos['nivel']=='Dificil']
+    filtro = dif[['nick', 'puntos']]
     filtro = filtro.groupby('nick')[['nick', 'puntos']].sum()
-    ranking = filtro.sort_values(by='puntos', ascending=False).reset_index()[:3]
-    return ranking.values
-
+    ranking_d = filtro.sort_values(by='puntos', ascending=False).reset_index()[:5]
+    return ranking_d.values
 
 def start():
     """ Lanza la ejecución de la ventana del tablero """
@@ -50,4 +49,5 @@ def loop():
         if event in (sg.WINDOW_CLOSED, "-SALIR-"):
             sonido.reproducir_sonido(1)
             break
+
     return window

@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 from src.windows import ranking
-from src.handlers import sonido, ranking_h
+from src.handlers import sonido, ranking_f,ranking_m,ranking_d
 
 
 
@@ -20,10 +20,22 @@ def loop():
             sonido.reproducir_sonido(1)
             break
 
-        if event == "-RANKING-":
+        if event == "-RANKING_FACIL-":
             window.hide()
             sonido.reproducir_sonido(1)
-            ranking_h.start()
+            ranking_f.start()
+            window.un_hide()
+
+        if event == "-RANKING_MEDIO-":
+            window.hide()
+            sonido.reproducir_sonido(1)
+            ranking_m.start()
+            window.un_hide()
+        
+        if event == "-RANKING_DIFICIL-":
+            window.hide()
+            sonido.reproducir_sonido(1)
+            ranking_d.start()
             window.un_hide()
 
     return window

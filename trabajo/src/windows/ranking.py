@@ -8,7 +8,9 @@ def build():
 
     layout = [
     [sg.Image(filename=("src/recursos/images/ranking.png"),size=(150,150))],   
-    [sg.Button("Ranking de los mejores Jugadores",key=("-RANKING-"),size=(size))],
+    [sg.Button("Ranking : Nivel Facil",key=("-RANKING_FACIL-"),size=(size))],
+    [sg.Button("Ranking : Nivel Medio",key=("-RANKING_MEDIO-"),size=(size))],
+    [sg.Button("Ranking : Nivel Dificil",key=("-RANKING_DIFICIL-"),size=(size))],
     [sg.Button("Salir",key=("-SALIR-"),size=(size))]
     ]
     
