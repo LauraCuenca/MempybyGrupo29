@@ -1,5 +1,7 @@
 # Juego de la memoria. Mempy -byGrupo29
 
+<img  src="src/recursos/images/python.png">
+
 Juego de la memoria, creado en python, tiene 3 niveles de dificultad, con distintos temarios para jugar dependiendo de la hora que quieras utilizarlo.
 
 Permite elegir entre 3 gamas de colores: Dark, Light, G29.
@@ -32,6 +34,9 @@ python run.py
 
 [dataset logo autos](https://www.kaggle.com/yamaerenay/100-images-of-top-50-car-brands)
 
+#### Iconos
+
+[flaticon.es](https://www.flaticon.es/packs/computer-programming/2?word=programming)
 
 
 ## Tabla de criterios

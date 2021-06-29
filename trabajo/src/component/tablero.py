@@ -45,13 +45,13 @@ def loop():
                     if len(msj) >= 1:
                         sg.popup(msj[0], title="fin")  # Mostrar primer mensaje
                     else:
-                        sg.popup("Ganaste el juego!!", title="fin")
+                        sg.popup("Ganaste el juego!!", title="fin",icon="src/recursos/images/winner.png")
                 else:
                     msj = configuraciones[jugador_logueado][5].split(',')
                     if len(msj) >= 2:
                         sg.popup(msj[1], title="fin")  # Mostrar segundo mensaje
                     else:
-                        sg.popup("Perdiste el juego", title="fin")
+                        sg.popup("Perdiste el juego", title="fin",icon="src/recursos/images/game-over.png")
                 nueva_partida = 0
 
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):
