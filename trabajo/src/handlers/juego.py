@@ -7,7 +7,7 @@ from src.handlers import tablero
 
 class Juego:
     def __init__(self, dificultad, con_ayuda, tipo_tarjeta, jugador_nombre, jugador_genero, jugador_edad):
-        self.dificultad = dificultad  # Fácil, Medio, Díficil
+        self.dificultad = dificultad  # Facil, Medio, Díficil
         self.con_ayuda = con_ayuda
         self.tipo_tarjeta = tipo_tarjeta  # Texto, Imagen, Mixto
         self.jugador_nombre = jugador_nombre  # Datos del jugador
@@ -43,7 +43,7 @@ class Juego:
             hora_del_dia = (0, 12)
         else:
             hora_del_dia = (13, 23)
-        if self.dificultad == "Fácil":
+        if self.dificultad == "Facil":
             tamanio = (4, 3)  # Tamaño x,y del tablero segun la dificultad
             self.tiempo_restante = 40
         elif self.dificultad == "Medio":
