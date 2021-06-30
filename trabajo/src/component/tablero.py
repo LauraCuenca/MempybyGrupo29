@@ -43,15 +43,15 @@ def loop():
                 if nueva_partida.aciertos == nueva_partida.aciertos_maximos:  # Si ganaste
                     msj = configuraciones[jugador_logueado][5].split(',')
                     if len(msj) >= 1:
-                        sg.popup(msj[0], title="fin")  # Mostrar primer mensaje
+                        sg.popup(msj[0], title="fin", image="src/recursos/images/winner.png")  # Mostrar primer mensaje
                     else:
-                        sg.popup("Ganaste el juego!!", title="fin",icon="src/recursos/images/winner.png")
+                        sg.popup("Ganaste el juego!!", title="fin", image="src/recursos/images/winner.png")
                 else:
                     msj = configuraciones[jugador_logueado][5].split(',')
                     if len(msj) >= 2:
-                        sg.popup(msj[1], title="fin")  # Mostrar segundo mensaje
+                        sg.popup(msj[1], title="fin", image="src/recursos/images/game-over.png")  # Mostrar segundo mensaje
                     else:
-                        sg.popup("Perdiste el juego", title="fin",icon="src/recursos/images/game-over.png")
+                        sg.popup("Perdiste el juego", title="fin", image="src/recursos/images/game-over.png")
                 nueva_partida = 0
 
         if event in (sg.WINDOW_CLOSED, "Exit", "-exit-", "Cerrar sesión"):
@@ -95,8 +95,8 @@ def loop():
             window = tablero.build()
 
         if event == "Nueva partida":
-            ok = sg.popup_ok_cancel("¿Iniciar nueva partida?")
-            if ok:
+            resp = sg.popup_ok_cancel("¿Iniciar nueva partida?")
+            if resp == "OK":
                 config = configuracion_h.leer_config()[login.leer_sesion()]
                 nueva_partida = juego.Juego(config[0], config[1], config[2], jugador_logueado,
                                             datos_de_jugador_logueado[2], datos_de_jugador_logueado[3])
