@@ -21,7 +21,7 @@ def build():
     ]
 
     config = configuracion_h.leer_config()[login.leer_sesion()]
-    if config[0] == "Fácil":
+    if config[0] == "Facil":
         tamanio = (4, 3)  # Tamaño x,y del tablero segun la dificultad
     elif config[0] == "Medio":
         tamanio = (4, 4)

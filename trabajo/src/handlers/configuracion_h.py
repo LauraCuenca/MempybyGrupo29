@@ -35,7 +35,7 @@ def crear_configuracion_default(usuario):
     except Exception:
         # Si el archivo no existe
         configuraciones = {}
-    configuraciones[usuario] = ["Fácil", "Con", "Texto", "60", "Topanga", "Ganaste, Perdiste"]
+    configuraciones[usuario] = ["Facil", "Con", "Texto", "60", "Topanga", "Ganaste, Perdiste"]
     datos_json = json.dumps(configuraciones)  
     # Guarda la configuracion en un json
     with open("configuracion.json", "w", encoding="utf8") as archivoJSON:
