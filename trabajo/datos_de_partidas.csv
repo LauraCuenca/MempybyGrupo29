@@ -235,3 +235,25 @@ tiempo_partida,nro_de_partida,cant_palabras,evento,nick,genero,edad,estado,palab
 1625022742,23,6,fin,diego,m,30,abandono,,Facil
 1625022767,24,6,inicio_partida,diego,m,30,,,Facil
 1625022768,24,6,fin,diego,m,30,abandono,,Facil
+1625113412,25,8,inicio_partida,mau,M,31,,,Medio
+1625113421,25,8,intento,mau,M,31,error,Ángel Di María,Medio
+1625113426,25,8,intento,mau,M,31,error,Luciano Aued,Medio
+1625113429,25,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625113433,25,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625113436,25,8,intento,mau,M,31,error,Ángel Di María,Medio
+1625113439,25,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625113443,25,8,intento,mau,M,31,ok,Ángel Di María,Medio
+1625113447,25,8,intento,mau,M,31,error,Leonel Vangioni,Medio
+1625113450,25,8,intento,mau,M,31,ok,Pablo Mouche,Medio
+1625113453,25,8,intento,mau,M,31,ok,Juan Ezequiel Cuevas,Medio
+1625113456,25,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625113458,25,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625113463,25,8,intento,mau,M,31,ok,Nicolás Gaitán,Medio
+1625113466,25,8,intento,mau,M,31,ok,Diego Buonanotte,Medio
+1625113469,25,8,intento,mau,M,31,error,Lionel Messi,Medio
+1625113472,25,8,intento,mau,M,31,error,Luciano Aued,Medio
+1625113475,25,8,intento,mau,M,31,ok,Luciano Aued,Medio
+1625113477,25,8,intento,mau,M,31,error,Lionel Messi,Medio
+1625113479,25,8,intento,mau,M,31,ok,Leonel Vangioni,Medio
+1625113480,25,8,intento,mau,M,31,ok,Lionel Messi,Medio
+1625113481,25,8,fin,mau,M,31,finalizada,,Medio
