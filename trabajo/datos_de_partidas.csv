@@ -257,3 +257,30 @@ tiempo_partida,nro_de_partida,cant_palabras,evento,nick,genero,edad,estado,palab
 1625113479,25,8,intento,mau,M,31,ok,Leonel Vangioni,Medio
 1625113480,25,8,intento,mau,M,31,ok,Lionel Messi,Medio
 1625113481,25,8,fin,mau,M,31,finalizada,,Medio
+1625114848,26,8,inicio_partida,mau,M,31,,,Medio
+1625114855,26,8,intento,mau,M,31,error,Pablo Mouche,Medio
+1625114863,26,8,intento,mau,M,31,error,Ángel Di María,Medio
+1625114868,26,8,intento,mau,M,31,error,Lionel Messi,Medio
+1625114872,26,8,intento,mau,M,31,ok,Ángel Di María,Medio
+1625114875,26,8,intento,mau,M,31,error,Luciano Aued,Medio
+1625114878,26,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625114881,26,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625114884,26,8,intento,mau,M,31,error,Leonel Vangioni,Medio
+1625114888,26,8,intento,mau,M,31,error,Lionel Messi,Medio
+1625114891,26,8,intento,mau,M,31,ok,Lionel Messi,Medio
+1625114893,26,8,intento,mau,M,31,error,Nicolás Gaitán,Medio
+1625114896,26,8,intento,mau,M,31,ok,Nicolás Gaitán,Medio
+1625114899,26,8,intento,mau,M,31,error,Leonel Vangioni,Medio
+1625114901,26,8,intento,mau,M,31,ok,Diego Buonanotte,Medio
+1625114903,26,8,intento,mau,M,31,error,Luciano Aued,Medio
+1625114906,26,8,intento,mau,M,31,ok,Pablo Mouche,Medio
+1625114909,26,8,intento,mau,M,31,error,Leonel Vangioni,Medio
+1625114912,26,8,intento,mau,M,31,ok,Juan Ezequiel Cuevas,Medio
+1625114914,26,8,intento,mau,M,31,error,Luciano Aued,Medio
+1625114918,26,8,intento,mau,M,31,error,Luciano Aued,Medio
+1625114921,26,8,intento,mau,M,31,ok,Leonel Vangioni,Medio
+1625114927,26,8,fin,mau,M,31,timeout,,Medio
+1625115023,27,8,inicio_partida,mau,M,31,,,Medio
+1625115027,27,8,intento,mau,M,31,error,Juan Ezequiel Cuevas,Medio
+1625115031,27,8,intento,mau,M,31,error,Leonel Vangioni,Medio
+1625115036,27,8,fin,mau,M,31,abandono,,Medio
