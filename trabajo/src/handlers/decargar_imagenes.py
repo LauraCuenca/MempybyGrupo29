@@ -145,7 +145,7 @@ https://www.carlogos.org/car-logos/hudson-logo.png
 https://www.carlogos.org/car-logos/citroen-logo.png
 https://www.carlogos.org/car-logos/mg-logo.png"""
 
-print(len(i))
+#print(len(i))
 for a in i:
     r = requests.get(a, allow_redirects=True)
     open(f'../recursos/datasets/images_fifa/images/{(a.split("/")[4])}-{(a.split("/")[5])}-20_60.png', 'wb').write(
