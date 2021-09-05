@@ -5,13 +5,18 @@ from src.handlers import sonido
 
 
 def obtener_datos():
-    datos_puntos= pd.read_csv('datos_de_puntos.csv')
-    facil= datos_puntos[datos_puntos['nivel']=='Facil']
-    filtro = facil[['nick', 'puntos']]
-    filtro = filtro.groupby('nick')[['nick', 'puntos']].sum()
-    ranking_f = filtro.sort_values(by='puntos', ascending=False).reset_index()[:5]
-    return ranking_f.values
-
+    try:
+        datos_puntos= pd.read_csv('datos_de_puntos.csv')
+        facil= datos_puntos[datos_puntos['nivel']=='Facil']
+        filtro = facil[['nick', 'puntos']]
+        filtro = filtro.groupby('nick')[['nick', 'puntos']].sum()
+        ranking_f = filtro.sort_values(by='puntos', ascending=False).reset_index()[:5]
+        if len(ranking_f.values) > 0:
+            return ranking_f.values
+        else:
+            raise
+    except:
+        return [["datos insuficientes"]]
 
 
 def start():

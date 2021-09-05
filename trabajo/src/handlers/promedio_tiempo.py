@@ -6,25 +6,26 @@ from src.handlers import sonido
 
 def obtener_datos():
     """ Filtro los datos que se quieren obtener del csv"""
+    try:
+        datos_juego= pd.read_csv('datos_de_partidas.csv')
 
-    datos_juego= pd.read_csv('datos_de_partidas.csv')
-    
-    finalizadas_f= datos_juego[(datos_juego['nivel']=='Facil')&(datos_juego['estado']=='finalizada')]
-    nro_facil= finalizadas_f['tiempo_partida'].div(14000000)
-    sum_f=nro_facil.sum()
+        finalizadas_f= datos_juego[(datos_juego['nivel']=='Facil')&(datos_juego['estado']=='finalizada')]
+        nro_facil= finalizadas_f['tiempo_partida'].div(14000000)
+        sum_f=nro_facil.sum()
 
-    finalizadas_m= datos_juego[(datos_juego['nivel']=='Medio')&(datos_juego['estado']=='finalizada')]
-    nro_medio= finalizadas_m['tiempo_partida'].div(14000000)
-    sum_m=nro_medio.sum()
+        finalizadas_m= datos_juego[(datos_juego['nivel']=='Medio')&(datos_juego['estado']=='finalizada')]
+        nro_medio= finalizadas_m['tiempo_partida'].div(14000000)
+        sum_m=nro_medio.sum()
 
-    finalizadas_d= datos_juego[(datos_juego['nivel']=='Dificil')&(datos_juego['estado']=='finalizada')]
-    nro_dif= finalizadas_d['tiempo_partida'].div(14000000)
-    sum_d=nro_dif.sum()
+        finalizadas_d= datos_juego[(datos_juego['nivel']=='Dificil')&(datos_juego['estado']=='finalizada')]
+        nro_dif= finalizadas_d['tiempo_partida'].div(14000000)
+        sum_d=nro_dif.sum()
 
-
-    data_dibujo = [int(sum_f),int(sum_m),int(sum_d)]
-    etiquetas = ['Facil','Medio','Dificil']
-    return etiquetas, data_dibujo
+        data_dibujo = [int(sum_f),int(sum_m),int(sum_d)]
+        etiquetas = ['Facil','Medio','Dificil']
+        return etiquetas, data_dibujo
+    except OSError:
+        return ["Datos insuficientes", "Datos insuficientes", "Datos insuficientes"], [1, 1, 1]
 
 
 
