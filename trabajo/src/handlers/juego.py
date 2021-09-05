@@ -6,6 +6,9 @@ from src.handlers import tablero
 
 
 class Juego:
+    """
+    Clase que contiene toda la logica del tablero de juego
+    """
     def __init__(self, dificultad, con_ayuda, tipo_tarjeta, jugador_nombre, jugador_genero, jugador_edad):
         self.dificultad = dificultad  # Facil, Medio, Díficil
         self.con_ayuda = con_ayuda
