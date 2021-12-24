@@ -1,7 +1,7 @@
 # Juego de la memoria. Mempy -byGrupo29
 
 <p align="center">
-    <img  src="src/recursos/images/pikachu.gif">
+    <img  src="src/recursos/images/pikachu.gif" width="40" height="40">
 </p>
 Juego de la memoria, creado en python, tiene 3 niveles de dificultad, con distintos temarios para jugar dependiendo de la hora que quieras utilizarlo.
 
