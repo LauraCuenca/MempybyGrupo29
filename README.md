@@ -7,6 +7,8 @@ Juego de la memoria, creado en python, tiene 3 niveles de dificultad, con distin
 
 Permite elegir entre 3 gamas de colores: Dark, Light, G29.
 
+Se realizo en el Seminario de Lenguajes, de la Facultad de Informatica UNLP
+
 ## Instalación
 
 ```
