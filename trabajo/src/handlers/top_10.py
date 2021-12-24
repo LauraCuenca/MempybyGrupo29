@@ -6,17 +6,17 @@ from src.handlers import sonido
 
 def obtener_datos():
     """ Filtro los datos que se quieren obtener del csv"""
+    try:
+        datos_juego= pd.read_csv('datos_de_partidas.csv')
 
-    datos_juego= pd.read_csv('datos_de_partidas.csv')
-            
-    top_10 = datos_juego[datos_juego['estado'] == 'ok'].groupby('nro_de_partida')['palabra'].first().value_counts().head(10)
-    data = top_10.keys()
-    return data
+        top_10 = datos_juego[datos_juego['estado'] == 'ok'].groupby('nro_de_partida')['palabra'].first().value_counts().head(10)
+        data = top_10.keys()
+        return data
+    except OSError:
+        return ["Datos insuficientes"]
 
 def iterar(data):
-    """
-
-    """
+    """ """
     lista_de_listas = []
     for x in range(len(data)):
         lista_de_listas += [[data[x]]]

@@ -4,12 +4,18 @@ import matplotlib.pyplot as plt
 from src.handlers import sonido
 
 def obtener_datos():
-    datos_puntos= pd.read_csv('datos_de_puntos.csv')
-    dif= datos_puntos[datos_puntos['nivel']=='Dificil']
-    filtro = dif[['nick', 'puntos']]
-    filtro = filtro.groupby('nick')[['nick', 'puntos']].sum()
-    ranking_d = filtro.sort_values(by='puntos', ascending=False).reset_index()[:5]
-    return ranking_d.values
+    try:
+        datos_puntos= pd.read_csv('datos_de_puntos.csv')
+        dif= datos_puntos[datos_puntos['nivel']=='Dificil']
+        filtro = dif[['nick', 'puntos']]
+        filtro = filtro.groupby('nick')[['nick', 'puntos']].sum()
+        ranking_d = filtro.sort_values(by='puntos', ascending=False).reset_index()[:5]
+        if len(ranking_d.values) > 0:
+            return ranking_d.values
+        else:
+            raise
+    except:
+        return [["datos insuficientes"]]
 
 def start():
     """ Lanza la ejecución de la ventana del tablero """

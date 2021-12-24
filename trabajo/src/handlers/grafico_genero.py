@@ -7,16 +7,18 @@ from src.handlers import sonido
 def obtener_datos():
     """ Filtro los datos que se quieren obtener del csv"""
 
-    datos_juego= pd.read_csv('datos_de_partidas.csv')
+    try:
+        datos_juego= pd.read_csv('datos_de_partidas.csv')
 
-    partidas_genero = datos_juego["genero"].value_counts()
-    nombres = datos_juego["genero"].unique()
-    nombres= list(nombres)
+        partidas_genero = datos_juego["genero"].value_counts()
+        nombres = datos_juego["genero"].unique()
+        nombres= list(nombres)
 
-    data_dibujo = partidas_genero
-    etiquetas = nombres
-    return etiquetas, data_dibujo
-
+        data_dibujo = partidas_genero
+        etiquetas = nombres
+        return etiquetas, data_dibujo
+    except OSError:
+        return ["Datos insuficientes"], [1]
 
 
 

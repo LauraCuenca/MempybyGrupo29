@@ -5,19 +5,26 @@ from src.handlers import sonido
 
 def obtener_datos():
     """ Filtro los datos que se quieren obtener del csv"""
+    try:
+        datos_juego= pd.read_csv('datos_de_partidas.csv')
 
-    datos_juego= pd.read_csv('datos_de_partidas.csv')
-
-    partidas_aband = datos_juego['estado'].str.contains('abandono').value_counts()[True]
-    partidas_cancel = datos_juego['estado'].str.contains('finalizada').value_counts()[True]
-    partidas_finalizadas= datos_juego['estado'].str.contains('abandono').value_counts()[True]
-    
-
-    etiquetas = ["Abandonada","Cancelada","Terminada"]
-    data_dibujo = [partidas_aband, partidas_cancel,partidas_finalizadas]
-    return etiquetas, data_dibujo
-
-
+        try:
+            partidas_aband = datos_juego['estado'].str.contains('abandono').value_counts()[True]
+        except:
+            partidas_aband = 0
+        try:
+            partidas_cancel = datos_juego['estado'].str.contains('finalizada').value_counts()[True]
+        except:
+            partidas_cancel = 0
+        try:
+            partidas_finalizadas= datos_juego['estado'].str.contains('finalizada').value_counts()[True]
+        except:
+            partidas_finalizadas = 0
+        etiquetas = ["Abandonada", "Cancelada", "Terminada"]
+        data_dibujo = [partidas_aband, partidas_cancel, partidas_finalizadas]
+        return etiquetas, data_dibujo
+    except OSError:
+        return ["Datos insuficientes", "Datos insuficientes", "Datos insuficientes"], [1, 1, 1]
 
 
 def start():
