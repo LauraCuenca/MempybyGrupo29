@@ -189,9 +189,9 @@ def get_tabla_criterios():
 
 
 if __name__ == '__main__':
-    # procesar_pokemon("../recursos/datasets/pokemon.csv")
+    procesar_pokemon("../recursos/datasets/pokemon.csv")
     # procesar_fifa("../recursos/datasets/fifa20data.csv")
-    procesar_logos("../recursos/datasets/companies.csv")
+    #procesar_logos("../recursos/datasets/companies.csv")
     """
     imagenes = []
     for i in range(1,7):
